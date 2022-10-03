@@ -5,12 +5,15 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
+import Navabar  from "./components/Navbar/index";
+import Footer from "./components/Footer/index"
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
     <>
+      <Navabar />
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +27,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
+      <Footer />
     </>
   );
 }
