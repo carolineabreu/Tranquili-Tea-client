@@ -1,5 +1,6 @@
 
 module.exports = {
+  mode: 'jit',
   content: ["./src/**/*.{html,js, jsx}", "./node_modules/tw-elements/dist/js/**/*.js"],
   theme: {
     theme: {
@@ -26,8 +27,8 @@ module.exports = {
         4: '4',
       },
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
+        sky: colors.sky,
+        cyan: colors.cyan,
         'white': '#ffffff',
         'purple': '#3f3cbb',
         'midnight': '#121063',
@@ -49,6 +50,7 @@ module.exports = {
   
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require('tw-elements/dist/plugin')
+    require('tw-elements/dist/plugin'),
+    require('tailwindcss/colors')
   ],
 }
