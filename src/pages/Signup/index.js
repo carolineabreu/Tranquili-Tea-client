@@ -34,20 +34,19 @@ export function Signup() {
   //   }
   // }
 
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  //   try {
-  //     const imgURL = await handleUpload();
-  //     await api.post("/user/signup",
-  //       { ...form, img: imgURL }
-  //     );
+    try {
+      const response = await api.post("/user/signup", form
+      );
 
-  //     navigate("/login");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+      navigate("/login");
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   //TODO: arrumar handleSubmit
 
