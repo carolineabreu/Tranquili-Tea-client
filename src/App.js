@@ -5,7 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import TeaList  from "./pages/TeaList";
+import TeaList from "./pages/TeaList";
 import Navabar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import { TeaCard } from "./pages/List.Ecommerce/TeaPage.js";
@@ -36,7 +36,7 @@ function App() {
           <Route path="/OrderReady" element={<OrderReady />} />
         </Routes>
       </AuthContextComponent>
-    
+
     </>
   );
 }
