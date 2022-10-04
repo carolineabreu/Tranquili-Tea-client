@@ -19,14 +19,16 @@ export function Teas() {
     fetchTeas();
   }, []);
 
-  function handleSubmit(e) 
-  //{  setForm({ ...form, [e.target.name]: e.target.value });}
+  function addToCart(e) {
+    e.preventDefault();
+    window.location.reload(true);
+  }
 
   return (
     <>
       <div className="Ecommerce">
         <h1 id="Shop"> Shop </h1>
-        <SearchBar/>
+        <SearchBar />
         <div className="flex">
           <div className="flex-item">
             {Teas.map((currentTea) => {
@@ -39,12 +41,12 @@ export function Teas() {
                         alt={currentTea.name}
                         id="currentTea.image"
                       />
-                       <h1>{currentTea.name}</h1>
+                      <h1>{currentTea.name}</h1>
                     </Link>
                   </>
-                  <button id="btn" onClick={handleSubmit}>
-                      Add to Cart
-                    </button>                  
+                  <button id="btn" onClick={addToCart}>
+                    Add to Cart
+                  </button>
                 </div>
               );
             })}
