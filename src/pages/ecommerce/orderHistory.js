@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function OrderHistory() {
-  const [history, setHistory] = state.userAPI.history;
-  const [isAdmin] = state.userAPI.isAdmin;
-  const [token] = state.token;
+export function OrderHistory() {
+  const [history, setHistory] = { history }; //state.userAPI.history;
+  const [isAdmin] = { isAdmin }; //state.userAPI.isAdmin;
+  const [token] = { token }; //state.token;
 
   useEffect(() => {
     if (token) {
@@ -55,5 +55,3 @@ function OrderHistory() {
     </div>
   );
 }
-
-export default OrderHistory;

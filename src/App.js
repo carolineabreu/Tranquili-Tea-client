@@ -6,13 +6,13 @@ import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 import TeaList from "./pages/TeaList";
-import { TeaCard } from "./pages/List.Ecommerce/TeaPage.js";
-import { Teas } from "./pages/List.Ecommerce/index.js";
-import { FormOrder } from "./pages/List.Ecommerce/OrderPage.js";
-import { OrderReady } from "./pages/List.Ecommerce/OrderReady.js";
-
-
-
+import { TeaCard } from "./pages/ecommerce/teaPage.js";
+import { Teas } from "./pages/ecommerce/index.js";
+import { Reviews } from "./pages/ecommerce/reviews.js";
+import { Cart } from "./pages/ecommerce/cart.js";
+import { Payment } from "./pages/ecommerce/payment.js";
+import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
+import { OurTeam } from "./pages/OurTeam/index.js";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
@@ -28,15 +28,17 @@ function App() {
           <Route
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
-          /> 
-         <Route path="*" element={<ErrorPage />} />
+          />
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/TeaPage/:id" element={<TeaCard />} />
           <Route path="/Teas" element={<Teas />} />
-          <Route path="/FormOrder" element={<FormOrder />} />
-          <Route path="/OrderReady" element={<OrderReady />} />
-        </Routes> *
+          <Route path="/TeaPage/:id/review" element={<Reviews />} />
+          <Route path="/ecommerce" element={<Cart />} />
+          <Route path="/ecommerce/payment" element={<Payment />} />
+          <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
+        </Routes>{" "}
+        *
       </AuthContextComponent>
-
     </>
   );
 }
