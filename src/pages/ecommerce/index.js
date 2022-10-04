@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Cart } from "./cart.js";
+import { Link } from "react-router-dom";
 import { searchBar } from "./searchBar.js";
+import axios from "axios";
 
-export function TeaCard() {
+export function Teas() {
   {
-    const [Teas, setTeas] = useState([]);
+    const [search, setSearch] = useState("");
+    const [teas, setTeas] = useState([]);
 
     useEffect(() => {
       async function fetchTeas() {
@@ -31,7 +34,7 @@ export function TeaCard() {
       <>
         <div className="Ecommerce">
           <h1 id="Shop"> Shop </h1>
-          <searchBar />
+          <searchBar teas={teas} search={search} setSearch={setSearch} />
           <div className="flex">
             <div className="flex-item">
               {Teas.map((currentTea) => {

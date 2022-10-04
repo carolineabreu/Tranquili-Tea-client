@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import { payment } from "./payment.js";
+import { Payment } from "./payment.js";
 
 export function Cart() {
   const [cart, setCart] = useState(0);
@@ -108,7 +108,7 @@ export function Cart() {
 
       <div className="total">
         <h3>Total: $ {total}</h3>
-        <button total={total} onSubmit={payment} button />
+        <button total={total} onSubmit={Payment} button />
       </div>
     </div>
   );

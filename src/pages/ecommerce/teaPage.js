@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
-import { Comment } from "./reviews.js";
+import { Reviews } from "./reviews.js";
+import axios from "axios";
 
 export function TeaCard() {
+  const [Tea, setTeas] = useState("");
+
   useEffect(() => {
     async function fetchTeas() {
       try {
@@ -38,7 +41,7 @@ export function TeaCard() {
           </div>
         );
       })}
-      <Comment />
+      <Reviews />
     </div>
     ;
   </div>;

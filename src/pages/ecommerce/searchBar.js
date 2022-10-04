@@ -1,36 +1,36 @@
 import { useState } from "react";
 
-export function searchBar(Teas) {
-  const [search, setSearch] = useState("");
+export function searchBar({ teas }, { search }, { setSearch }) {
   return (
-    <div className={style.page}>
-      <div className={style.searchBar}>
+    <div className="Searchpage">
+      <div className="searchBar">
         <input
-          className={style.search}
+          className="search"
           placeholder="Enter Tea"
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className={style.container}>
-        {Teas.Teas.filter((countries) => {
-          if (search === "") {
-            return Teas;
-          } else if (Teas.name.toLowerCase().includes(search.toLowerCase())) {
-            return Teas;
-          }
-        }).map((currentTea) => {
-          return (
-            <div className={style.card}>
-              <div className={style.cardItems}>
-                <>
-                  src={currentTea.images[0]}
-                  label={currentTea.name}
-                  path={`/ecommerce/${currentTea.id}`}
-                </>
+      <div className="container">
+        {teas.teas
+          .filter((currentTea) => {
+            if (search === "") {
+              return currentTea;
+            }
+            currentTea.name.toLowerCase().includes(search.toLowerCase());
+          })
+          .map((currentTea) => {
+            return (
+              <div className="card">
+                <div className="cardItems">
+                  <>
+                    src={currentTea.images[0]}
+                    label={currentTea.name}
+                    path={`/ecommerce/${currentTea.id}`}
+                  </>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );
