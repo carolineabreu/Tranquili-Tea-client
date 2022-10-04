@@ -27,8 +27,6 @@ module.exports = {
         4: '4',
       },
       colors: {
-        sky: colors.sky,
-        cyan: colors.cyan,
         'white': '#ffffff',
         'purple': '#3f3cbb',
         'midnight': '#121063',
