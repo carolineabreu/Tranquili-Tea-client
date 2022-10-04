@@ -13,7 +13,9 @@ import { Cart } from "./pages/ecommerce/cart.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
+import { TeaRoomForm } from "./pages/TeaRoomForm";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { TeaRoomPost } from "./pages/TeaRoomPost";
 
 function App() {
   return (
@@ -36,8 +38,9 @@ function App() {
           <Route path="/ecommerce" element={<Cart />} />
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
+          <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
+          <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
         </Routes>{" "}
-        *
       </AuthContextComponent>
     </>
   );

@@ -1,7 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
-import { BsCardImage } from "react-icons/fa";
+import { BiImageAdd } from "react-icons/bi";
+// import { Box, Text } from 'grommet';
+// import { SelectMultiple } from "grommet";
+// import { Grommet } from "grommet";
+// import { TextArea } from 'grommet';
+
+const defaultOptions = [
+  'Question',
+  'Recommendation',
+  'Review',
+  'Photo',
+  'Discussion',
+];
 
 export function TeaRoomForm() {
   const navigate = useNavigate();
@@ -13,6 +25,9 @@ export function TeaRoomForm() {
   });
 
   const [img, setImg] = useState("");
+
+  const [options, setOptions] = useState(defaultOptions);
+  const [valueMultiple, setValueMultiple] = useState([]);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -80,7 +95,28 @@ export function TeaRoomForm() {
         <option value="Discussion">Discussion</option>
       </select>
 
-      <label htmlFor="formImg"><BsCardImage /></label>
+      {/* <Grommet >
+        <Box fill align="center" pad="large" gap="large">
+          <Text>SelectMultiple Default</Text>
+          <SelectMultiple
+            value={valueMultiple}
+            placeholder="Select"
+            options={options}
+            onSearch={(text) => {
+              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+
+              const exp = new RegExp(escapedText, 'i');
+              setOptions(defaultOptions.filter((o) => exp.test(o)));
+            }}
+            onClose={() => setOptions(defaultOptions)}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+            }}
+          />
+        </Box>
+      </Grommet> */}
+
+      <label htmlFor="formImg"><BiImageAdd /></label>
       <input
         type="file"
         id="formImg"
@@ -91,3 +127,4 @@ export function TeaRoomForm() {
     </form>
   );
 }
+
