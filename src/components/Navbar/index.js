@@ -64,7 +64,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
- function Navbar() {
+ export function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -384,4 +384,4 @@ function classNames(...classes) {
     </div>
   )
 }
-export default Navbar;
+
