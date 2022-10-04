@@ -1,8 +1,15 @@
 
 module.exports = {
-  content: ["./src/**/*.{html,js, jsx}"],
+  content: ["./src/**/*.{html,js, jsx}", "./node_modules/tw-elements/dist/js/**/*.js"],
   theme: {
     theme: {
+      fontFamily: {
+        'sans': ['ui-sans-serif', 'system-ui'],
+        'serif': ['ui-serif', 'Georgia'],
+        'mono': ['ui-monospace', 'SFMono-Regular'],
+        'display': ['Oswald'],
+        'body': ['"Oswald"'],
+      },
       screens: {
         sm: '480px',
         md: '768px',
@@ -42,5 +49,6 @@ module.exports = {
   
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('tw-elements/dist/plugin')
   ],
 }

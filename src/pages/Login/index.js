@@ -17,7 +17,7 @@ export function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSumit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     try {
@@ -33,7 +33,7 @@ export function Login() {
   }
 
   return (
-    <form onSubmit={handleSumit}>
+    <form onSubmit={handleSubmit}>
       <label>Email:</label>
       <input
         type="email"
@@ -41,14 +41,14 @@ export function Login() {
         value={form.email}
         onChange={handleChange}
       />
-      <label>Senha:</label>
+      <label>Password:</label>
       <input
         type="password"
         name="password"
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Entrar!</button>
+      <button type="submit">Log In</button>
     </form>
   );
 }
