@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import  { Link } from 'react-router-dom';
+
 import "../../index.css";
 
 const navigation = {
@@ -54,6 +55,7 @@ const navigation = {
   ],
   pages: [
     { name: 'TEA ROOM', href: '#' },
+    { name: 'TEA LIST', href: 'TeaList' },
     { name: 'ABOUT US', href: '#' },
   ],
 }
@@ -184,7 +186,7 @@ function classNames(...classes) {
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a href="Signup" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
                     </a>
                   </div>
@@ -227,12 +229,8 @@ function classNames(...classes) {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
-                  <span className="sr-only">Your company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://www.canva.com/design/DAFN8r8ET00/6zZJTfjByM5tMjwQHRVBOg/edit?utm_content=DAFN8r8ET00&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                    alt=""
-                  />
+                  <span className="sr-only">Tranquili-Tea</span>
+                  
                 </a>
               </div>
 
