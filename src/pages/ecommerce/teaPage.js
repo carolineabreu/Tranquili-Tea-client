@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import React from "react";
-import style from "./style.module.css";
-import { Comment } from "./FormComment.js";
+import { Comment } from "./reviews.js";
 
 export function TeaCard() {
   useEffect(() => {

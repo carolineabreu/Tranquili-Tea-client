@@ -1,6 +1,4 @@
 import { useState } from "react";
-//import style from "./style.module.css";
-import cardItems from "./cart.js";
 
 export function searchBar(Teas) {
   const [search, setSearch] = useState("");
@@ -24,11 +22,11 @@ export function searchBar(Teas) {
           return (
             <div className={style.card}>
               <div className={style.cardItems}>
-                <CardItem
+                <>
                   src={currentTea.images[0]}
                   label={currentTea.name}
                   path={`/ecommerce/${currentTea.id}`}
-                />
+                </>
               </div>
             </div>
           );
