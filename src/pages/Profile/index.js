@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 export function Profile() {
-  // const [user, setUser] = useState({ name: "", email: "" });
+  //const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+
   // useEffect(() => {
   //   async function fetchUser() {
   //     const response = await api.get("/user/profile");
