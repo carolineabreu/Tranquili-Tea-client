@@ -16,7 +16,7 @@ export  function Carousel() {
                         flavours to suit your{' '}
                         <span className="relative px-1">
                           <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
-                          <span className="relative inline-block text-green-700">
+                          <span className="relative inline-block px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
                             mood
                           </span>
                         </span>
@@ -28,6 +28,7 @@ export  function Carousel() {
                         <div className="h-full p-5 border border-l-0 rounded-r">
                           <h6 className="mb-2 font-semibold leading-5 text-purple-900">
                             Tea for every mood
+                            px-2 text-white bg-blue-600 rounded dark:bg-blue-500
                           </h6>
                           <p className="text-sm text-gray-900">
                           There’s tea for every mood! Isn’t that the best thing ever? We know it is. So, if you have been struggling with sleep or you’re feeling stressed at work, don’t worry. We have specific kinds of tea that can help you. For some situations, green tea may be ideal, while for others, chamomile tea works better. Let us help you find the right blend for your current state of mind. 
