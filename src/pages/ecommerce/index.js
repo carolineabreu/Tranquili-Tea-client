@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // import { Cart } from "./cart.js";
 // import { Link } from "react-router-dom";
 //import { searchBar } from "./searchBar.js";
-import axios from "axios";
+import { api } from "../../api/api";
 
 export function Teas() {
   //const [search, setSearch] = useState("");
@@ -12,7 +12,7 @@ export function Teas() {
   useEffect(() => {
     async function fetchTeas() {
       try {
-        const response = await axios.get("https://ironrest.herokuapp.com/...");
+        const response = await api.get("/tea/all");
 
         setTeas([...response.data]);
       } catch (err) {
