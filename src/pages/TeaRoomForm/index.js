@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../api/api";
 import { BiImageAdd } from "react-icons/bi";
 // import { Box, Text } from 'grommet';
@@ -7,27 +7,27 @@ import { BiImageAdd } from "react-icons/bi";
 // import { Grommet } from "grommet";
 // import { TextArea } from 'grommet';
 
-const defaultOptions = [
-  'Question',
-  'Recommendation',
-  'Review',
-  'Photo',
-  'Discussion',
-];
+// const defaultOptions = [
+//   'Question',
+//   'Recommendation',
+//   'Review',
+//   'Photo',
+//   'Discussion',
+// ];
 
 export function TeaRoomForm() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
     body: "",
-    image: "",
     tag: "",
   });
 
   const [img, setImg] = useState("");
 
-  const [options, setOptions] = useState(defaultOptions);
-  const [valueMultiple, setValueMultiple] = useState([]);
+  // const [options, setOptions] = useState(defaultOptions);
+  // const [valueMultiple, setValueMultiple] = useState([]);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -40,9 +40,9 @@ export function TeaRoomForm() {
   async function handleUpload() {
     try {
       const uploadImage = new FormData();
-      uploadImage.append("image", img);
+      uploadImage.append("picture", img);
 
-      const response = await api.post("/upload-image", uploadImage);
+      const response = await api.post("/uploadImage/uploadImage", uploadImage);
 
       return response.data.url;
     } catch (error) {
@@ -58,7 +58,7 @@ export function TeaRoomForm() {
       await api.post("/tea-room/post/new-post", { ...form, img: imgURL });
 
       //FIXME: /post => ver se ta certa e
-      navigate("/post/:id");
+      navigate(`/post/${id}`);
     } catch (error) {
       console.log(error);
     }
@@ -118,6 +118,7 @@ export function TeaRoomForm() {
 
       <label htmlFor="formImg"><BiImageAdd /></label>
       <input
+        name="picture"
         type="file"
         id="formImg"
         onChange={handleImage}

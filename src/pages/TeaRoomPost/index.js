@@ -20,8 +20,8 @@ export function TeaRoomPost() {
     owner: "",
     title: "",
     body: "",
-    image: "",
-    tag: [""]
+    picture: "",
+    tag: ""
   });
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export function TeaRoomPost() {
         <CardMedia
           component="img"
           height="194"
-          image={post.image}
+          picture={post.picture}
           alt={post.title}
         />
         <CardContent>
