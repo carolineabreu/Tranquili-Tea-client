@@ -26,7 +26,7 @@ export function Signup() {
   //     const uploadData = new FormData();
   //     uploadData.append("picture", img);
 
-  //     const response = await api.post("/upload-image", uploadData);
+  //     const response = await api.post("/uploadImg/uploadImg", uploadData);
 
   //     return response.data.url;
   //   } catch (error) {
