@@ -1,39 +1,43 @@
 import { useContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { Link, useNavigate, useParams } from "react-router-dom";
+//import { AuthContext } from "../../contexts/authContext";
+import { TeaRoom } from "../TeaRoom";
 
 export function Profile() {
-  const [user, setUser] = useState({ email: "", password: "" });
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchUserData() {
+    async function fetchUser() {
       try {
         const response = await api.get("/user/profile");
+
         setUser(response.data);
       } catch (error) {
         console.log(error);
       }
     }
-    fetchUserData();
+    fetchUser();
   }, []);
 
-  const { loggedInUser } = useContext(AuthContext);
+  // const { loggedInUser } = useContext(AuthContext);
 
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
 
-  function handleLogOut() {
-    localStorage.removeItem("loggedInUser");
-    navigate("/");
-  }
+  // function handleLogOut() {
+  //   localStorage.removeItem("loggedInUser");
+  //   navigate("/");
+  // }
 
   return (
     <>
       <h1>{user.name}</h1>
       <p>{user.email}</p>
-      <p>{user.username}</p>
-      <button onClick={handleLogOut}>Sair</button>
+      <Link to="/tea-room/profile">
+        <button>Tea Room</button>
+      </Link>
+      {/* <button onClick={handleLogOut}>Sair</button> */}
     </>
   );
 }
