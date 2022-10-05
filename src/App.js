@@ -5,7 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import TeaPage from "./pages/TeaPage";
+// import {Card} from "./pages/TeaDetail/card"
 import { TeaCard } from "./pages/ecommerce/teaPage.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
@@ -15,20 +15,26 @@ import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
 import { TeaRoomForm } from "./pages/TeaRoomForm";
 import { TeaRoomPost } from "./pages/TeaRoomPost";
+import { Navbar } from "./components/Navbar";
+import {Footer} from "./components/Footer"
+import {TeaDetails} from "./pages/TeaDetail/index"
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
+
 function App() {
   return (
-    <>
       <AuthContextComponent>
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/tealist" element={<TeaPage />} />
+          {/* <Route path="/tealist" element={<Card />} /> */}
           <Route path="/ourteam" element={<OurTeam />} />
+          <Route path="/teaDetail" element={<TeaDetails />} />
+          <Route
           {/* <Route
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
@@ -43,10 +49,11 @@ function App() {
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
           <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
+        </Routes>{" "} 
+        <Footer/>
           <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
         </Routes>{" "}
       </AuthContextComponent>
-    </>
   );
 }
 
