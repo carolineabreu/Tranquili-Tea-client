@@ -1,0 +1,76 @@
+import React from 'react';
+import { useState, useEffect } from "react";
+import { api } from "../../api/api";
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
+import ProfileTabs from "../../components/TeaRoomProfile/Tab";
+
+export function TeaRoomProfile() {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
+        const response = await api.get("/user/profile");
+        setUser(response.data);
+
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchUserData();
+  }, []);
+
+  return (
+    <div className="gradient-custom-2" style={{ backgroundColor: "aquamarine" }}>
+      <MDBContainer className="py-5 h-100">
+        <MDBRow className="justify-content-center align-items-center h-100">
+          <MDBCol lg="9" xl="7" sm="6" style={{ width: "80vw" }}>
+            <MDBCard >
+              <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#000', height: '200px' }}>
+                <div className="ms-4 mt-5 d-flex flex-column" style={{ width: '150px' }}>
+                  <MDBCardImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIy2vRwSRoUACatub962auO36Uo5OjNQ5wCQ&usqp=CAU"
+                    alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
+                  {/* TODO: fazer a página para editar o perfil*/}
+                  <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible' }}>
+                    Edit profile
+                  </MDBBtn>
+                </div>
+                <div className="ms-3" style={{ marginTop: '130px' }}>
+                  <MDBTypography tag="h5">{user.username}</MDBTypography>
+                </div>
+              </div>
+              <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
+                {/* <div className="d-flex justify-content-end text-center py-1">
+                  <div>
+                    <MDBCardText className="mb-1 h5">{TODO:COMO COLOCAR A QUANTIDADE DE POSTS?}</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Posts</MDBCardText>
+                  </div>
+                  <div className="px-3">
+                    <MDBCardText className="mb-1 h5">1026</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Comments</MDBCardText>
+                  </div>
+                  <div>
+                    <MDBCardText className="mb-1 h5">478</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Likes</MDBCardText>
+                  </div>
+                </div> */}
+              </div>
+              <MDBCardBody className="text-black p-4">
+                <div className="mb-5">
+                  <p className="lead fw-normal mb-1">About</p>
+                  <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
+                    <MDBCardText className="font-italic mb-1">{user.about}</MDBCardText>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                  <ProfileTabs />
+                </div>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </div>
+  );
+}
