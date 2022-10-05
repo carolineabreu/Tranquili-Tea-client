@@ -60,12 +60,18 @@ export function Teas() {
                   </p>
                   <></>
                   <button
-                    class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300"
+                    class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300 mr-2.5"
                     onClick={handleSubmit}
                   >
                     {" "}
                     Add to Cart{" "}
                   </button>
+                  <Link to="/TeaPage/:id">
+                    <button class="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-400 duration-300">
+                      {" "}
+                      View{" "}
+                    </button>
+                  </Link>
                 </div>
               );
             })}
