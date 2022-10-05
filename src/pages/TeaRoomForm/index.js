@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
-import { BiImageAdd } from "react-icons/bi";
 // import { Box, Text } from 'grommet';
 // import { SelectMultiple } from "grommet";
 // import { Grommet } from "grommet";
@@ -16,15 +15,12 @@ import { BiImageAdd } from "react-icons/bi";
 // ];
 
 export function TeaRoomForm() {
-  const { id } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
     body: "",
     tag: "",
   });
-
-  const [img, setImg] = useState("");
 
   // const [options, setOptions] = useState(defaultOptions);
   // const [valueMultiple, setValueMultiple] = useState([]);
@@ -33,32 +29,15 @@ export function TeaRoomForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleImage(e) {
-    setImg(e.target.files[0]);
-  }
-
-  async function handleUpload() {
-    try {
-      const uploadImage = new FormData();
-      uploadImage.append("picture", img);
-
-      const response = await api.post("/uploadImage/uploadImage", uploadImage);
-
-      return response.data.url;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/tea-room/post/new-post", { ...form, img: imgURL });
+      const response = await api.post("/tea-room/post/new-post", form);
 
+      console.log(response);
       //FIXME: /post => ver se ta certa e
-      navigate(`/post/${id}`);
+      navigate(`/tea-room/post/${form.id}`);
     } catch (error) {
       console.log(error);
     }
@@ -90,7 +69,7 @@ export function TeaRoomForm() {
       <select id="formTag" name="tag" value={form.tag} onChange={handleChange}>
         <option value="Question">Question</option>
         <option value="Recommendation">Recommendation</option>
-        <option value="Photo">Photo</option>
+        <option value="Blog">Blog</option>
         <option value="Review">Review</option>
         <option value="Discussion">Discussion</option>
       </select>
@@ -115,14 +94,6 @@ export function TeaRoomForm() {
           />
         </Box>
       </Grommet> */}
-
-      <label htmlFor="formImg"><BiImageAdd /></label>
-      <input
-        name="picture"
-        type="file"
-        id="formImg"
-        onChange={handleImage}
-      />
 
       <button type="submit">Post</button>
     </form>

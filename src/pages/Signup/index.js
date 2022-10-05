@@ -6,6 +6,7 @@ export function Signup() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -52,7 +53,7 @@ export function Signup() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
+      <label htmlFor="formName">Name:</label>
       <input
         id="formName"
         name="name"
@@ -60,8 +61,15 @@ export function Signup() {
         value={form.name}
         onChange={handleChange}
       />
-      {/* <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} /> */}
+
+      <label htmlFor="formUsername">Username:</label>
+      <input
+        id="formUsername"
+        name="username"
+        type="text"
+        value={form.username}
+        onChange={handleChange}
+      />
 
       <label htmlFor="formEmail">E-mail:</label>
       <input
