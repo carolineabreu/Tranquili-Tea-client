@@ -9,7 +9,7 @@ export  function NavbarForum() {
           <a className="_o6689fn" href="/"><div className="hidden md:block">
             </div>
              <div className="ml-4 flex lg:ml-0">
-                <a class="text-xl text-purple-500 font font-mono" href="home">Tranquili-Tea</a>
+                <a class="text-xl text-purple-500 font font-mono" href="home">Tea Room</a>
               </div>
             {/* <div className="block md:hidden">
               <svg width={30} height={32} fill="currentcolor" style={{display: 'block'}}>
@@ -24,7 +24,7 @@ export  function NavbarForum() {
           <div className="inline-block">
             <div className="inline-flex items-center max-w-full">
               <button className="flex items-center flex-grow-0 flex-shrink border-blue-500pl-2 relative w-80 border rounded-full px-1  py-1" type="button">
-                <div className="block flex-grow text-blue-500 fill-current flex-shrink overflow-hidden">Search Bar</div>
+                <div className="block flex-grow text-black-900 fill-current flex-shrink overflow-hidden">Search Bar</div>
                 <div className="flex items-center  text-blue-500 fill-current justify-center relative  h-8 w-8 rounded-full">
                   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentcolor', strokeWidth: '5.33333', overflow: 'visible'}}>
                     <g fill="none">
@@ -34,7 +34,7 @@ export  function NavbarForum() {
                 </div>
               </button>
               <div className="px-4">
-              <a className="inline-block px-4 py-2 px-3bg bg-blue-400 w-50 hover:bg-blue-400 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded-full" href="#">
+              <a className="inline-block px-4 py-2 px-3bg bg-green-200 w-50 hover:bg-blue-400 text-blue-700 font-semibold hover:text-white border border-black-900 hover:border-transparent rounded-full" href="#">
                 <div className="flex items-center relative cursor-pointer whitespace-nowrap"> + </div>
               </a>
               </div>
