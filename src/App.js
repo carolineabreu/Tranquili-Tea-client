@@ -9,7 +9,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 import { TeaCard } from "./pages/ecommerce/teaPage.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
-//import { Teas} from "./pages/ecommerce/cart.js";
+import { Cart } from "./pages/ecommerce/cart.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
@@ -45,6 +45,7 @@ function App() {
           <Route path="/Teas" element={<Teas />} />
           <Route path="/TeaPage/:id/review" element={<Reviews />} />
           <Route path="/ecommerce" element={<Teas />} />
+          <Route path="/ecommerce/cart" element={<Cart />} />
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
