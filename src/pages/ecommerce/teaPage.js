@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Reviews } from "./reviews.js";
-import axios from "axios";
+import { api } from "../../api/api.js";
 
-export function TeaCard() {
+export function Card() {
   const [Tea, setTeas] = useState("");
 
   useEffect(() => {
     async function fetchTeas() {
       try {
-        const response = await axios.get("https://ironrest.herokuapp.com/...");
-
+        const response = await await api.get("/tea/all");
         setTeas([...response.data]);
       } catch (err) {
         console.log(err);
