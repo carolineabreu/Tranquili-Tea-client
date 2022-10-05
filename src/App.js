@@ -5,7 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import TeaList from "./pages/TeaList";
+import TeaPage from "./pages/TeaPage";
 import { TeaCard } from "./pages/ecommerce/teaPage.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/tealist" element={<TeaList />} />
+          <Route path="/tealist" element={<TeaPage />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route
             path="/profile"

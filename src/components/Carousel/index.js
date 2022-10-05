@@ -16,20 +16,19 @@ export  function Carousel() {
                         flavours to suit your{' '}
                         <span className="relative px-1">
                           <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
-                          <span className="relative inline-block text-green-700">
+                          <span className="relative inline-block px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
                             mood
                           </span>
                         </span>
                       </h2>
-                      <p className="text-sm text-gray-700 md:text-base">
-                      {/* We want only the best for our fellow tea-sippers, that's why we source the highest quality, natural plant ingredients from ethical farms, and manufacture our brews right here in Aus. Our tea bags are biodegradable and home compostable and once you've enjoyed brewing up your full tea box, don't forget to recycle it!. */}
-                      </p>
+
                     </div>
                     <div className="grid gap-5 row-gap-8 sm:grid-cols-2">
                       <div className="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
                         <div className="h-full p-5 border border-l-0 rounded-r">
                           <h6 className="mb-2 font-semibold leading-5 text-purple-900">
                             Tea for every mood
+                            px-2 text-white bg-blue-600 rounded dark:bg-blue-500
                           </h6>
                           <p className="text-sm text-gray-900">
                           There’s tea for every mood! Isn’t that the best thing ever? We know it is. So, if you have been struggling with sleep or you’re feeling stressed at work, don’t worry. We have specific kinds of tea that can help you. For some situations, green tea may be ideal, while for others, chamomile tea works better. Let us help you find the right blend for your current state of mind. 
@@ -38,11 +37,15 @@ export  function Carousel() {
                       </div>
                       <div className="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
                         <div className="h-full p-5 border border-l-0 rounded-r">
-                          <h6 className="mb-2 font-semibold leading-5 text-green-700">
+                          <h6 className="mb-2 font-semibold leading-5 text-purple-900">
                             Qualiti-Tea in every sip
                           </h6>
                           <p className="text-sm text-gray-900">
-                          We want only the best for our fellow tea-sippers, that's why we source the highest quality and, natural plant ingredients from ethical farms.
+                          We want only the best for our fellow tea-sippers, that's why we sell our products in reusable, recyclable & compostable packaging, significantly reducing industrial waste.
+
+ 
+
+Our Philosophy is simple! We source ingredients from ethical, organic, sustainable and like-minded suppliers who truly care about how they treat people and the environment.
 
                           </p>
                         </div>
@@ -52,8 +55,8 @@ export  function Carousel() {
                   <div>
                     <img
                       className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-                      src="https://images.unsplash.com/photo-1562547256-2c5ee93b60b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGVhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=00&q=60"
-                      alt=""
+                      src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                      alt="tea leaves and a white cup"
                     />
                   </div>
                 </div>
