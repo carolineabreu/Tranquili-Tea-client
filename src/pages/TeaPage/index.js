@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { api } from "../../api/api";
-import { useNavigate } from "react-router-dom";
+import {NavBarForum} from "../../components/NavbarForum";
+
 
 
 export default function TeaList() {

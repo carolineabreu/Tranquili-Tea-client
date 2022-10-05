@@ -53,6 +53,9 @@ export function Teas() {
                       {currentTea.name}{" "}
                     </a>
                   </div>
+                  <p className="text-sm font-medium text-gray-900">
+                    {currentTea.price}
+                  </p>
                   <button id="btn" onClick={handleSubmit}>
                     Add to Cart
                   </button>

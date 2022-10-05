@@ -5,7 +5,7 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import TeaList from "./pages/TeaList";
+import TeaPage from "./pages/TeaPage";
 import { TeaCard } from "./pages/ecommerce/teaPage.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
@@ -13,7 +13,9 @@ import { Cart } from "./pages/ecommerce/cart.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
+import { TeaRoomForm } from "./pages/TeaRoomForm";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { TeaRoomPost } from "./pages/TeaRoomPost";
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/tealist" element={<TeaList />} />
+          <Route path="/tealist" element={<TeaPage />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route
             path="/profile"
@@ -36,8 +38,9 @@ function App() {
           <Route path="/ecommerce" element={<Cart />} />
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
+          <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
+          <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
         </Routes>{" "}
-        *
       </AuthContextComponent>
     </>
   );
