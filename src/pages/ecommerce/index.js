@@ -21,10 +21,7 @@ export function Teas() {
     fetchTeas();
   }, []);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    window.location.reload(true);
-  }
+  //function AddtoCart()
 
   return (
     <>
@@ -33,7 +30,7 @@ export function Teas() {
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             SHOP
           </h2>
-          <Link to="/cart">
+          <Link to="/CartPage">
             <button class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300">
               Cart Icon
             </button>
@@ -63,17 +60,20 @@ export function Teas() {
                   <></>
                   <button
                     class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300 mr-2.5"
-                    onClick={handleSubmit}
+                    //onClick={addTocart}
                   >
                     {" "}
                     Add to Cart{" "}
                   </button>
-                  <Link to="/TeaPage/:id">
-                    <button class="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-400 duration-300">
-                      {" "}
-                      View{" "}
-                    </button>
-                  </Link>
+                  <button
+                    class="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-400 duration-300"
+                    onClick={() => {
+                      navigate(`/TeaPage/:id`);
+                    }}
+                  >
+                    {" "}
+                    View{" "}
+                  </button>
                 </div>
               );
             })}
