@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export function searchBar({ teas }, { search }, { setSearch }) {
+export function SearchBar({ teas }, { search }, { setSearch }) {
   return (
     <div className="Searchpage">
       <div className="searchBar">
@@ -11,7 +9,7 @@ export function searchBar({ teas }, { search }, { setSearch }) {
         />
       </div>
       <div className="container">
-        {teas.teas
+        {teas
           .filter((currentTea) => {
             if (search === "") {
               return currentTea;
