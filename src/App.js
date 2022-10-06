@@ -17,38 +17,43 @@ import { TeaRoomForm } from "./pages/TeaRoomForm";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { TeaRoomPost } from "./pages/TeaRoomPost";
 import { Navbar } from "./components/Navbar";
-import {Footer} from "./components/Footer"
-import {TeaDetails} from "./pages/TeaDetail/index"
- 
+import { Footer } from "./components/Footer";
+import { TeaDetails } from "./pages/TeaDetail/index";
+import { TeaRoomProfile } from "./pages/TeaRoomProfile";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+
+
+
 function App() {
 
   return (
-    
-      <AuthContextComponent>
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          {/* <Route path="/tealist" element={<Card />} /> */}
-          <Route path="/ourteam" element={<OurTeam />} />
-          <Route path="/teaDetail" element={<TeaDetails />} />
-          <Route
-            path="/profile"
-            element={<ProtectedRoute component={Profile} />}
-          />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="/TeaPage/:id" element={<TeaCard />} />
-          <Route path="/Teas" element={<Teas />} />
-          <Route path="/TeaPage/:id/review" element={<Reviews />} />
-          <Route path="/ecommerce" element={<Teas />} />
-          <Route path="/ecommerce/payment" element={<Payment />} />
-          <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
-          <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
-          <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
-        </Routes>{" "} 
-        <Footer/>
-      </AuthContextComponent>
+
+    <AuthContextComponent>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/tealist" element={<Card />} /> */}
+        <Route path="/ourteam" element={<OurTeam />} />
+        <Route path="/teaDetail" element={<TeaDetails />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/TeaPage/:id" element={<TeaCard />} />
+        <Route path="/Teas" element={<Teas />} />
+        <Route path="/TeaPage/:id/review" element={<Reviews />} />
+        <Route path="/ecommerce" element={<Teas />} />
+        <Route path="/ecommerce/cart" element={<Cart />} />
+        <Route path="/ecommerce/payment" element={<Payment />} />
+        <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
+        <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
+        <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
+        <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
+      </Routes>{" "}
+      <Footer />
+    </AuthContextComponent>
+
   );
 }
 
