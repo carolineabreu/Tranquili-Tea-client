@@ -17,25 +17,25 @@ import { TeaDetails } from "./pages/TeaDetails/index";
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
 import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
-import { CartPage } from "./pages/ecommerce/CartPage";
-import { CartComponent } from "./pages/ecommerce/cartContext.js";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 function App() {
   return (
-    <AuthContextComponent>
-      <CartComponent>
+    <>
+      <AuthContextComponent>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          {/* <Route path="/tealist" element={<Card />} /> */}
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/teaDetail/:id" element={<TeaDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/Teas" element={<Teas />} />
           <Route path="/ecommerce" element={<Teas />} />
-          <Route path="/CartPage" element={<CartPage />} />
+          {/* <Route path="/ecommerce/cart" element={<Cart />} /> */}
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
@@ -48,8 +48,8 @@ function App() {
           <Route path="/tea-room" element={<TeaRoomHomePage />} />
         </Routes>{" "}
         <Footer />
-      </CartComponent>
-    </AuthContextComponent>
+      </AuthContextComponent>
+    </>
   );
 }
 
