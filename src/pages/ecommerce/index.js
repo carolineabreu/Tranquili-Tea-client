@@ -51,7 +51,7 @@ export function Teas() {
           <div className="mt-6 bg-white grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {teas.map((currentTea) => {
               return (
-                <div key={currentTea.id} className="group relative">
+                <div key={currentTea.id}>
                   <div className="text-3xl mt-5 mb-6 font-mono font-400 flex justify-center">
                     {" "}
                     <span aria-hidden="true" className="absolute inset-0" />
