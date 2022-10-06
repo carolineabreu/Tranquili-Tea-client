@@ -1,12 +1,17 @@
 import { useLocation } from "react-router-dom";
 import "../../index.css";
 
+
+export function Footer() {
+  
+
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
 
 export function Footer() {
   const { pathname } = useLocation();
 
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
+
 
   return (
     <div>
