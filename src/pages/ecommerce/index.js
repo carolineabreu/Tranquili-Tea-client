@@ -69,7 +69,7 @@ export function Teas() {
                     />
                   </div>
                   <p className="text-xl font-medium font-mono font-style: italic text-gray-900 mt-4 mb-3">
-                    {currentTea.price} per 100 grams
+                    US$ {currentTea.price} per 100 grams
                   </p>
                   <></>
                   <button
