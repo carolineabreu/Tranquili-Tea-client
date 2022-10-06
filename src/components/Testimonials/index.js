@@ -1,4 +1,5 @@
 import "../../index.css"
+import { Link } from "react-router-dom"; 
 
 export function Testimonials() {
   return (
@@ -58,7 +59,7 @@ export function Testimonials() {
                 />
               </div>
               <p className="text-base leading-6 text-gray-600 mt-4">
-             "I love the Tranquiti-Tea store, the varieties of tea available, the quick delivery of orders, and the packaging. Thank you for such fine products. The teas are wonderful, bright, brisk, flavorful, everything you would want out of a cup of tea." </p>
+             "I love the Tranquiti-Tea store, the varieties of tea available, the quick delivery of orders, and the packaging. Thank you for such fine products. The teas are wonderful, bright, brisk, flavorful, everything you would want out of <Link to="/" target="_blank" rel="noopener noreferrer"></Link> cup of tea." </p>
               <div className="absolute bottom-0 -mb-4 ml-10">
                 <img
                   src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg2.svg"

@@ -19,6 +19,10 @@ export function TeaDetails() {
     price: 0
   });
 
+  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(50);
+  const [subtotal, setSubtotal] = useState(0);
+
   useEffect(() => {
     async function fetchTeaDetail() {
       try {
@@ -30,11 +34,21 @@ export function TeaDetails() {
       }
     }
     fetchTeaDetail();
-  }, [id]);
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
     window.location.reload(true);
+  }
+
+  useEffect(() => {
+    function changePrice() {
+      setSubtotal((quantity / 50) * teaDetail.price);
+    }
+    changePrice();
+  }, [quantity]);
+  function handleChangePrice(e) {
+    setQuantity(e.target.value);
   }
 
   return (
@@ -138,7 +152,7 @@ export function TeaDetails() {
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
-                <p className="font-bold text-xl">{teaDetail.price}</p>
+                <p className="font-bold text-xl">{((quantity / 50) * teaDetail.price)}</p>
                 <button
                   className="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                   onClick={handleSubmit}
