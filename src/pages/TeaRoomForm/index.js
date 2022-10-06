@@ -56,7 +56,7 @@ export function TeaRoomForm() {
       />
 
       <label htmlFor="formBody"></label>
-      <input
+      <textarea
         type="textarea"
         id="formBody"
         name="body"
