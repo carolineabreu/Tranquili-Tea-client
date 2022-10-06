@@ -10,7 +10,7 @@ import { Card } from "./pages/ecommerce/card.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
 import { CartPage } from "./pages/ecommerce/CartPage.js";
-// import { TeaDisplay } from "./pages/ecommerce/TeaDisplay.js";
+import { TeaDisplay } from "./pages/ecommerce/TeaDisplay.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
@@ -40,8 +40,7 @@ function App() {
             <Route path="/Teas" element={<Teas />} />
             <Route path="/TeaPage/:id/review" element={<Reviews />} />
             <Route path="/ecommerce" element={<Teas />} />
-            {/* <Route path="/TeaDisplay" element={<TeaDisplay />} />
-            <Route path="/CartPage" element={<CartPage />} /> */}
+            <Route path="/TeaDisplay/:id" element={<TeaDisplay />} />
             <Route path="/CartPage" element={<CartPage />} />
             <Route path="/ecommerce/payment" element={<Payment />} />
             <Route path="/allTeas" element={<AllTeas />} />
