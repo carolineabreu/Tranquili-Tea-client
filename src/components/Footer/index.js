@@ -1,9 +1,17 @@
+import { useLocation } from "react-router-dom";
 import "../../index.css";
 
+const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
+
 export function Footer() {
+  const { pathname } = useLocation();
+
+  if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
+
+
   return (
     <div>
-        <section className="bg-gray-100">
+      <section className="bg-gray-100">
         <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
           <nav className="flex flex-wrap justify-center -mx-5 -my-2">
             <div className="px-5 py-2">
@@ -59,6 +67,6 @@ export function Footer() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 

@@ -1,11 +1,11 @@
-import React from "react";
+import "../../index.css"
 
 export function Testimonials() {
   return (
     <div>
       <div className="lg:px-20 md:px-6 px-4 py-12">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="lg:text-4xl text-3xl font-bold text-center text-gray-800">
+          <h1 className="lg:text-3xl tracking-tight font-sans font-bold text-center text-black-600">
             What our customers are saying
           </h1>
         </div>

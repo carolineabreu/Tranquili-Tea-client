@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
+// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 
-export  function Carousel() {
+export  function MainCard() {
             return (
-              
                 <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
                 <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
                   <div className="flex flex-col justify-center">
@@ -28,7 +27,7 @@ export  function Carousel() {
                         <div className="h-full p-5 border border-l-0 rounded-r">
                           <h6 className="mb-2 font-semibold leading-5 text-purple-900">
                             Tea for every mood
-                            px-2 text-white bg-blue-600 rounded dark:bg-blue-500
+                          
                           </h6>
                           <p className="text-sm text-gray-900">
                           There’s tea for every mood! Isn’t that the best thing ever? We know it is. So, if you have been struggling with sleep or you’re feeling stressed at work, don’t worry. We have specific kinds of tea that can help you. For some situations, green tea may be ideal, while for others, chamomile tea works better. Let us help you find the right blend for your current state of mind. 
@@ -42,11 +41,7 @@ export  function Carousel() {
                           </h6>
                           <p className="text-sm text-gray-900">
                           We want only the best for our fellow tea-sippers, that's why we sell our products in reusable, recyclable & compostable packaging, significantly reducing industrial waste.
-
- 
-
 Our Philosophy is simple! We source ingredients from ethical, organic, sustainable and like-minded suppliers who truly care about how they treat people and the environment.
-
                           </p>
                         </div>
                       </div>
@@ -61,6 +56,5 @@ Our Philosophy is simple! We source ingredients from ethical, organic, sustainab
                   </div>
                 </div>
               </div>
-
     );
 }

@@ -4,7 +4,7 @@ export function HomeCards() {
   return (
     <div className="bg-gray-100">
         <div className="mx-auto max-w-2xl py-20 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold pb-4 tracking-tight font-sans  text-center text-yellow-600">Best Sellers</h2>
+          <h2 className="text-3xl font-bold pb-4 tracking-tight font-sans  text-center text-black-600">Best Sellers</h2>
           <div className="bg-gray-100 mx-auto  py-18 px-4 gap-4 flex-wrap flex justify-center items-center">
           
 {/* Card */}
