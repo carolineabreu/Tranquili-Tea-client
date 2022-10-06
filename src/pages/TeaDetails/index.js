@@ -16,13 +16,14 @@ export function TeaDetails() {
     caffeine: "",
     flavour: "",
     ingredients: "",
-    price: "",
+    price: ""
   });
 
   useEffect(() => {
     async function fetchTeaDetail() {
       try {
-        const response = await api.get(`tea/teaDetail/${id}`);
+        const response = await api.get(`/tea/teaDetail/${id}`);
+        
         setTeaDetail(response.data);
         console.log(response);
       } catch (error) {

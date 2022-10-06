@@ -13,7 +13,6 @@ export function Home() {
       <HomeCards />
       <ProductList />
       <Testimonials />
-      <NavbarForum />
     </>
   );
 }

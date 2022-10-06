@@ -1,10 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "../../index.css";
 
-
-export function Footer() {
-  
-
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
 
 export function Footer() {
@@ -72,5 +68,4 @@ export function Footer() {
       </section>
     </div>
   );
-}
-
+  }
