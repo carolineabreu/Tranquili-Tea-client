@@ -20,12 +20,14 @@ import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 function App() {
-
   return (
     <>
       <AuthContextComponent>
+    <AuthContextComponent>
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
