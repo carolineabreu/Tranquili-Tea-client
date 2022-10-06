@@ -51,7 +51,7 @@ export function Teas() {
           <div className="mt-6 bg-white grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {teas.map((currentTea) => {
               return (
-                <div key={currentTea.id}>
+                <div key={currentTea.id} className="">
                   <div className="text-3xl mt-5 mb-6 font-mono font-400 flex justify-center">
                     {" "}
                     <span aria-hidden="true" className="absolute inset-0" />
@@ -70,7 +70,7 @@ export function Teas() {
                   <></>
                   <button
                     type="button"
-                    className="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-700 duration-300 mr-2.5"
+                    className="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300 mr-2.5"
                     //onClick={addTocart}
                   >
                     {" "}
@@ -79,10 +79,7 @@ export function Teas() {
                   <Link to={`/teaDetail/${currentTea._id}`}>
                     <button
                       type="button"
-                      className="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-700 duration-300"
-                      // onClick={() => {
-                      //   navigate("/teaDetail/:id");
-                      // }}
+                      className="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-400 duration-300"
                     >
                       {" "}
                       View{" "}
