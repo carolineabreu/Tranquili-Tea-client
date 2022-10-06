@@ -5,20 +5,12 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-
-import TeaPage from "./pages/TeaPage";
 import { Card } from "./pages/ecommerce/card.js";
 import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
 import { CartPage } from "./pages/ecommerce/CartPage.js";
 import { TeaDisplay } from "./pages/ecommerce/TeaDisplay.js";
-
-
-// import {Card} from "./pages/TeaDetail/card"
-import { TeaCard } from "./pages/ecommerce/teaPage.js";
-import { Teas } from "./pages/ecommerce/index.js";
 import { Reviews } from "./pages/ecommerce/reviews.js";
-//import { Teas} from "./pages/ecommerce/cart.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
