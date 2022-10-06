@@ -1,5 +1,21 @@
-import { createContext } from "react";
+// import { useContext } from "react";
+// import { cartContext } from "./cartContext.js";
+// import { useNavigate } from "react-router-dom";
 
-export const CartContext = createContext({});
+// export function Header() {
+//   const cart = useContext(cartContext);
+//   const navigate = useNavigate();
 
-export const cartProvider = ({ children }) => {};
+//   return (
+//     <div>
+//       <strong>{`${cart.tea.length} itens itens in the cart`}</strong>
+//       <button
+//         onClick={() => {
+//           navigate("/cart");
+//         }}
+//       >
+//         Check Cart
+//       </button>
+//     </div>
+//   );
+// }

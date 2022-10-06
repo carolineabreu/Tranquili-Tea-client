@@ -31,11 +31,13 @@ export function Card() {
               id="currentTea.image"
             />
             <p>{currentTea.description}</p>
-            <p>{currentTea.description}</p>
-            <p>{currentTea.description}</p>
-            <p>{currentTea.description}</p>
-            <p>{currentTea.description}</p>
-            <p>{currentTea.description}</p>
+            <p>{currentTea.category}</p>
+            <p>{currentTea.origin}</p>
+            <p>{currentTea.brew}</p>
+            <p>{currentTea.temperature}</p>
+            <p>{currentTea.caffeine}</p>
+            <p>{currentTea.flavour}</p>
+            <p>{currentTea.ingredients}</p>
             <p>{currentTea.price}</p>
           </div>
         );

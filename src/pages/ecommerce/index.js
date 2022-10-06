@@ -2,10 +2,11 @@ import "../../index.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../api/api";
-//import { SearchBar } from "./searchBar.js";
+import { useNavigate } from "react-router-dom";
 
 export function Teas() {
   const [teas, setTeas] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchTeas() {
@@ -32,7 +33,6 @@ export function Teas() {
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             SHOP
           </h2>
-          {/* <SearchBar /> */}
           <Link to="/cart">
             <button class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300">
               Cart Icon
