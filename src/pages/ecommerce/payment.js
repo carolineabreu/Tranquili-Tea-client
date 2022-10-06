@@ -20,19 +20,19 @@ export function Payment() {
     window.onload = "/orderHistory";
   }
   return (
-    <div class="leading-loose">
+    <div className="leading-loose">
       <form
-        class="max-w-xl m-4 p-10 bg-white rounded shadow-xl"
+        className="max-w-xl m-4 p-10 bg-white rounded shadow-xl"
         onSubmit={handleSumit}
       >
-        <p class="text-gray-800 font-big">Checkout </p>
+        <p className="text-gray-800 font-big">Checkout </p>
 
-        <div class="">
-          <label class="block text-sm text-gray-00" for="cus_name">
+        <div className="">
+          <label className="block text-sm text-gray-00" for="cus_name">
             Name
           </label>
           <input
-            class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="cus_name"
             name="cus_name"
             type="text"
@@ -44,12 +44,12 @@ export function Payment() {
           />
         </div>
 
-        <div class="mt-2">
-          <label class="block text-sm text-gray-600" for="cus_email">
+        <div className="mt-2">
+          <label className="block text-sm text-gray-600" for="cus_email">
             Email
           </label>
           <input
-            class="w-full px-2  py-2 text-gray-700 bg-gray-200 rounded"
+            className="w-full px-2  py-2 text-gray-700 bg-gray-200 rounded"
             id="cus_email"
             name="cus_email"
             type="text"
@@ -61,12 +61,12 @@ export function Payment() {
           />
         </div>
 
-        <div class="mt-2">
-          <label class=" block text-sm text-gray-600" for="cus_email">
+        <div className="mt-2">
+          <label className=" block text-sm text-gray-600" for="cus_email">
             Address
           </label>
           <input
-            class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="cus_email"
             name="cus_email"
             type="text"
@@ -78,12 +78,12 @@ export function Payment() {
           />
         </div>
 
-        <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-          <label class="hidden block text-sm text-gray-600" for="cus_email">
+        <div className="inline-block mt-2 -mx-1 pl-1 w-1/2">
+          <label className="hidden block text-sm text-gray-600" for="cus_email">
             Zip
           </label>
           <input
-            class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="cus_email"
             name="cus_email"
             type="text"
@@ -95,14 +95,14 @@ export function Payment() {
           />
         </div>
 
-        <p class="mt-4 text-gray-800 font-medium">Payment info</p>
+        <p className="mt-4 text-gray-800 font-medium">Payment info</p>
 
-        <div class="">
-          <label class="block text-sm text-gray-600" for="cus_name">
+        <div className="">
+          <label className="block text-sm text-gray-600" for="cus_name">
             Card
           </label>
           <input
-            class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="cus_name"
             name="cus_name"
             type="number"
@@ -114,9 +114,9 @@ export function Payment() {
           />
         </div>
 
-        <div class="mt-4">
+        <div className="mt-4">
           <button
-            class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+            className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
             type="submit"
           >
             Pay
