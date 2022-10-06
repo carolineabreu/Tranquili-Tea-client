@@ -18,11 +18,9 @@ import { TeaDetails } from "./pages/TeaDetails/index";
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
 import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 function App() {
-
   return (
     <AuthContextComponent>
       <Navbar />
@@ -49,7 +47,6 @@ function App() {
       </Routes>{" "}
       <Footer />
     </AuthContextComponent>
-
   );
 }
 

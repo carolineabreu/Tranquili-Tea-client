@@ -1,12 +1,13 @@
 import "../../index.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 
 export function Teas() {
   const [teas, setTeas] = useState([]);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchTeas() {
@@ -33,11 +34,11 @@ export function Teas() {
           <Link to="/CartPage">
             <button
               type="button"
-              class=" absolute top-5 right-0 h-30 w-30 text-white bg-stone-700 hover:bg-stone-900 flex justify-end focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="absolute top-5 right-0 h-30 w-30 text-white bg-stone-700 hover:bg-stone-900 flex justify-end focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               <svg
                 aria-hidden="true"
-                class="mr-2 -ml-1 w-5 h-5"
+                className="mr-2 -ml-1 w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,16 +51,11 @@ export function Teas() {
           <div className="mt-6 bg-white grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {teas.map((currentTea) => {
               return (
-                <div
-                  key={currentTea.id}
-                  className="group hover:bg-green-100 relative"
-                >
+                <div key={currentTea.id} className="group relative">
                   <div className="text-3xl mt-5 mb-6 font-mono font-400 flex justify-center">
-                    <a href={currentTea.href}>
-                      {" "}
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {currentTea.name}{" "}
-                    </a>
+                    {" "}
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    {currentTea.name}{" "}
                   </div>{" "}
                   <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-60 lg:aspect-none lg:h-80">
                     <img
@@ -73,21 +69,25 @@ export function Teas() {
                   </p>
                   <></>
                   <button
-                    class="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-700 duration-300 mr-2.5"
+                    type="button"
+                    className="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-700 duration-300 mr-2.5"
                     //onClick={addTocart}
                   >
                     {" "}
                     Add to Cart{" "}
                   </button>
-                  <button
-                    class="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-700 duration-300"
-                    onClick={() => {
-                      navigate(`/TeaPage/:id`);
-                    }}
-                  >
-                    {" "}
-                    View{" "}
-                  </button>
+                  <Link to={`/teaDetail/${currentTea._id}`}>
+                    <button
+                      type="button"
+                      className="rounded-lg px-4 py-2 bg-purple-300 hover:bg-purple-700 duration-300"
+                      // onClick={() => {
+                      //   navigate("/teaDetail/:id");
+                      // }}
+                    >
+                      {" "}
+                      View{" "}
+                    </button>
+                  </Link>
                 </div>
               );
             })}
