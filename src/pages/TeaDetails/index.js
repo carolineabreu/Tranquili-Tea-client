@@ -9,14 +9,14 @@ export function TeaDetails() {
     name: "",
     image: "",
     description: "",
-    category: "",
+    category: [],
     origin: "",
     brew: "",
     temperature: "",
-    caffeine: "",
+    caffeine: 0,
     flavour: "",
     ingredients: "",
-    price: "",
+    price: 0
   });
 
   useEffect(() => {
@@ -113,13 +113,12 @@ export function TeaDetails() {
             <p>Name</p>
             <p className="leading-relaxed">{teaDetail.description}</p>
             <p>Category: {teaDetail.category}</p>
-            <p>Origin: {teaDetail.description}</p>
-            <p>Brew: {teaDetail.origin}</p>
-            <p>Temperature: {teaDetail.brew}</p>
-            <p>Caffeine: {teaDetail.temperature}</p>
-            <p>Flavour: {teaDetail.caffeine}</p>
-            <p>Ingredients: {teaDetail.flavour}</p>
-            <p>Price: {teaDetail.ingredients}</p>
+            <p>Origin: {teaDetail.origin}</p>
+            <p>Brew: {teaDetail.brew}</p>
+            <p>Temperature: {teaDetail.temperature}</p>
+            <p>Caffeine: {teaDetail.caffeine}</p>
+            <p>Flavour: {teaDetail.flavour}</p>
+            <p>Ingredients: {teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Caffeine Free</span>

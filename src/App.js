@@ -29,11 +29,12 @@ import { CartComponent } from "./pages/ecommerce/cartContext";
 import { AllTeas } from "./pages/ecommerce/pages/AllTeas.js";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { TeaDetails } from "./pages/TeaDetail/index";
+import { TeaDetails } from "./pages/TeaDetails/index";
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
 import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
+
 
 function App() {
 

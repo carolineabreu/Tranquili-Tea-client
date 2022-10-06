@@ -63,7 +63,7 @@ export function HomeCards() {
     <a
       role="button"
       href="#"
-      className="text-black bg-sky-300 px-3 py-1 rounded-md hover:bg-purple-700"
+      className="text-black bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
     >
       Shop Now
     </a>
@@ -92,7 +92,7 @@ export function HomeCards() {
     <a
       role="button"
       href="#"
-      className="text-black bg-stone-200 px-3 py-1 rounded-md hover:bg-purple-700"
+      className="text-black bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
     >
       Shop Now
     </a>
@@ -122,7 +122,7 @@ export function HomeCards() {
     <a
       role="button"
       href="#"
-      className="text-black bg-yellow-200 px-3 py-1 rounded-md hover:bg-purple-700"
+      className="text-black  bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
     >
      Shop Now
     </a>
