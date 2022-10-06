@@ -1,11 +1,13 @@
 
-import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import  { Link } from 'react-router-dom';
-import {SearchBar} from '../SearchBar/index'
+import { Fragment, useState } from 'react';
+import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link, useLocation } from 'react-router-dom';
+import { SearchBar } from '../SearchBar/index';
 
 import "../../index.css";
+
+const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
 
 const navigation = {
   categories: [
@@ -52,21 +54,25 @@ const navigation = {
         },
       ],
     },
- 
+
   ],
   pages: [
     { name: 'TEA ROOM', href: '#' },
     { name: 'TEA LIST', href: 'TeaList' },
     { name: 'ABOUT US', href: '#' },
   ],
-}
+};
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
- export function Navbar() {
-  const [open, setOpen] = useState(false)
+export function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const { pathname } = useLocation();
+
+  if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
 
   return (
     <div className="bg-white">
@@ -307,6 +313,6 @@ function classNames(...classes) {
         </nav>
       </header>
     </div>
-  )
+  );
 }
 
