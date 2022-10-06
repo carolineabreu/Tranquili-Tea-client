@@ -4,6 +4,12 @@ module.exports = {
     "./src/**/*.{html,js, jsx}",
     "./node_modules/tw-elements/dist/js/**/*.js",
   ],
+  screen: {
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+  },
   theme: {
     theme: {
       fontFamily: {
@@ -12,7 +18,10 @@ module.exports = {
         mono: ["ui-monospace", "SFMono-Regular"],
         display: ["Oswald"],
         body: ['"Oswald"'],
-      },
+        poppins: ["Poppins", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+      } 
+      ,
       screens: {
         sm: "480px",
         md: "768px",

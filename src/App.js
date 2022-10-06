@@ -14,20 +14,15 @@ import { Payment } from "./pages/ecommerce/payment.js";
 import { OrderHistory } from "./pages/ecommerce/orderHistory.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
 import { TeaRoomForm } from "./pages/TeaRoomForm";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import { TeaRoomPost } from "./pages/TeaRoomPost";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { TeaDetails } from "./pages/TeaDetails/index";
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
-<<<<<<< HEAD
-import { ProtectedRoute } from "./components/ProtectedRoute";
-
-=======
 import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
->>>>>>> d6c4b6009b814dcae0ec538e80f37d7708439ced
-
 
 
 function App() {
