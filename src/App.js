@@ -19,8 +19,14 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { TeaDetails } from "./pages/TeaDetails/index";
 import { TeaRoomProfile } from "./pages/TeaRoomProfile";
+<<<<<<< HEAD
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
+=======
+import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
+>>>>>>> d6c4b6009b814dcae0ec538e80f37d7708439ced
 
 
 
@@ -36,7 +42,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         {/* <Route path="/tealist" element={<Card />} /> */}
         <Route path="/ourteam" element={<OurTeam />} />
-        <Route path="/teaDetail" element={<TeaDetails />} />
+        <Route path="/teaDetail/:id" element={<TeaDetails />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/TeaPage/:id" element={<TeaCard />} />
@@ -47,8 +53,10 @@ function App() {
         <Route path="/ecommerce/payment" element={<Payment />} />
         <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
         <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
+        <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
         <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
         <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
+        <Route path="/tea-room" element={<TeaRoomHomePage />} />
       </Routes>{" "}
       <Footer />
     </AuthContextComponent>

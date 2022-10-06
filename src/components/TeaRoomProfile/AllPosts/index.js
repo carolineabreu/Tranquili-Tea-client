@@ -9,7 +9,7 @@ export function AllPosts() {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const response = await api.get("/tea-room/post/my-posts");
+        const response = await api.get("/tea-room/post/all-posts");
         setPosts(response.data);
 
         console.log(response.data);

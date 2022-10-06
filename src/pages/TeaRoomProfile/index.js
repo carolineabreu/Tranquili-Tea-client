@@ -3,10 +3,13 @@ import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import ProfileTabs from "../../components/TeaRoomProfile/Tab";
+import { Link } from "react-router-dom";
 
 export function TeaRoomProfile() {
   const [user, setUser] = useState({});
 
+
+  //TODO: como colocar um toaste para aparecer alguma mensagem de perfil alterado antes de voltar para o perfil. Só voltar pro perfil quando clicar em ok
   useEffect(() => {
     async function fetchUserData() {
       try {
@@ -32,9 +35,11 @@ export function TeaRoomProfile() {
                   <MDBCardImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIy2vRwSRoUACatub962auO36Uo5OjNQ5wCQ&usqp=CAU"
                     alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
                   {/* TODO: fazer a página para editar o perfil*/}
-                  <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible' }}>
-                    Edit profile
-                  </MDBBtn>
+                  <Link to="/tea-room/profile/edit">
+                    <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible' }}>
+                      Edit profile
+                    </MDBBtn>
+                  </Link>
                 </div>
                 <div className="ms-3" style={{ marginTop: '130px' }}>
                   <MDBTypography tag="h5">{user.username}</MDBTypography>
