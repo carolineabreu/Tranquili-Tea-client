@@ -2,10 +2,10 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import  { Link } from 'react-router-dom';
-import {SearchBar} from '../SearchBar/index'
+// import {SearchBar} from '../SearchBar/index'
 
 import "../../index.css";
+
 
 const navigation = {
   categories: [
@@ -66,11 +66,11 @@ function classNames(...classes) {
 }
 
  export function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
+  
   return (
     <div className="bg-white">
-      {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -154,12 +154,12 @@ function classNames(...classes) {
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
 
-              {/* Logo */}
+         
               <div className="ml-4 flex lg:ml-0">
                 <a class="text-xl text-purple-500 font font-mono" href="home">Tranquili-Tea</a>
               </div>
 
-              {/* Flyout menus */}
+             
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
@@ -170,7 +170,7 @@ function classNames(...classes) {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-indigo-200 text-indigo-200'
+                                  ? 'border-blue-800 text-blue-800'
                                   : 'border-transparent text-gray-700 hover:text-gray-800',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
                               )}
@@ -282,7 +282,7 @@ function classNames(...classes) {
                   </a>
                 </div>
 
-                {/* Search */}
+                
                 <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
@@ -290,7 +290,7 @@ function classNames(...classes) {
                   </a>
                 </div>
 
-                {/* Cart */}
+               
                 <div className="ml-4 flow-root lg:ml-6">
                   <a href="#" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon

@@ -1,6 +1,11 @@
 import "../../index.css";
 
+// const withtoutNavbarRoutes = ["/tea-room/new-post", "/tear-room/post/:id", "/tea-room/profile"];
+
 export function Footer() {
+  // const {pathname} = useLocation();
+
+  // if (withtoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
   return (
     <div>
         <section className="bg-gray-100">
