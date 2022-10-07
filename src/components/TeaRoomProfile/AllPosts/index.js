@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import differenceInDays from "date-fns/differenceInDays";
 import style from "./style.module.css";
+import { Link } from "react-router-dom";
 
 export function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -34,7 +35,11 @@ export function AllPosts() {
                   new Date(currentPost.createdAt)
                 )}{" "}
                   days ago</span>
-                <div className="font-bold text-xl mb-2">{currentPost.title}</div>
+                <div className="font-bold text-xl mb-2">
+                  <Link to={`/tea-room/post/${currentPost._id}`}>
+                    {currentPost.title}
+                  </Link>
+                </div>
                 <div className="px-6 pt-4 pb-2">
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{currentPost.tag}</span>
                 </div>
