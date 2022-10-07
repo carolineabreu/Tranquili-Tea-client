@@ -65,17 +65,20 @@ export function Profile() {
                 </div>
               </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 px-20">
               <Link to="/tea-room">
-                <button onSubmit={handleLogOut} type="submit" className="py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Tea Room
+                <button onSubmit={handleLogOut} type="submit" className="py-2 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Tea Room
                 </button>
               </Link>
+              </div>
+          <div className="mt-4 px-20">
               <Link to="/profile/edit">
-                <button onSubmit={handleLogOut} type="submit" className="py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Edit Profile
+                <button onSubmit={handleLogOut} type="submit" className="py-2 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Edit Profile
                 </button>
               </Link>
+              </div>
             </div>
-          </div>
+         
         </div>
       </div>
     </div>

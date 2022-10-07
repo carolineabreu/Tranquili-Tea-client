@@ -58,7 +58,7 @@ export function HomeCards() {
             <div className="m-2">
               <Link
                 to="/Teas"
-                className="text-black bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
+                className="text-black bg-purple-300  px-3 py-1 rounded-m"
               >
                 Shop Now
               </Link>
