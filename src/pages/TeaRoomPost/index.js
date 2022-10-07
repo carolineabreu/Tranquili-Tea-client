@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { differenceInDays } from "date-fns";
 import { api } from "../../api/api";
+import { NavbarForum } from "../../components/NavbarForum/index";
+
 
 export function TeaRoomPost() {
   const { id } = useParams();
@@ -28,6 +30,7 @@ export function TeaRoomPost() {
 
   return (
     <div>
+      <NavbarForum />
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <div className="px-6 py-4">
           {/* FIXME: mostrar o username, não o id */}

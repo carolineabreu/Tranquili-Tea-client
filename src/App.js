@@ -18,6 +18,12 @@ import { TeaRoomProfile } from "./pages/TeaRoomProfile";
 import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import { EditProfile } from "./pages/EditProfile/Profile";
+import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
+//import { NavbarCart } from "./pages/ecommerce/Carrinho/components/navbar.js";
+import { ProductList } from "./pages/ecommerce/Carrinho/pages/productList.js";
+import { ProductPage } from "./pages/ecommerce/Carrinho/pages/ProductPage.js";
+import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
 
 function App() {
   return (
@@ -31,6 +37,7 @@ function App() {
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/teaDetail/:id" element={<TeaDetails />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit" element={<EditProfile />} />
           <Route path="*" element={<ErrorPage />} />
           <Route path="/Teas" element={<Teas />} />
           <Route path="/ecommerce" element={<Teas />} />
@@ -46,8 +53,7 @@ function App() {
           <Route path="/tea-room" element={<TeaRoomHomePage />} />
         </Routes>{" "}
         <Footer />
-      </AuthContextComponent> 
-
+      </AuthContextComponent>
     </>
   );
 }
