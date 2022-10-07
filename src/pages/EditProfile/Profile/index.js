@@ -1,64 +1,71 @@
-//TODO: ver como faz pra alterar a senha e o email (pra trocar o email precisaria de uma confirmação da senha.)
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../../api/api";
 
-// import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { api } from "../../../api/api";
+export function EditProfile() {
+  const navigate = useNavigate();
 
-// export function EditTeaRoomProfile() {
-//   const navigate = useNavigate();
+  const [form, setForm] = useState({
+    phoneNumber: 0,
+    address: ""
+  });
 
-//   const [form, setForm] = useState({
-//    phoneNumber
-address
-//   });
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        const response = await api.get(`/user/profile`);
+        setForm({ ...response.data });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchUser();
+  }, []);
 
-//   useEffect(() => {
-//     async function fetchUser() {
-//       try {
-//         const response = await api.get(`/user/profile`);
-//         setForm({ ...response.data });
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     }
-//     fetchUser();
-//   }, []);
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
-//   function handleChange(e) {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      const response = await api.patch(`/user/edit-profile`, {
+        ...form,
+      });
 
-//   async function handleSubmit(e) {
-//     e.preventDefault();
-//     try {
-//       const response = await api.patch(`/user/edit-profile`, {
-//         ...form,
-//       });
+      console.log(response);
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-//       console.log(response);
-//       navigate("/profile");
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <h1>Customize Profile</h1>
-//         <label htmlFor="formAbout">Email:</label>
-//         <br />
-//         <input
-//           id="formEmail"
-//           placeholder="Email"
-//           type="address"
-//           name="email"
-//           onChange={handleChange}
-//           value={form.email}
-//         />
-//         <br />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h1>Customize Profile</h1>
+        <label htmlFor="formAbout">Address:</label>
+        <br />
+        <input
+          id="formAddress"
+          placeholder="Address"
+          type="text"
+          name="address"
+          onChange={handleChange}
+          value={form.address}
+        />
+        <br />
+        <input
+          id="formPhoneNumber"
+          placeholder="Phone Number"
+          type="number"
+          name="phoneNumber"
+          onChange={handleChange}
+          value={form.phoneNumber}
+        />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}

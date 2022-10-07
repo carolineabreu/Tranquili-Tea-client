@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
+import { NavbarForum } from "../../components/NavbarForum/index";
 // import { Box, Text } from 'grommet';
 // import { SelectMultiple } from "grommet";
 // import { Grommet } from "grommet";
@@ -44,37 +45,39 @@ export function TeaRoomForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formTitle"></label>
-      <input
-        type="text"
-        id="formTitle"
-        name="title"
-        value={form.title}
-        onChange={handleChange}
-        placeholder="Title"
-      />
+    <>
+      <NavbarForum />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="formTitle"></label>
+        <input
+          type="text"
+          id="formTitle"
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+          placeholder="Title"
+        />
 
-      <label htmlFor="formBody"></label>
-      <textarea
-        type="textarea"
-        id="formBody"
-        name="body"
-        value={form.body}
-        onChange={handleChange}
-        placeholder="Text"
-      />
+        <label htmlFor="formBody"></label>
+        <textarea
+          type="textarea"
+          id="formBody"
+          name="body"
+          value={form.body}
+          onChange={handleChange}
+          placeholder="Text"
+        />
 
-      <label htmlFor="formTag">Tags</label>
-      <select id="formTag" name="tag" value={form.tag} onChange={handleChange}>
-        <option value="Question">Question</option>
-        <option value="Recommendation">Recommendation</option>
-        <option value="Blog">Blog</option>
-        <option value="Review">Review</option>
-        <option value="Discussion">Discussion</option>
-      </select>
+        <label htmlFor="formTag">Tags</label>
+        <select id="formTag" name="tag" value={form.tag} onChange={handleChange}>
+          <option value="Question">Question</option>
+          <option value="Recommendation">Recommendation</option>
+          <option value="Blog">Blog</option>
+          <option value="Review">Review</option>
+          <option value="Discussion">Discussion</option>
+        </select>
 
-      {/* <Grommet >
+        {/* <Grommet >
         <Box fill align="center" pad="large" gap="large">
           <Text>SelectMultiple Default</Text>
           <SelectMultiple
@@ -95,8 +98,9 @@ export function TeaRoomForm() {
         </Box>
       </Grommet> */}
 
-      <button type="submit">Post</button>
-    </form>
+        <button type="submit">Post</button>
+      </form>
+    </>
   );
 }
 
