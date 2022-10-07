@@ -1,27 +1,26 @@
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CarrinhoContext } from "../../Carrinho/carrinho.js";
+import { CarrinhoContext } from "../carrinho.js";
 import { useState, useEffect } from "react";
-import { api } from "../../../../api/api.js";
 import { Link } from "react-router-dom";
+import { api } from "../../../../api/api.js";
+import { HandleCart } from "../pages/handleCarrinho.js";
 
-export function Card(props) {
-  const navigate = useNavigate();
-  const [tea, setTea] = useState([]);
-
+export function Card() {
+  const [allTea, setAllTea] = useState([]);
   const carrinho = useContext(CarrinhoContext);
+  const [tea, setTea] = useState({});
 
-  console.log(carrinho.tea);
-
-  function handleCarrinho() {
-    carrinho.setTea([...carrinho.tea, { ...props }]);
+  function handleCarrinho(tea) {
+    console.log(carrinho);
+    console.log(tea);
+    carrinho.setTea([...carrinho.tea, { ...tea }]);
+    console.log(carrinho);
   }
-
   useEffect(() => {
     async function fetchTea() {
       try {
         const response = await api.get(`/tea/all`);
-        setTea(response.data);
+        setAllTea(response.data);
         console.log(response);
       } catch (error) {
         console.log(error);
@@ -29,7 +28,6 @@ export function Card(props) {
     }
     fetchTea();
   }, []);
-
   return (
     <div>
       <Link to="/carrinho">
@@ -50,19 +48,20 @@ export function Card(props) {
         </button>
       </Link>
       <div>
-        {tea.map((currentTea) => {
-          console.log(currentTea);
+        {allTea.map((currentTea) => {
           return (
-            <div key={currentTea.id}>
+            <div key={currentTea._id}>
               <h1>{currentTea.name}</h1>
               <p>{currentTea.price}</p>
-              <button onClick={handleCarrinho}>Adicionar ao carrinho</button>
+              <button onClick={() => handleCarrinho(currentTea)}>
+                Adicionar ao carrinho
+              </button>
               <Link to={`/teaDetail/${currentTea._id}`}>
                 <button>Ver produto</button>
               </Link>
               <div>
                 <img
-                  src={currentTea.image}
+                  src={currentTea.teaPicture}
                   alt="Tea"
                   style={{ width: "150px", height: "150px" }}
                 />
