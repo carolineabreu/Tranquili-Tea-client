@@ -33,6 +33,7 @@ export function Profile() {
 <div class="min-h-screen bg-white flex items-center justify-center">
   <div class="px-10">
     <div class="bg-white max-w-xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
+
     <div className="col-span-9 shadow rounded  px-6 pt-5 pb-7">
         <h4 className="text-lg font-medium capitalize mb-4">
           Profile information

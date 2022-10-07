@@ -5,7 +5,7 @@ export function MainCard() {
     <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14 lg:px-8 lg:py-20 ">
       <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
-          <div className="max-w-xl ">
+
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-red-900 sm:text-4xl sm:leading-none">
               Feel good
               <br className="hidden md:block" />
@@ -33,6 +33,7 @@ export function MainCard() {
                   Let us help you find the right blend for your current state of
                   mind.
                 </p>
+
               </div>
             </div>
             <div className="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
