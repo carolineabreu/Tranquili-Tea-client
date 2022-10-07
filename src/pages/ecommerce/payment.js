@@ -1,15 +1,36 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from "react";
-import "../../index.css";
 
 export function Payment() {
   const [form, setForm] = useState({
     name: "",
-    email: "",
     city: "",
     zip: "",
     card: "",
   });
+
+  //   const navigate = useNavigate();
+
+  //   const { setLoggedInUser } = useContext(AuthContext);
+
+  //   function handleChange(e) {
+  //     setForm({ ...form, [e.target.name]: e.target.value });
+  //   }
+
+  //   async function handleSubmit(e) {
+  //     e.preventDefault();
+
+  //     try {
+  //       const response = await api.get("/user", form);
+  //       setLoggedInUser({ ...response.data });
+
+  //       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
+
+  //       navigate("/profile");
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,112 +38,80 @@ export function Payment() {
 
   function handleSumit(e) {
     e.preventDefault();
-    window.onload = "/orderHistory";
+    window.location.reload(true);
   }
+
   return (
-    <div className="leading-loose">
-      <form
-        className="max-w-xl m-4 p-10 bg-white rounded shadow-xl"
-        onSubmit={handleSumit}
-      >
-        <p className="text-gray-800 font-big">Checkout </p>
-
-        <div className="">
-          <label className="block text-sm text-gray-00" for="cus_name">
-            Name
-          </label>
-          <input
-            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-            id="cus_name"
-            name="cus_name"
-            type="text"
-            required=""
-            placeholder="Your Name"
-            aria-label="Name"
-            value={form.name}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mt-2">
-          <label className="block text-sm text-gray-600" for="cus_email">
-            Email
-          </label>
-          <input
-            className="w-full px-2  py-2 text-gray-700 bg-gray-200 rounded"
-            id="cus_email"
-            name="cus_email"
-            type="text"
-            required=""
-            placeholder="Your Email"
-            aria-label="Email"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mt-2">
-          <label className=" block text-sm text-gray-600" for="cus_email">
-            Address
-          </label>
-          <input
-            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-            id="cus_email"
-            name="cus_email"
-            type="text"
-            required=""
-            placeholder="City"
-            aria-label="Email"
-            value={form.city}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="inline-block mt-2 -mx-1 pl-1 w-1/2">
-          <label className="hidden block text-sm text-gray-600" for="cus_email">
-            Zip
-          </label>
-          <input
-            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-            id="cus_email"
-            name="cus_email"
-            type="text"
-            required=""
-            placeholder="Zip"
-            aria-label="Email"
-            value={form.zip}
-            onChange={handleChange}
-          />
-        </div>
-
-        <p className="mt-4 text-gray-800 font-medium">Payment info</p>
-
-        <div className="">
-          <label className="block text-sm text-gray-600" for="cus_name">
-            Card
-          </label>
-          <input
-            className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-            id="cus_name"
-            name="cus_name"
-            type="number"
-            required=""
-            placeholder="Card Number MM/YY CVC"
-            aria-label="Name"
-            value={form.card}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mt-4">
-          <button
-            className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-            type="submit"
-          >
-            Pay
-          </button>
-        </div>
-      </form>
+    <div className="contain py-16">
+      <div className="max-w-lg mx-auto shadow-2xl px-6 py-7 rounded overflow-hidden">
+        <h2 className="text-2xl uppercase font-large text-center mb-1">
+          Checkout
+        </h2>
+        <form onSubmit={handleSumit} method="post" autoComplete="off">
+          <div className="space-y-2">
+            <div>
+              <label htmlFor="name" className="text-gray-600 mb-2 block">
+                Name
+              </label>
+              <input
+                type="name"
+                onChange={handleChange}
+                name="name"
+                id="name"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                placeholder="Your Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="city" className="text-gray-600 mb-2 block">
+                City
+              </label>
+              <input
+                type="city"
+                onSubmit={handleChange}
+                name="city"
+                id="city"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                placeholder="City"
+              />
+            </div>
+            <div>
+              <label htmlFor="zip" className="text-gray-600 mb-2 block">
+                Zip Code
+              </label>
+              <input
+                type="zip"
+                onSubmit={handleChange}
+                name="zip"
+                id="zip"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                placeholder="Zip Code"
+              />
+            </div>
+            <div>
+              <label htmlFor="card" className="text-gray-600 mb-2 block">
+                Card
+              </label>
+              <input
+                type="card"
+                onSubmit={handleChange}
+                name="card"
+                id="card"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                placeholder="XXX XXXX XXX XXX"
+              />
+            </div>
+          </div>
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="relative block w-50 py-2 content-center text-white bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 border rounded uppercase font-roboto font-medium"
+            >
+              Pay
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
