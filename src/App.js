@@ -22,8 +22,8 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 function App() {
   return (
     <>
+      <Navbar />
       <AuthContextComponent>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
@@ -37,16 +37,20 @@ function App() {
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-          <Route
-            path="/tea-room/profile/edit"
-            element={<EditTeaRoomProfile />}
-          />
+        
+     
+          <Route path="/ecommerce/payment" element={<Payment />} />
+          <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
+          <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
+          <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
           <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
           <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
           <Route path="/tea-room" element={<TeaRoomHomePage />} />
         </Routes>{" "}
         <Footer />
       </AuthContextComponent> 
+
+    </>
   );
 }
 
