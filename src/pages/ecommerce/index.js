@@ -2,27 +2,31 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CarrinhoContext } from "./Carrinho/carrinho.js";
 
-export function Teas() {
-  const [teas, setTeas] = useState([]);
+export function Teas(props) {
+  const [tea, setTea] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
+  const carrinho = useContext(CarrinhoContext);
 
   useEffect(() => {
-    async function fetchTeas() {
+    async function fetchTea() {
       try {
         const response = await api.get("/tea/all");
 
-        setTeas([...response.data]);
+        setTea([...response.data]);
       } catch (err) {
         console.log(err);
       }
     }
-    fetchTeas();
+    fetchTea();
   }, []);
 
-  //function AddtoAddtoCart()
-
+  function handleCarrinho() {
+    carrinho.setTea([...carrinho.tea, { ...props }]);
+  }
   return (
     <>
       <div className="bg-white">
@@ -48,7 +52,7 @@ export function Teas() {
             </button>
           </Link>
           <div className="mt-6 bg-white grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {teas.map((currentTea) => {
+            {tea.map((currentTea) => {
               return (
                 <div key={currentTea.id} className="">
                   <div className="text-3xl mt-5 mb-6 font-mono font-400 flex justify-center">
@@ -68,7 +72,7 @@ export function Teas() {
                   </p>
                   <></>
                   <button
-                    type="button"
+                    onClick={handleCarrinho}
                     className="rounded-lg px-4 py-2 bg-green-300 hover:bg-green-400 duration-300 mr-2.5"
                   >
                     {" "}

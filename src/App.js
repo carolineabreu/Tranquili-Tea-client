@@ -19,43 +19,53 @@ import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoomHomePage";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import { EditProfile } from "./pages/EditProfile/Profile";
-import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
-//import { NavbarCart } from "./pages/ecommerce/Carrinho/components/navbar.js";
 import { ProductList } from "./pages/ecommerce/Carrinho/pages/productList.js";
-import { ProductPage } from "./pages/ecommerce/Carrinho/pages/ProductPage.js";
 import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
+import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
 
 function App() {
   return (
     <>
       <Navbar />
-      <AuthContextComponent>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/ourteam" element={<OurTeam />} />
-          <Route path="/teaDetail/:id" element={<TeaDetails />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/edit" element={<EditProfile />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="/Teas" element={<Teas />} />
-          <Route path="/ecommerce" element={<Teas />} />
-          <Route path="/ecommerce/payment" element={<Payment />} />
-          <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
-          <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-          <Route path="/ecommerce/payment" element={<Payment />} />
-          <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
-          <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-          <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
-          <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
-          <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
-          <Route path="/tea-room" element={<TeaRoomHomePage />} />
-          <Route path="/productlist" element={<ProductList />} />
-          <Route path="/carrinho" element={<CarrinhoPage />} />
-        </Routes>{" "}
-        <Footer />
-      </AuthContextComponent>
+
+      <CarrinhoComponent>
+        <AuthContextComponent>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/ourteam" element={<OurTeam />} />
+            <Route path="/teaDetail/:id" element={<TeaDetails />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit" element={<EditProfile />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/Teas" element={<Teas />} />
+            <Route path="/ecommerce" element={<Teas />} />
+            <Route path="/ecommerce/payment" element={<Payment />} />
+            <Route
+              path="/ecommerce/payment/user:id"
+              element={<OrderHistory />}
+            />
+            <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
+            <Route path="/ecommerce/payment" element={<Payment />} />
+            <Route
+              path="/ecommerce/payment/user:id"
+              element={<OrderHistory />}
+            />
+            <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
+            <Route
+              path="/tea-room/profile/edit"
+              element={<EditTeaRoomProfile />}
+            />
+            <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
+            <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
+            <Route path="/tea-room" element={<TeaRoomHomePage />} />
+            <Route path="/productlist" element={<ProductList />} />
+            <Route path="/carrinho" element={<CarrinhoPage />} />
+          </Routes>{" "}
+          <Footer />
+        </AuthContextComponent>
+      </CarrinhoComponent>
     </>
   );
 }

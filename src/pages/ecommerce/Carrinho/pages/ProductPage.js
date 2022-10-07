@@ -6,13 +6,6 @@ export function ProductPage() {
   const [tea, setTea] = useState({});
   const { id } = useParams();
 
-  //   useEffect(() => {
-  //     async function fetchTea() {
-  //       const response = await api.get("/tea/${teaId}");
-  //     }
-  //     setTea(response.data);
-  //   }, []);
-
   useEffect(() => {
     async function fetchTea() {
       try {
