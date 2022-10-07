@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import differenceInDays from "date-fns/differenceInDays";
 import { Link } from "react-router-dom";
+import { NavbarForum } from "../../components/NavbarForum/index";
+
 
 export function TeaRoomHomePage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -21,6 +23,7 @@ export function TeaRoomHomePage() {
 
   return (
     <div>
+      <NavbarForum />
       {allPosts.map((currentPost) => {
         console.log(currentPost);
         return (
