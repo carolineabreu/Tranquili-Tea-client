@@ -34,7 +34,7 @@ export function TeaRoomProfile() {
                 <div className="ms-4 mt-5 d-flex flex-column" style={{ width: '150px' }}>
                   <MDBCardImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIy2vRwSRoUACatub962auO36Uo5OjNQ5wCQ&usqp=CAU"
                     alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
-                  {/* TODO: fazer a página para editar o perfil*/}
+                  {/* TODO: faze a página para editar o perfil*/}
                   <Link to="/tea-room/profile/edit">
                     <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible' }}>
                       Edit profile

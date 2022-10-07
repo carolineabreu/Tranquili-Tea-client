@@ -124,7 +124,6 @@ export function TeaDetails() {
                 <span className="text-gray-600 ml-3">4 Reviews</span>
               </span>
             </div>
-            <p>Name</p>
             <p className="leading-relaxed">{teaDetail.description}</p>
             <p>Category: {teaDetail.category}</p>
             <p>Origin: {teaDetail.origin}</p>
@@ -152,7 +151,7 @@ export function TeaDetails() {
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
-                <p className="font-bold text-xl">{((quantity / 50) * teaDetail.price)}</p>
+                <p className="font-bold text-xl">{Number.parseFloat(teaDetail.price).toFixed(2)}</p>
                 <button
                   className="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                   onClick={handleSubmit}

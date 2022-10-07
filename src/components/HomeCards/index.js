@@ -47,7 +47,7 @@ export function HomeCards() {
   <div className="p-2">
     <h2 className="font-bold text-lg mb-2 ">Green Tea</h2>
     <p className="text-sm text-gray-600">
-    Green tea is Link staple in many cultures and may offer some important health benefits, like protecting our brain, heart, and bone health. Green tea comes in different forms, but it's best to drink it plain"
+    Green tea is a staple in many cultures and may offer some important health benefits, like protecting our brain, heart, and bone health. Green tea comes in different forms, but it's best to drink it plain"
     </p>
   </div>
   <div className="m-2">
