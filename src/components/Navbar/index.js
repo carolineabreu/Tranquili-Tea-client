@@ -1,22 +1,24 @@
-// import { Fragment, useState } from "react";
-// import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
-import logo from "../logo/Low Resolution Logo - Transparent Background.png"
+import { useLocation, Link } from "react-router-dom";
+// import logo from "../logo/Low Resolution Logo - Transparent Background.png"
 
 import "../../index.css";
 
+const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
+
 export function Navbar() {
+
+  const { pathname } = useLocation();
+  
+  if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
+
   return (
     <div>
-  
       <header className="py-4 shadow- sm:px-6 lg:px-8 bg-white">
         <div className="container flex items-center justify-between">
         <Link to="/">
             <img className= " w-10" src="https://img.icons8.com/carbon-copy/100/000000/tea-bag.png" alt="tea bag"/>
           </Link>
-          <Link to="/" >
-          <img className = "w-64" src={logo} alt="Logo" />
-          </Link>
+          {/* <img className = "w-64" src={logo} alt="Logo" /> */}
           <div className="w-full max-w-xl relative flex">
             <span className="absolute left-4 top-3 text-lg text-gray-400">
               <i className="fa-solid fa-magnifying-glass" />

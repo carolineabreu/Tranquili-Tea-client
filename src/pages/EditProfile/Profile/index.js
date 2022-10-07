@@ -8,8 +8,8 @@
 //   const navigate = useNavigate();
 
 //   const [form, setForm] = useState({
-//     password: "",
-//     email: ""
+//    phoneNumber
+address
 //   });
 
 //   useEffect(() => {
@@ -51,7 +51,7 @@
 //         <input
 //           id="formEmail"
 //           placeholder="Email"
-//           type="email"
+//           type="address"
 //           name="email"
 //           onChange={handleChange}
 //           value={form.email}
