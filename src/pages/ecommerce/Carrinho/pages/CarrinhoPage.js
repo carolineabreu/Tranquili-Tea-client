@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CarrinhoContext } from "../../Carrinho/carrinho.js";
+import { CarrinhoContext } from "../carrinho.js";
 
 export function CarrinhoPage() {
   const carrinho = useContext(CarrinhoContext);
@@ -7,7 +7,7 @@ export function CarrinhoPage() {
   return (
     <>
       {carrinho.tea.map((currentTea) => {
-        return <h1>{currentTea.teaName}</h1>;
+        return <h1>{currentTea.name}</h1>;
       })}
     </>
   );

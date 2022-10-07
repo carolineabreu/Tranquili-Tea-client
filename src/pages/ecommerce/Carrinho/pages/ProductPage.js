@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 export function ProductPage() {
   const [tea, setTea] = useState({});
   const { id } = useParams();
-
   useEffect(() => {
     async function fetchTea() {
       try {
@@ -18,7 +17,6 @@ export function ProductPage() {
     }
     fetchTea();
   }, []);
-
   return (
     <>
       <div>
