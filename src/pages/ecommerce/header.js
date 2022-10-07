@@ -11,7 +11,7 @@ export function Header() {
       <strong>{`${cart.tea.length} itens itens in the cart`}</strong>
       <button
         onClick={() => {
-          navigate("/CartPage");
+          navigate("/carrinho");
         }}
       >
         Check Cart
