@@ -5,7 +5,7 @@ export function MainCard() {
     <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14 lg:px-8 lg:py-20 ">
       <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
-          <div className="max-w-xl mb-6">
+          <div className="max-w-xl ">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-red-900 sm:text-4xl sm:leading-none">
               Feel good
               <br className="hidden md:block" />
@@ -51,14 +51,18 @@ export function MainCard() {
               </div>
             </div>
           </div>
+          
         </div>
+        <div className="flex pt-40 flex-col">
+
+        <img
+              className="object-cover w-full  rounded shadow-lg sm:h-96"
+              src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+              alt="tea leaves and a white cup"
+            />
         <div>
-          <img
-            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-            src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-            alt="tea leaves and a white cup"
-          />
-        </div>
+          </div>
+          </div>
       </div>
     </div>
   );
