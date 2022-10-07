@@ -29,7 +29,7 @@ export function TeaRoomProfile() {
   return (
     <>
       <NavbarForum />
-      <div className="gradient-custom-2" style={{ backgroundColor: "  #f3d8ff  " }}>
+      <div className="gradient-custom-2" style={{ backgroundColor: "  #F5F5F5 " }}>
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
             <MDBCol lg="9" xl="7" sm="6" style={{ width: "80vw" }}>
@@ -37,10 +37,10 @@ export function TeaRoomProfile() {
                 <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#BBDEFB', height: '200px' }}>
                   <div className="ms-4 mt-5 d-flex flex-column" style={{ width: '150px' }}>
                     <MDBCardImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIy2vRwSRoUACatub962auO36Uo5OjNQ5wCQ&usqp=CAU"
-                      alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
+                      alt="Generic placeholder image" className="mt-4 mb-2 mr-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
                     {/* TODO: faze a página para editar o perfil*/}
                     <Link to="/tea-room/profile/edit">
-                      <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible' }}>
+                      <MDBBtn outline color="dark" style={{ height: '36px', overflow: 'visible', backgroundColor: '#BBDEFB' }}>
                         Edit profile
                       </MDBBtn>
                     </Link>

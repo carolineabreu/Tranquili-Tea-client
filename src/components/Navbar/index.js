@@ -200,7 +200,7 @@ export function Navbar() {
               </Link>
               <Link
                 to="/tea-room"
-                className="text-black hover:bg-green-700 hover:text-white transition"
+                className="text-black hover:text-white transition"
               >
                 Tea Room
               </Link>
