@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "./cartContext.js";
 
-export function Card(props) {
+export function CardOriginal(props) {
   const navigate = useNavigate(cartContext);
 
   const cart = useContext();
