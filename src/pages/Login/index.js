@@ -33,7 +33,7 @@ export function Login() {
         <p className="text-gray-600 mb-6 text-sm">
           welcome back customer
         </p>
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="on">
           <div className="space-y-2">
             <div>
               <label htmlFor="email" className="text-gray-600 mb-2 block">Email address</label>
@@ -52,7 +52,7 @@ export function Login() {
             <Link to="/" className="text-primary">Forgot password</Link>
           </div>
           <div className="mt-4">
-            <Link to="/profile">
+            <Link to="/tea-room">
             <button type="submit" className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Login</button>
             </Link>
           </div>
