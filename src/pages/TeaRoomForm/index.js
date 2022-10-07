@@ -37,7 +37,7 @@ export function TeaRoomForm() {
 
       console.log(response);
       //FIXME: /post => ver se ta certa e
-      navigate(`/tea-room/post/${form.id}`);
+      navigate(`/tea-room/profile`);
     } catch (error) {
       console.log(error);
     }
