@@ -35,8 +35,7 @@ export function TeaRoomPost() {
       <NavbarForum />
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <div className="px-6 py-4">
-          {/* FIXME: mostrar o username, não o id */}
-          <span className="text-sm text-gray-600 flex items-center">{post.owner}</span>
+          <span className="text-sm text-gray-600 flex items-center">{post.owner.username}</span>
           <span className="text-sm text-gray-600 flex items-center">{differenceInDays(
             new Date(Date.now()),
             new Date(post.createdAt)

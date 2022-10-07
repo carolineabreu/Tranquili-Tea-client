@@ -42,7 +42,7 @@ export function EditProfile() {
 
   return (
     <div>
-      <section onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <h1>Customize Profile</h1>
         <label htmlFor="formAbout">Address:</label>
         <br />
@@ -65,7 +65,7 @@ export function EditProfile() {
         />
         <br />
         <button type="submit">Submit</button>
-      </section>
+      </form>
     </div>
   );
 }
