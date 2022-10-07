@@ -28,7 +28,7 @@ export function NavbarForum() {
                 </div>
               </button>
               <div className="px-4">
-                <Link to="/tea-room/new-post" className="inline-block px-4 py-2 px-3bg bg-white w-50 hover:bg-blue-200 text-green-400 font-semibold hover:text-white border border-black-900 hover:border-transparent rounded-full" >
+                <Link to="/tea-room/new-post" className="inline-block px-4 py-2 px-3bg bg-white w-50 hover:bg-blue-200 text-blue-500 font-semibold hover:border- rounded-full" >
                   <div className="flex items-center relative cursor-pointer whitespace-nowrap"> + </div>
                 </Link>
               </div>
@@ -39,7 +39,7 @@ export function NavbarForum() {
         <div className="flex-initial">
           <div className="flex justify-end items-center relative">
             <div className="flex mr-8 items-center">
-              <Link to="/" className="inline-block py-2  w-50 bg-white hover:bg-blue-100 text-green-400  hover:text-white px-4 border border-blue-500s hover:border-transparent rounded-full" >
+              <Link to="/" className="inline-block py-2  w-50 bg-white hover:bg-blue-100 text-green-400  hover:text-white  border-blue-500s hover:border-transparent rounded-full" >
                 <div className="flex items-center relative cursor-pointer whitespace-nowrap text-xl text-purple-400 font font-mono" >Tranquili-Tea</div>
               </Link>
             </div>

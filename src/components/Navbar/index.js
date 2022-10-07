@@ -1,5 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
-// import logo from "../logo/Low Resolution Logo - Transparent Background.png"
+import logo from "../images/Low Resolution Logo - Transparent Background.png"
 
 import "../../index.css";
 
@@ -15,10 +15,13 @@ export function Navbar() {
     <div>
       <header className="py-4 shadow- sm:px-6 lg:px-8 bg-white">
         <div className="container flex items-center justify-between">
+          {/* <Link to="/">
+            <img className=" w-10" src="https://www.flaticon.com/free-icons/tea" title="tea icons" alt="tea bag" />
+          </Link> */}
+         
           <Link to="/">
-            <img className=" w-10" src="https://img.icons8.com/carbon-copy/100/000000/tea-bag.png" alt="tea bag" />
+          <img className = "w-64 rounded-md hover:bg-green-700" src={logo} alt="Logo" />
           </Link>
-          {/* <img className = "w-64" src={logo} alt="Logo" /> */}
           <div className="w-full max-w-xl relative flex">
             <span className="absolute left-4 top-3 text-lg text-gray-400">
               <i className="fa-solid fa-magnifying-glass" />
@@ -190,13 +193,13 @@ export function Navbar() {
             <div className="flex items-center space-x-6 capitalize">
               <Link
                 to="/"
-                className="text-black hover:text-white transition"
+                className="text-black underline hover:text-white transition"
               >
                 Home
               </Link>
               <Link
                 to="/tea-room"
-                className="text-black hover:text-white transition"
+                className="text-black hover:bg-green-700 hover:text-white transition"
               >
                 Tea Room
               </Link>
