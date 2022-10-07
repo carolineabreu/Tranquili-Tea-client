@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import React from "react";
 
 export function Payment() {
@@ -8,29 +9,6 @@ export function Payment() {
     zip: "",
     card: "",
   });
-
-  //   const navigate = useNavigate();
-
-  //   const { setLoggedInUser } = useContext(AuthContext);
-
-  //   function handleChange(e) {
-  //     setForm({ ...form, [e.target.name]: e.target.value });
-  //   }
-
-  //   async function handleSubmit(e) {
-  //     e.preventDefault();
-
-  //     try {
-  //       const response = await api.get("/user", form);
-  //       setLoggedInUser({ ...response.data });
-
-  //       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-
-  //       navigate("/profile");
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -103,12 +81,14 @@ export function Payment() {
             </div>
           </div>
           <div className="mt-4">
-            <button
-              type="submit"
-              className="relative block w-50 py-2 content-center text-white bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 border rounded uppercase font-roboto font-medium"
-            >
-              Pay
-            </button>
+            <Link to="/orderDone">
+              <button
+                type="submit"
+                className="relative block w-50 py-2 content-center text-white bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 border rounded uppercase font-roboto font-medium"
+              >
+                Pay
+              </button>
+            </Link>
           </div>
         </form>
       </div>

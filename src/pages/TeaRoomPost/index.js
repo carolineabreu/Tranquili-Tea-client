@@ -50,6 +50,7 @@ export function TeaRoomPost() {
           </p>
         </div>
       </div>;
+      
       <TeaRoomFormComment />
       <TeaRoomComment />
     </div>
