@@ -1,20 +1,21 @@
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CarrinhoContext } from "../../Carrinho/carrinho.js";
 import { useState, useEffect } from "react";
-import { api } from "../../../../api/api.js";
 import { Link } from "react-router-dom";
+import { api } from "../../../../api/api.js";
+import { HandleCart } from "../pages/handleCarrinho.js";
 
-export function Card(props) {
-  const navigate = useNavigate();
+export function Card() {
   const [tea, setTea] = useState([]);
 
   const carrinho = useContext(CarrinhoContext);
 
-  console.log(carrinho.tea);
+  console.log(carrinho);
+  console.log(tea);
 
   function handleCarrinho() {
-    carrinho.setTea([...carrinho.tea, { ...props }]);
+    carrinho.setTea([...carrinho.tea, tea]);
+    HandleCart();
   }
 
   useEffect(() => {
@@ -51,7 +52,6 @@ export function Card(props) {
       </Link>
       <div>
         {tea.map((currentTea) => {
-          console.log(currentTea);
           return (
             <div key={currentTea.id}>
               <h1>{currentTea.name}</h1>
