@@ -27,6 +27,7 @@ function App() {
   return (
     <>
       <Navbar />
+
       <CarrinhoComponent>
         <AuthContextComponent>
           <Routes>
