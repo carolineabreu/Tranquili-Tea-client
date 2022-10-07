@@ -44,8 +44,6 @@ function App() {
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-
-
           <Route path="/ecommerce/payment" element={<Payment />} />
           <Route path="/ecommerce/payment/user:id" element={<OrderHistory />} />
           <Route path="/tea-room/profile" element={<TeaRoomProfile />} />

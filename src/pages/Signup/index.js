@@ -129,7 +129,7 @@ export function Signup() {
             </div>
             <div class="mt-4 ">
               <button type="submit"
-                class="block w-full py-2 text-center  text-white bg-blue-400 border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">create
+                class="block w-full py-2 text-center  text-white bg-blue-400 border border-primary rounded hover:bg-blue-800 hover:text-primary transition uppercase font-roboto font-medium">create
                 account</button>
             </div>
           </div>
@@ -143,12 +143,12 @@ export function Signup() {
           <Link to="/"
             class="w-1/2 py-2 text-center text-white bg-blue-400 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-700">facebook</Link>
           <Link to="/"
-            class="w-1/2 py-2 text-center text-white bg-green-400 rounded uppercase font-roboto font-medium text-sm hover:bg-red-500">google</Link>
+            class="w-1/2 py-2 text-center text-white bg-green-400 rounded uppercase font-roboto font-medium text-sm hover:bg-green-500">google</Link>
         </div>
 
 
-        <p class="mt-4 text-center text-gray-600">Already have account? <a href="login.html"
-          class="text-primary">Login now</a></p>
+        <p class="mt-4 text-center text-gray-600">Already have account? <Link to="/login"
+          class="text-primary">Login now</Link></p>
       </div>
     </div>
 

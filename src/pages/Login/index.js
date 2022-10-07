@@ -52,12 +52,11 @@ export function Login() {
             <Link to="/" className="text-primary">Forgot password</Link>
           </div>
           <div className="mt-4">
-            {/* <Link to="/profile"> */}
+            <Link to="/profile">
             <button type="submit" className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">Login</button>
-            {/* </Link> */}
+            </Link>
           </div>
         </form>
-
 
         <div className="mt-6 flex justify-center relative">
           <div className="text-gray-600 uppercase px-3 bg-white z-10 relative">Or login with</div>
@@ -65,8 +64,8 @@ export function Login() {
         </div>
         <div className="mt-4 flex gap-4">
 
-          <Link to="/" className="w-1/2 py-2 text-center text-white bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-400">facebook</Link>
-          <Link to="/" className="w-1/2 py-2 text-center text-white bg-red-600 rounded uppercase font-roboto font-medium text-sm hover:bg-red-400">google</Link>
+          <Link to="/" className="w-1/2 py-2 text-center text-white bg-blue-400 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-800">facebook</Link>
+          <Link to="/" className="w-1/2 py-2 text-center text-white bg-green-400 rounded uppercase font-roboto font-medium text-sm hover:bg-green-800">google</Link>
         </div>
        
         <p className="mt-4 text-center text-gray-600">Don't have account? <Link to="/signup" className="text-primary">Register
