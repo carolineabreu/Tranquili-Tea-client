@@ -33,15 +33,15 @@ export function Profile() {
 <div class="min-h-screen bg-white flex items-center justify-center">
   <div class="px-10">
     <div class="bg-white max-w-xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
-    <div className="col-span-9 shadow rounded  bg-green-200 px-6 pt-5 pb-7">
+    <div className="col-span-9 shadow rounded  bg-white px-6 pt-5 pb-7">
         <h4 className="text-lg font-medium capitalize mb-4">
           Profile information
         </h4>
-        <div className="space-y-10">
+        <div className="space-y-10git">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label  text-gray-600 mb-6 text-sm htmlFor="name">Full Name:</label>
-              <input type="text" name="name" id="name" className="input-box" />
+              <input value = {user.name} type="text" name="name" id="name" className="input-box" />
             </div>
             <div>
               <label htmlFor="username">Username:</label>
