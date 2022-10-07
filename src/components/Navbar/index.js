@@ -118,8 +118,9 @@ export function Navbar() {
             <span className="text-black">
               <i className="fa-solid fa-bars" />
             </span>
+            <Link to="tea-room">
             <span className="capitalize ml-2 text-black">Tea Selection</span>
-            {/* dropdown */}
+            </Link>
             <div className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
               <Link
                 to="/"
