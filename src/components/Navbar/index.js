@@ -6,17 +6,17 @@ import "../../index.css";
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "tea-room/profile", "/tea-room"];
 
 export function Navbar() {
-
   const { pathname } = useLocation();
-  
+
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
+
 
   return (
     <div>
       <header className="py-4 shadow- sm:px-6 lg:px-8 bg-white">
         <div className="container flex items-center justify-between">
-        <Link to="/">
-            <img className= " w-10" src="https://img.icons8.com/carbon-copy/100/000000/tea-bag.png" alt="tea bag"/>
+          <Link to="/">
+            <img className=" w-10" src="https://img.icons8.com/carbon-copy/100/000000/tea-bag.png" alt="tea bag" />
           </Link>
           {/* <img className = "w-64" src={logo} alt="Logo" /> */}
           <div className="w-full max-w-xl relative flex">
@@ -59,7 +59,7 @@ export function Navbar() {
               </div>
             </Link>
             <Link
-              to="/"
+              to="/carrinho"
               className="text-center text-gray-700 hover:text-primary transition relative"
             >
               <div className="text-2xl">
@@ -84,7 +84,7 @@ export function Navbar() {
               </div>
             </Link>
             <Link
-            to="/"
+              to="/profile"
               className="text-center text-gray-700 hover:text-primary transition relative"
             >
               <div className="text-2xl">
@@ -119,7 +119,7 @@ export function Navbar() {
             {/* dropdown */}
             <div className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
               <Link
-               to="/"
+                to="/"
                 className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
               >
                 <img
@@ -152,7 +152,7 @@ export function Navbar() {
                 <span className="ml-6 text-gray-600 text-sm">Mood-Booster</span>
               </Link>
               <Link
-               to="/"
+                to="/"
                 className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
               >
                 <img
@@ -174,7 +174,7 @@ export function Navbar() {
                 <span className="ml-6 text-gray-600 text-sm">Restless</span>
               </Link>
               <Link
-               to="/"
+                to="/"
                 className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
               >
                 <img
@@ -195,12 +195,12 @@ export function Navbar() {
                 Home
               </Link>
               <Link
-                to="/"
+                to="/tea-room"
                 className="text-black hover:text-white transition"
               >
                 Tea Room
               </Link>
-              <Link to="/tea-room" className="text-black hover:text-white transition">
+              <Link to="/" className="text-black hover:text-white transition">
                 Our Team
               </Link>
               <Link to="/" className="text-black hover:text-white transition">
@@ -213,7 +213,7 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      
+
     </div>
   );
 }

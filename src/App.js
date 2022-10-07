@@ -51,6 +51,8 @@ function App() {
           <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
           <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
           <Route path="/tea-room" element={<TeaRoomHomePage />} />
+          <Route path="/productlist" element={<ProductList />} />
+          <Route path="/carrinho" element={<CarrinhoPage />} />
         </Routes>{" "}
         <Footer />
       </AuthContextComponent>
