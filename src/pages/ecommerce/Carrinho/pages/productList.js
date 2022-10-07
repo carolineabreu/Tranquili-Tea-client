@@ -1,4 +1,4 @@
-import { Card } from "../../Carrinho/components/Card.js";
+import { Card } from "../components/Card.js";
 
 export function ProductList() {
   return (

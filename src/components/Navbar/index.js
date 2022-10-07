@@ -194,7 +194,7 @@ export function Navbar() {
             <div className="flex items-center space-x-6 capitalize">
               <Link
                 to="/"
-                className="text-black underline hover:text-white transition"
+                className="text-black  hover:text-white transition"
               >
                 Home
               </Link>
