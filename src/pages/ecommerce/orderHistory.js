@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { api } from "../../api/api";
 
 export function OrderHistory() {
   const [history, setHistory] = { history }; //state.userAPI.history;
@@ -11,12 +11,12 @@ export function OrderHistory() {
     if (token) {
       const getHistory = async () => {
         if (isAdmin) {
-          const res = await axios.get("/api/payment", {
+          const res = await api.get("/api/payment", {
             headers: { Authorization: token },
           });
           setHistory(res.data);
         } else {
-          const res = await axios.get("/user/history", {
+          const res = await api.get("/user/history", {
             headers: { Authorization: token },
           });
           setHistory(res.data);
