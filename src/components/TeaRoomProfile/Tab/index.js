@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useState } from "react";
 import { AllPosts } from "../AllPosts";
+import { AllComments } from "../AllComments";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -58,17 +59,13 @@ export default function ProfileTabs(props) {
         >
           <Tab label="Posts" {...a11yProps(0)} />
           <Tab label="Comments" {...a11yProps(1)} />
-          <Tab label="Likes" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         <AllPosts />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+        <AllComments />
       </TabPanel>
     </Box>
   );

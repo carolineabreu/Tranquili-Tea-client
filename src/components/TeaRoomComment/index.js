@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { api } from "../../api/api";
 import { differenceInDays } from "date-fns";
 
@@ -27,14 +27,14 @@ export function TeaRoomComment() {
           <div>
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <div className="px-6 py-4">
-                <span className="text-sm text-gray-600 flex items-center">{currentComment.owner}</span>
+                <span className="text-sm text-gray-600 flex items-center">{currentComment.owner.username}</span>
                 <span className="text-sm text-gray-600 flex items-center">{differenceInDays(
                   new Date(Date.now()),
                   new Date(currentComment.createdAt)
                 )}{" "}
                   days ago</span>
                 <p className="text-gray-700 text-base">
-                  {currentComment.body}
+                  {currentComment.comment}
                 </p>
               </div>
             </div>

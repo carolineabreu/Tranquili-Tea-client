@@ -7,11 +7,6 @@ export function EditTeaRoomProfile() {
 
   const [form, setForm] = useState({
     about: ""
-    /**TODO:
-     * mudar avatar
-     * mudar background => imagem de background ou só a cor?
-     * se sobrar tempo: espaço para por redes sociais?
-     */
   });
 
   useEffect(() => {

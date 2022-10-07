@@ -29,7 +29,7 @@ export function TeaRoomProfile() {
   return (
     <>
       <NavbarForum />
-      <div className="gradient-custom-2" style={{ backgroundColor: "white" }}>
+      <div className="gradient-custom-2" style={{ backgroundColor: "  #f3d8ff  " }}>
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
             <MDBCol lg="9" xl="7" sm="6" style={{ width: "80vw" }}>
@@ -50,20 +50,6 @@ export function TeaRoomProfile() {
                   </div>
                 </div>
                 <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
-                  {/* <div className="d-flex justify-content-end text-center py-1">
-                  <div>
-                    <MDBCardText className="mb-1 h5">{TODO:COMO COLOCAR A QUANTIDADE DE POSTS?}</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Posts</MDBCardText>
-                  </div>
-                  <div className="px-3">
-                    <MDBCardText className="mb-1 h5">1026</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Comments</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="mb-1 h5">478</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Likes</MDBCardText>
-                  </div>
-                </div> */}
                 </div>
                 <MDBCardBody className="text-black p-4">
                   <div className="mb-5">

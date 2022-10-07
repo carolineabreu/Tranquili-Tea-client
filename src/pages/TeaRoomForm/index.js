@@ -2,18 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
 import { NavbarForum } from "../../components/NavbarForum/index";
-// import { Box, Text } from 'grommet';
-// import { SelectMultiple } from "grommet";
-// import { Grommet } from "grommet";
-// import { TextArea } from 'grommet';
-
-// const defaultOptions = [
-//   'Question',
-//   'Recommendation',
-//   'Review',
-//   'Photo',
-//   'Discussion',
-// ];
 
 export function TeaRoomForm() {
   const navigate = useNavigate();
@@ -106,27 +94,6 @@ export function TeaRoomForm() {
           <option value="Review">Review</option>
           <option value="Discussion">Discussion</option>
         </select>
-
-        {/* <Grommet >
-        <Box fill align="center" pad="large" gap="large">
-          <Text>SelectMultiple Default</Text>
-          <SelectMultiple
-            value={valueMultiple}
-            placeholder="Select"
-            options={options}
-            onSearch={(text) => {
-              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-
-              const exp = new RegExp(escapedText, 'i');
-              setOptions(defaultOptions.filter((o) => exp.test(o)));
-            }}
-            onClose={() => setOptions(defaultOptions)}
-            onChange={({ value }) => {
-              setValueMultiple(value);
-            }}
-          />
-        </Box>
-      </Grommet> */}
 
         <button type="submit">Post</button>
       </form>
