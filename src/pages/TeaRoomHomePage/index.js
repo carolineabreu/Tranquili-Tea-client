@@ -102,7 +102,6 @@ export function TeaRoomHomePage() {
                     </div>
                   </div>
                 </div>
-                ;
               </div>
             </div>
           </div>

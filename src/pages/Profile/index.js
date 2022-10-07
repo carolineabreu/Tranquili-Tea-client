@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 export function Profile() {
