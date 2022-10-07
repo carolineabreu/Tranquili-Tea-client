@@ -31,8 +31,8 @@ export function Teas(props) {
     <>
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className=" font-mono content-center items-center text-4xl flex justify-center mb-16 mt-3 font-bold tracking-tight text-gray-900">
-            OUR TEAS
+          <h2 className=" font-mono content-center items-center text-5xl flex justify-center mb-16 mt-3 font-bold tracking-tight text-gray-900">
+            TEA SELECTION
           </h2>
           <Link to="/CartPage">
             <button
