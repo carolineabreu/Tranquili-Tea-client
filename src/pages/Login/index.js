@@ -2,28 +2,21 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
-
 export function Login() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-
   const navigate = useNavigate();
-
   const { setLoggedInUser } = useContext(AuthContext);
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
       const response = await api.post("/user/login", form);
       setLoggedInUser({ ...response.data });
-
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
       console.log(response.data);
 
@@ -32,7 +25,6 @@ export function Login() {
       console.log(error);
     }
   }
-
   return (
 
     <div className="contain py-16">
@@ -66,21 +58,21 @@ export function Login() {
           </div>
         </form>
 
+
         <div className="mt-6 flex justify-center relative">
           <div className="text-gray-600 uppercase px-3 bg-white z-10 relative">Or login with</div>
           <div className="absolute left-0 top-3 w-full border-b-2 border-gray-200" />
         </div>
         <div className="mt-4 flex gap-4">
-          <Link to="/" className="w-1/2 py-2 text-center text-white bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-700">facebook</Link>
-          <Link to="/" className="w-1/2 py-2 text-center text-white bg-red-600 rounded uppercase font-roboto font-medium text-sm hover:bg-red-500">google</Link>
+
+          <Link to="/" className="w-1/2 py-2 text-center text-white bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-400">facebook</Link>
+          <Link to="/" className="w-1/2 py-2 text-center text-white bg-red-600 rounded uppercase font-roboto font-medium text-sm hover:bg-red-400">google</Link>
         </div>
-        {/* ./login with */}
+       
         <p className="mt-4 text-center text-gray-600">Don't have account? <Link to="/signup" className="text-primary">Register
           now</Link></p>
       </div>
     </div>
-
-
-
   );
 }
+

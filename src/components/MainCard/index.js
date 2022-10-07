@@ -49,9 +49,9 @@ Our Philosophy is simple! We source ingredients from ethical, organic, sustainab
                   </div>
                   <div>
                     <img
-                      className="object-cover w-full h-60 rounded shadow-lg sm:h-96"
+                      className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
                       src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                      alt="tea leaves and Link white cup"
+                      alt="tea leaves and a white cup"
                     />
                   </div>
                 </div>

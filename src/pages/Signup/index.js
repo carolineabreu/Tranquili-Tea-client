@@ -2,6 +2,7 @@ import { useState } from "react";
 import { api } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
 
+
 export function Signup() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -12,7 +13,6 @@ export function Signup() {
     confirmPassword: "",
   });
 
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -21,8 +21,7 @@ export function Signup() {
     e.preventDefault();
 
     try {
-      const response = await api.post("/user/signup", form
-      );
+      const response = await api.post("/user/signup", form);
 
       navigate("/login");
       console.log(response);
@@ -30,8 +29,6 @@ export function Signup() {
       console.log(error);
     }
   }
-
-  //TODO: arrumar handleSubmit
 
   return (
     // <form onSubmit={handleSubmit}>
