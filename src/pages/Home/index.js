@@ -1,5 +1,3 @@
-import { Navbar } from "../../components/Navbar";
-import { Footer } from "../../components/Footer";
 import { MainCard} from "../../components/MainCard";
 import { HomeCards } from "../../components/HomeCards";
 import { Testimonials } from "../../components/Testimonials";
