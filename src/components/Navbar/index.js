@@ -207,7 +207,7 @@ export function Navbar() {
               <Link to="/" className="text-black hover:text-white transition">
                 Our Team
               </Link>
-              <Link to="/" className="text-black hover:text-white transition">
+              <Link to="/ourteam" className="text-black hover:text-white transition">
                 Contact us
               </Link>
             </div>
