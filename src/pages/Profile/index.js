@@ -30,57 +30,86 @@ export function Profile() {
   }
 
   return (
-    <div class="min-h-screen bg-white flex items-center justify-center">
-      <div class="px-10">
-        <div class="bg-white max-w-xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
-          <div className="col-span-9 shadow rounded  bg-white px-6 pt-5 pb-7">
-            <h4 className="text-lg font-medium capitalize mb-4">
-              Profile information
-            </h4>
-            <div className="space-y-10git">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label text-gray-600 mb-6 text-sm htmlFor="name">Full Name:</label>
-                  <input value={user.name} type="text" name="name" id="name" className="input-box" />
-                </div>
-                <div>
-                  <label htmlFor="username">Username:</label>
-                  <input value={user.username} type="text" name="username" id="formUsername" className="input-box" />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email">Email Address:</label>
-                  <input value={user.email} type="email" name="email" id="Formemail" className="input-box" />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email">Address:</label>
-                  <input value={user.address} type="address" name="address" id="address" className="input-box" />
-                </div>
-                <div>
-                  <label htmlFor="phone">Phone number:</label>
-                  <input value={user.phone} type="phone" name="phone" id="phone" className="input-box" />
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 px-20">
-              <Link to="/tea-room">
-                <button onSubmit={handleLogOut} type="submit" className="py-2 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Tea Room
-                </button>
-              </Link>
-              </div>
-          <div className="mt-4 px-20">
-              <Link to="/profile/edit">
-                <button onSubmit={handleLogOut} type="submit" className="py-2 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Edit Profile
-                </button>
-              </Link>
-              </div>
-            </div>
-         
+    <div>
+    <div className="contain py-16">
+      <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
+        <h4 className="text-lg font-medium capitalize mb-4">
+          Profile information
+        </h4>
+        <div>
+          <label htmlFor="name">Full name:</label>
+          <input
+            value={user.name}
+            type="text"
+            name="name"
+            id="name"
+            className="input-box block w-full border mb-4 text-sm bg:blue-100 border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
+            placeholder="Fill in your full name"
+          />
+        </div>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            value={user.username}
+            type="text"
+            name="username"
+            id="formUsername"
+            className="input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
+            placeholder="Fill in your username"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phone">Phone number:</label>
+          <input
+            value={user.phone}
+            type="phone"
+            name="phone"
+            id="phone"
+            className="input-box input-box input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
+            placeholder="Fill in your phone number"
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email Address:</label>
+          <input
+            value={user.email}
+            type="email"
+            name="email"
+            id="Formemail"
+            className="input-box input-box input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
+            placeholder="youremail.@domain.com"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email">Address:</label>
+          <input
+            value={user.address}
+            type="address"
+            name="address"
+            id="address"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
+            placeholder="Fill your home address"
+          />
+        </div>
+
+            <div className="mt-4 flex gap-4">
+          <Link
+            to="/tea-room"
+            className="w-1/2 py-2 text-center text-white bg-blue-400 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-600"
+          >
+            tea room
+          </Link>
+          <Link
+            to="/tea-room/profile/edit"
+            className="w-1/2 py-2 text-center text-white bg-green-400 rounded uppercase font-roboto font-medium text-sm hover:bg-green-600"
+          >
+            edit profile
+          </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

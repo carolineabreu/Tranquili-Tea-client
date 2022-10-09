@@ -40,11 +40,7 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
             <Route path="/Teas" element={<Teas />} />
             <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-            <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-            <Route
-              path="/tea-room/profile/edit"
-              element={<EditTeaRoomProfile />}
-            />
+            <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
             <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
             <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
             <Route path="/tea-room" element={<TeaRoomHomePage />} />
