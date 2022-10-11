@@ -15,9 +15,9 @@ export function Navbar() {
     <div>
       <header className="py-4 shadow- sm:px-6 lg:px-8 bg-white">
         <div className="container flex items-center justify-between">
-          {/* <Link to="/">
+          <Link to="/">
             <img className=" w-10" src="https://www.flaticon.com/free-icons/tea" title="tea icons" alt="tea bag" />
-          </Link> */}
+          </Link>
          
           <Link to="/">
           <img className = "w-64 rounded-md hover:bg-green-700" src={logo} alt="Logo" />
@@ -118,7 +118,7 @@ export function Navbar() {
             <span className="text-black">
               <i className="fa-solid fa-bars" />
             </span>
-            <Link to="tea-room">
+            <Link to="productlist">
             <span className="capitalize ml-2 text-black">Tea Selection</span>
             </Link>
             <div className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">

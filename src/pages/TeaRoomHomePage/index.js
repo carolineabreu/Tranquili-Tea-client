@@ -27,8 +27,8 @@ export function TeaRoomHomePage() {
         console.log(currentPost);
         return (
           <div>
-            <div class="min-h-screen w-full bg-gray-100 flex items-center justify-center">
-              <div class="px-10">
+            <div class="min-h-20 w-full py-2 bg-gray-100 flex items-center justify-center">
+        
                 <div class="bg-white max-w-xl rounded-2xl px-20 py-8 shadow-lg hover:shadow-2xl transition duration-500">
                   <div className="col-span-9 shadow rounded  px-10 pt-5 pb-7">
                     {/* FIXME: mostrar o username, não o id */}
@@ -102,9 +102,7 @@ export function TeaRoomHomePage() {
                     </div>
                   </div>
                 </div>
-                ;
               </div>
-            </div>
           </div>
         );
       })}

@@ -10,11 +10,10 @@ export function TeaDetails() {
     name: "",
     image: "",
     description: "",
-    category: [],
+    category: "",
     origin: "",
     brew: "",
     temperature: "",
-    caffeine: 0,
     flavour: "",
     ingredients: "",
     price: 0
@@ -125,7 +124,7 @@ export function TeaDetails() {
                 <span className="text-gray-600 ml-3">4 Reviews</span>
               </span>
             </div>
-            <p className="leading-relaxed">{teaDetail.description}</p>
+            <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
             <p>Category: {teaDetail.category}</p>
             <p>Origin: {teaDetail.origin}</p>
             <p>Brew: {teaDetail.brew}</p>
@@ -149,10 +148,10 @@ export function TeaDetails() {
                   </select>
                 </div>
               </div>
+              <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
-                <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
                 <button
                   className="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                   onClick={handleSubmit}
@@ -160,24 +159,6 @@ export function TeaDetails() {
                   Add to cart
                 </button>
               </div>
-            </div>
-
-            <div className="flex">
-              <button className="flex ml-auto text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
-                Button
-              </button>
-              <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-purple-500 ml-4">
-                <svg
-                  fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
