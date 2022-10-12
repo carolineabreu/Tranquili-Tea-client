@@ -64,6 +64,10 @@ export function TeaDetails() {
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
               Name:{teaDetail.name}
             </h1>
+            <div className="pl-0">
+<p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
+
+</div>
             <div className="flex mb-4">
               <span className="flex items-center">
                 <svg
@@ -129,7 +133,6 @@ export function TeaDetails() {
             <p>Origin: {teaDetail.origin}</p>
             <p>Brew: {teaDetail.brew}</p>
             <p>Temperature: {teaDetail.temperature}</p>
-            <p>Caffeine: {teaDetail.caffeine}</p>
             <p>Flavour: {teaDetail.flavour}</p>
             <p>Ingredients: {teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
@@ -146,14 +149,13 @@ export function TeaDetails() {
                     <option>100 g</option>
                     <option>250 g </option>
                   </select>
-                </div>
+                </div>              
               </div>
-              <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
                 <button
-                  className="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
+                  className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                   onClick={handleSubmit}
                 >
                   Add to cart
