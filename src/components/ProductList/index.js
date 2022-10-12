@@ -5,7 +5,7 @@ const products = [
     {
       id: 1,
       name: 'Organic Earl Grey Tea',
-      href: '#',
+      href: '/carrinho',
       imageSrc: 'https://cdn.shopify.com/s/files/1/2256/0415/products/11018-LOOSE-ORGANIC_EARL_GREY_760x.jpg?v=1505847226%27',
       imageAlt: "Organic Earl Grey Tea.",
       qty: 'ounce loose',
@@ -14,7 +14,7 @@ const products = [
     {
       id: 2 ,
       name: 'Organic Yerba Mate',
-      href: '#',
+      href: '/carrinho',
       imageSrc: 'https://cdn.shopify.com/s/files/1/2256/0415/products/Organic-yerba.jpg?v=1511468981',
       imageAlt: "Yerba Mate leaves",
       qty: 'ounce loose',
@@ -23,7 +23,7 @@ const products = [
     {
       id: 3 ,
       name: 'Roibos Tea',
-      href: '#',
+      href: '/carrinho',
       imageSrc: 'https://cdn.shopify.com/s/files/1/2256/0415/products/69213-LOOSE-ORGANIC_AFRICAN_NECTAR.jpg?v=1509136959',
       imageAlt: "Rooibos loose leaves",
       qty: 'ounce loose',
@@ -32,7 +32,7 @@ const products = [
     {
       id: 4 ,
       name: 'Organic Green Tea',
-      href: '#',
+      href: '/product-list',
       imageSrc: 'https://cdn.shopify.com/s/files/1/2256/0415/products/41040-LOOSE-ORGANIC_SENCHA_2000x2000.jpg?v=1593028494',
       imageAlt: "Organic Green Tea loose leaves",
       qty: 'ounce loose',

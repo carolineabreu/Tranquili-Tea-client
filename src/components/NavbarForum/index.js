@@ -9,7 +9,7 @@ export function NavbarForum() {
           <Link to="/" className="_o6689fn" href="/"><div className="hidden md:block">
           </div>
             <div className="ml-4 flex lg:ml-0">
-              <Link to="/tea-room" className="text-xl text-purple-500 font font-mono" href="home">Tea Room</Link>
+              <Link to="/tea-room" className="text-2xl ml-10 text-purple-500 font-extrabold font-sans" href="home">Tea Room</Link>
             </div>
           </Link>
         </div>
@@ -17,7 +17,7 @@ export function NavbarForum() {
         <div className="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
           <div className="inline-block">
             <div className="inline-flex items-center max-w-full">
-              <button className="flex items-center flex-grow-0 flex-shrink border-blue-500pl-2 relative w-80 border rounded-full px-1  py-1" type="button">
+              <button className="flex items-center w-96 border rounded-full px-1  py-1" type="button">
                 <div className="block flex-grow text-black-900 fill-current flex-shrink overflow-hidden">Search Bar</div>
                 <div className="flex items-center  text-green-400 fill-current justify-center relative  h-8 w-8 rounded-full">
                   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '12px', width: '12px', stroke: 'currentcolor', strokeWidth: '5.33333', overflow: 'visible' }}>
@@ -28,8 +28,8 @@ export function NavbarForum() {
                 </div>
               </button>
               <div className="px-4">
-                <Link to="/tea-room/new-post" className="inline-block px-4 py-2 px-3bg bg-white w-50 hover:bg-blue-200 text-blue-500 font-semibold hover:border- rounded-full" >
-                  <div className="flex items-center relative cursor-pointer whitespace-nowrap"> + </div>
+                <Link to="/tea-room/new-post" className="inline-block px-1 py-2 bg-white w-50 hover:bg-blue-200 text-blue-500 font-semibold hover:border- rounded-full" >
+                  <div className="flex items-center relative cursor-pointer  text-xl   whitespace-nowrap"> + </div>
                 </Link>
               </div>
             </div>
