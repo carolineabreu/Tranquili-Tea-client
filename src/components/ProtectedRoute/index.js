@@ -11,10 +11,15 @@ export function ProtectedRoute(props) {
 
   useEffect(() => {
     console.log(parsedUser);
-    if (parsedUser.user.role !== "ADMIN") {
-      navigate("/login");
+    // if (parsedUser.user.role !== "USER") {
+    //   navigate("/login");
+    // }
+    if (!loggedInUser) {
+      return navigate("/login");
     }
-  }, []);
+  });
 
   return <Component />;
 }
+
+
