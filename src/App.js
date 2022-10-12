@@ -23,6 +23,8 @@ import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
 import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
 import { OrderDone } from "./pages/ecommerce/orderDone";
 
+import { ProtectedRoute } from "./components/ProtectedRoute";
+
 function App() {
   return (
     <>
@@ -33,21 +35,21 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/ourteam" element={<OurTeam />} />
-            <Route path="/teaDetail/:id" element={<TeaDetails />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
             <Route path="/profile/edit" element={<EditProfile />} />
-            <Route path="*" element={<ErrorPage />} />
             <Route path="/Teas" element={<Teas />} />
+            <Route path="/productlist" element={<ProductList />} />
+            <Route path="/teaDetail/:id" element={<TeaDetails />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/carrinho" element={<CarrinhoPage />} />
+            <Route path="/orderDone" element={<OrderDone />} />
+            <Route path="/ourteam" element={<OurTeam />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/tea-room" element={<ProtectedRoute component={TeaRoomHomePage} />} />
             <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
             <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
             <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
             <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
-            <Route path="/tea-room" element={<TeaRoomHomePage />} />
-            <Route path="/productlist" element={<ProductList />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/carrinho" element={<CarrinhoPage />} />
-            <Route path="/orderDone" element={<OrderDone />} />
           </Routes>{" "}
           <Footer />
         </AuthContextComponent>
