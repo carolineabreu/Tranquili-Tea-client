@@ -2,20 +2,26 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
+
 export function Login() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
   const navigate = useNavigate();
+
   const { setLoggedInUser } = useContext(AuthContext);
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
   async function handleSubmit(e) {
     e.preventDefault();
+
     try {
       const response = await api.post("/user/login", form);
+
       setLoggedInUser({ ...response.data });
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
       console.log(response.data);
@@ -82,7 +88,6 @@ export function Login() {
           </div>
           <div className="mt-4">
             <button
-              type="submit"
               className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
             >
               Login
