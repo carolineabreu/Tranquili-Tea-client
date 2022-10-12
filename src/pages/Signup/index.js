@@ -101,7 +101,18 @@ export function Signup() {
                   placeholder="Username"></input>
               </div>
               <div>
-                <label htmlFor="email" class="text-gray-600 mb-2 block">Email address</label>
+                <label htmlFor="email" class="text-gray-600 mb-2 block">Address</label>
+                <input onChange={handleChange} type="text" name="address" id="address"
+                  class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                ></input>
+              </div>
+              <div>
+                <label htmlFor="phoneNumber" class="text-gray-600 mb-2 block">Phone Number</label>
+                <input onChange={handleChange} type="tel" name="phoneNumber" id="phoneNumber"
+                  class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"></input>
+              </div>
+              <div>
+                <label htmlFor="address" class="text-gray-600 mb-2 block">Email address</label>
                 <input onChange={handleChange} type="email" name="email" id="email"
                   class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
                   placeholder="youremail.@domain.com"></input>
