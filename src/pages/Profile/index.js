@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { api } from "../../api/api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 export function Profile() {
@@ -44,7 +44,7 @@ export function Profile() {
               name="name"
               id="name"
               className="input-box block w-full border mb-4 text-sm bg:blue-100 border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
-              placeholder="Fill in your full name"
+              disabled
             />
           </div>
           <div>
@@ -55,7 +55,7 @@ export function Profile() {
               name="username"
               id="formUsername"
               className="input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
-              placeholder="Fill in your username"
+              disabled
             />
           </div>
 
@@ -67,7 +67,7 @@ export function Profile() {
               name="phone"
               id="phone"
               className="input-box input-box input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
-              placeholder="Fill in your phone number"
+              disabled
             />
           </div>
           <div>
@@ -78,7 +78,7 @@ export function Profile() {
               name="email"
               id="email"
               className="input-box input-box input-box block w-full border mb-4 text-sm border-gray-300 px-4 py-3 text-gray-600 rounded focus:ring-0 focus:border-primary focus:bg-blue-100 placeholder-gray-400"
-              placeholder="youremail.@domain.com"
+              disabled
             />
           </div>
 
@@ -107,7 +107,14 @@ export function Profile() {
             >
               edit profile
             </Link>
+            <button
+              onClick={handleLogOut}
+              className="w-1/2 py-2 text-center text-white bg-red-400 rounded uppercase font-roboto font-medium text-sm hover:bg-red-600"
+            >
+              Sign Out
+            </button>
           </div>
+
         </div>
       </div>
     </div>
