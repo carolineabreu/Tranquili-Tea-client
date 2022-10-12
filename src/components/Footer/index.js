@@ -4,12 +4,12 @@ import "../../index.css";
 const withoutNavbarRoutes = [
   "/tea-room/new-post",
   "/tea-room/post/:id",
-  "tea-room/profile",
+  "/tea-room/profile",
   "/tea-room",
 ];
 
 export function Footer() {
-  
+
   const { pathname } = useLocation();
 
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
@@ -38,7 +38,7 @@ export function Footer() {
             </div>
             <div className="px-5 py-2">
               <Link
-                to="login"
+                to="/login"
                 className="text-base leading-6 text-black hover:text-gray-900"
               >
                 My account
