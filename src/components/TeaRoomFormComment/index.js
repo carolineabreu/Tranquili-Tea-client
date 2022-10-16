@@ -25,22 +25,24 @@ export function TeaRoomFormComment() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="w-full max-w-sm">
-        <div className="flex items-center border-b border-teal-500 py-2">
+    <div className="flex p-10">
+      <form onSubmit={handleSubmit} className=" rounded overflow-hidden shadow-lg">
+        <div className="flex items-center border-b border-gray-500  pl-40 py-4">
           <label htmlFor="formComment"></label>
           <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none p-10 bg-transparent border-none w-full text-gray-700 mr-3 py-10 px-2 leading-tight focus:outline-none"
             onChange={handleChange}
             id="formComment"
             type="text"
             value={commentForm.comment}
             name="comment"
           />
-          <button className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
+          <button className="flex-shrink-0 bg-gray-500 hover:bg-gray-700 border-gray-500 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
             Comment
           </button>
         </div>
       </form>
+      </div>
     </>
   );
 

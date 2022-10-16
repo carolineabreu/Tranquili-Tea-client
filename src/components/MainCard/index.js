@@ -8,7 +8,7 @@ export function MainCard() {
           <div className="max-w-xl ">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-red-900 sm:text-4xl sm:leading-none">
               Feel good
-              <br className="hidden md:block" />
+              <br className="hidden sm:block md:block" />
               flavours to suit your{" "}
               <span className="relative px-1">
                 <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
@@ -20,8 +20,8 @@ export function MainCard() {
           </div>
           <div className="grid gap-5 row-gap-8 sm:grid-cols-2">
             <div className="bg-white border-l-2 shadow-sm border-deep-purple-accent-400">
-              <div className="h-full p-5 border border-l-0 rounded-r">
-                <h6 className="mb-2 font-semibold leading-5 text-purple-900">
+              <div className="h-full p-3 border border-l-0 rounded-r">
+                <h6 className="mb-2 font-semibold leading-5 text-red-900">
                   Tea for every mood
                 </h6>
                 <p className="text-sm text-gray-900">
@@ -36,8 +36,8 @@ export function MainCard() {
               </div>
             </div>
             <div className="bg-white border-l-4 shadow-sm border-deep-purple-accent-400">
-              <div className="h-full p-5 border border-l-0 rounded-r">
-                <h6 className="mb-2 font-semibold leading-5 text-purple-900">
+              <div className="h-full p-3 border border-l-0 rounded-r">
+                <h6 className="mb-2 font-semibold leading-5 text-red-900">
                   Qualiti-Tea in every sip
                 </h6>
                 <p className="text-sm text-gray-900">
@@ -52,16 +52,12 @@ export function MainCard() {
             </div>
           </div>
         </div>
-        <div className="flex pt-40 flex-col">
-          <div className="max-w-xl h-50">
-            <img
-              className="object-cover w-full  rounded shadow-lg sm:h-96"
-              src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+        <div className="">
+            <img className="object-cover w-full h-96 rounded shadow-lg sm:min-h-full"
+              src="https://images.unsplash.com/photo-1586600485773-c90ebcd53540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
               alt="tea leaves and a white cup"
             />
-            <div></div>
-          </div>
-        </div>
+            </div>
       </div>
     </div>
   );
