@@ -65,9 +65,9 @@ export function TeaDetails() {
               Name:{teaDetail.name}
             </h1>
             <div className="pl-0">
-<p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
+              <p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
 
-</div>
+            </div>
             <div className="flex mb-4">
               <span className="flex items-center">
                 <svg
@@ -129,12 +129,12 @@ export function TeaDetails() {
               </span>
             </div>
             <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
-            <p>Category: {teaDetail.category}</p>
-            <p>Origin: {teaDetail.origin}</p>
-            <p>Brew: {teaDetail.brew}</p>
-            <p>Temperature: {teaDetail.temperature}</p>
-            <p>Flavour: {teaDetail.flavour}</p>
-            <p>Ingredients: {teaDetail.ingredients}</p>
+            <p><strong>Category:</strong> {teaDetail.category}</p>
+            <p><strong>Origin:</strong> {teaDetail.origin}</p>
+            <p><strong>Brew:</strong> {teaDetail.brew}</p>
+            <p><strong>Temperature:</strong> {teaDetail.temperature}</p>
+            <p><strong>Flavour:</strong> {teaDetail.flavour}</p>
+            <p><strong>Ingredients:</strong> {teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Caffeine Free</span>
@@ -149,7 +149,7 @@ export function TeaDetails() {
                     <option>100 g</option>
                     <option>250 g </option>
                   </select>
-                </div>              
+                </div>
               </div>
             </div>
             <div className="flex mt-6 items-center pb-5 ">
