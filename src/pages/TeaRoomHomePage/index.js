@@ -27,33 +27,35 @@ export function TeaRoomHomePage() {
         console.log(currentPost);
         return (
           <div>
-            <div class="min-h-20 py-6 px-10 w-full bg-gray-100 flex items-center justify-center">
-                <div class="bg-white max-w-3xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500 sm:px-6">
-                  <div className="col-span-9 shadow rounded  px-10 pt-5 pb-7">
-                    {/* FIXME: mostrar o username, não o id */}
-                    <span className="text-sm text-gray-600 flex items-center">
-                      {currentPost.owner}
+            <div class="min-h-20 py-6 w-full bg-gray-100 flex items-center justify-center" style={{ backgroundColor: "  #F5F5F5 " }}>
+
+              <div class="bg-white max-w-xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500" >
+                <div className="col-span-9 shadow rounded  px-10 pt-5 pb-7">
+                  {/* FIXME: mostrar o username, não o id */}
+                  <span className="text-sm text-gray-600 flex items-center">
+                    {currentPost.owner.username}
+                  </span>
+                  <span className="text-sm text-gray-600 flex items-center">
+                    {differenceInDays(
+                      new Date(Date.now()),
+                      new Date(currentPost.createdAt)
+                    )}{" "}
+                    days ago
+                  </span>
+                  <div className="font-bold text-xl mb-2">
+                    <Link to={`/tea-room/post/${currentPost._id}`}>
+                      {currentPost.title}
+                    </Link>
+                  </div>
+                  <div className="px-6 pt-4 pb-2">
+                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                      {currentPost.tag}
                     </span>
-                    <span className="text-sm text-gray-600 flex items-center">
-                      {differenceInDays(
-                        new Date(Date.now()),
-                        new Date(currentPost.createdAt)
-                      )}{" "}
-                      days ago
-                    </span>
-                    <div className="font-bold text-2xl mb-2">
-                      <Link to={`/tea-room/post/${currentPost._id}`}>
-                        {currentPost.title}
-                      </Link>
-                    </div>
-                    <div className=" pt-2 pb-2">
-                      <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                        {currentPost.tag}
-                      </span>
-                    </div>
-                    <p className="text-gray-700 text-base">
-                      {currentPost.body}
-                    </p>
+                  </div>
+                  <p className="text-gray-700 text-base">
+                    {currentPost.body}
+                  </p>
+                  <Link to={`/tea-room/post/${currentPost._id}`}>
                     <button class="inline-flex items-center px-1 pt-2 ml-1 flex-column">
                       <svg
                         class="w-5 h-5 ml-2 text-gray-600 cursor-pointer fill-current hover:text-gray-900"
@@ -66,42 +68,43 @@ export function TeaRoomHomePage() {
                         />
                       </svg>
                     </button>
-                    <button class="inline-flex items-center px-1 -ml-1 flex-column">
-                      <svg
-                        class="w-5 h-5 text-gray-600 cursor-pointer hover:text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div className="mt-4 flex items-center">
-                      <div className="flex -space-x-2 mr-2">
-                        <img
-                          className="rounded-full w-6 h-6 border border-white"
-                          src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                          alt=""
-                        />
-                        <img
-                          className="rounded-full w-6 h-6 border border-white"
-                          src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                          alt=""
-                        />
-                      </div>
-                      <div className="text-sm text-gray-500 font-semibold">
-                        5 Replies
-                      </div>
+                  </Link>
+                  <button class="inline-flex items-center px-1 -ml-1 flex-column">
+                    <svg
+                      class="w-5 h-5 text-gray-600 cursor-pointer hover:text-gray-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div className="mt-4 flex items-center">
+                    <div className="flex -space-x-2 mr-2">
+                      <img
+                        className="rounded-full w-6 h-6 border border-white"
+                        src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
+                        alt=""
+                      />
+                      <img
+                        className="rounded-full w-6 h-6 border border-white"
+                        src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
+                        alt=""
+                      />
+                    </div>
+                    <div className="text-sm text-gray-500 font-semibold">
+                      5 Replies
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         );
       })}
