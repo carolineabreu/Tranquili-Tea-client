@@ -65,9 +65,9 @@ export function TeaDetails() {
               Name:{teaDetail.name}
             </h1>
             <div className="pl-0">
-<p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
+              <p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
 
-</div>
+            </div>
             <div className="flex mb-4">
               <span className="flex items-center">
                 <svg
@@ -149,7 +149,7 @@ export function TeaDetails() {
                     <option>100 g</option>
                     <option>250 g </option>
                   </select>
-                </div>              
+                </div>
               </div>
             </div>
             <div className="flex mt-6 items-center pb-5 ">
