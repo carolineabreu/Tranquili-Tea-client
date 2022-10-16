@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { api } from "../../api/api";
+import { api } from "../../../api/api";
 import differenceInDays from "date-fns/differenceInDays";
 import { Link } from "react-router-dom";
-import { NavbarForum } from "../../components/NavbarForum/index";
+import { NavbarForum } from "../../../components/NavbarForum/index";
 
 export function TeaRoomHomePage() {
   const [allPosts, setAllPosts] = useState([]);

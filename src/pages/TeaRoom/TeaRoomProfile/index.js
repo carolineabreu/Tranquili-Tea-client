@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { api } from "../../api/api";
+import { api } from "../../../api/api";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import ProfileTabs from "../../components/TeaRoomProfile/Tab";
 import { Link } from "react-router-dom";
-import { NavbarForum } from "../../components/NavbarForum/index";
+import { NavbarForum } from "../../../components/NavbarForum/index";
 
 
 export function TeaRoomProfile() {

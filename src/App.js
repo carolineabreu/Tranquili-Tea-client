@@ -37,14 +37,16 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
             <Route path="/profile/edit" element={<EditProfile />} />
+            <Route path="/ourteam" element={<OurTeam />} />
+            <Route path="*" element={<ErrorPage />} />
+
+            <Route path="/teaDetail/:id" element={<TeaDetails />} />
             <Route path="/Teas" element={<Teas />} />
             <Route path="/productlist" element={<ProductList />} />
-            <Route path="/teaDetail/:id" element={<TeaDetails />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/carrinho" element={<CarrinhoPage />} />
             <Route path="/orderDone" element={<OrderDone />} />
-            <Route path="/ourteam" element={<OurTeam />} />
-            <Route path="*" element={<ErrorPage />} />
+
             <Route path="/tea-room" element={<ProtectedRoute component={TeaRoomHomePage} />} />
             <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
             <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
