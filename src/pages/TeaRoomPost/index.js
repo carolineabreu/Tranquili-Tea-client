@@ -49,7 +49,7 @@ export function TeaRoomPost() {
             {post.body}
           </p>
         </div>
-      </div>;
+      </div>
       
       <TeaRoomFormComment />
       <TeaRoomComment />

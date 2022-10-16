@@ -25,12 +25,12 @@ export function TeaRoomFormComment() {
 
   return (
     <>
-    <div className="flex p-10">
-      <form onSubmit={handleSubmit} className=" rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+      <form onSubmit={handleSubmit} className="">
         <div className="flex items-center border-b border-gray-500  pl-40 py-4">
           <label htmlFor="formComment"></label>
           <input
-            className="appearance-none p-10 bg-transparent border-none w-full text-gray-700 mr-3 py-10 px-2 leading-tight focus:outline-none"
+            className="appearance-none p-10 bg-transparent border-none w-full text-gray-700 mr-10 py-10 px-2 leading-tight focus:outline-none"
             onChange={handleChange}
             id="formComment"
             type="text"

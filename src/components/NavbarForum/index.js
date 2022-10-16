@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export function NavbarForum() {
   return (
     <div>
-      <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
+      <nav className=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20 ">
         <div className="inline-flex">
           <Link to="/" className="_o6689fn" href="/"><div className="hidden md:block">
           </div>
@@ -43,7 +43,7 @@ export function NavbarForum() {
                 <div className="flex  flex-shrink items-center relative cursor-pointer whitespace-nowrap text-xl text-blue-400  font-mono" >Tranquili-Tea</div>
               </Link>
             </div>
-            <div className="block">
+            <div className="block md:block ">
               <div className="inline relative">
                 <Link to="/tea-room/profile">
                   <button type="button" className="inline-flex items-center relative border-black-900 px-2 border rounded-full hover:bg-blue-100">
