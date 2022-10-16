@@ -1,32 +1,47 @@
 import { useLocation, Link } from "react-router-dom";
-import logo from "../images/Low Resolution Logo - Transparent Background.png";
-
+import logo from "../images/Low Resolution Logo - Transparent Background-2.png";
+import { useState, useEffect } from "react";
 import "../../index.css";
 
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-room/profile", "/tea-room"];
 
 export function Navbar() {
   const { pathname } = useLocation();
+ const [click, setClick] = useState(false);
+ const [button, setButton]= useState(true);
+
+ const handleClick = () => setClick(!click);
+ const closeMobileMenu = () => setClick(false);
+
+ const showButton = () => {
+  if (window.innerWidth <= 960) {
+    setButton(false);
+  }else {
+    setButton(true);
+  }
+  };
+  useEffect(() => {
+    showButton ( );
+  }, []);
 
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
 
-
   return (
-    <div>
-      <header className="py-4 shadow- sm:px-6 lg:px-8 bg-white">
+    <div className="bg-white sm:px-6  md:px-8 lg:px-8">
+      <header className="lex flex-wrap items-center justify-between w-full py-3 md:py-0 px-4 text-lg text-gray-700">
         <div className="container flex items-center justify-between">
           <Link to="/">
-          <img className = "w-56 rounded-md hover:bg-green-700" src={logo} alt="Logo" />
+          <img className = "items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
           </Link>
-          <div className="w-full pl-20 max-w-xl relative flex">
+          <div className="w-full pl-20 max-auto relative flex">
             <input
-              type="text"
+              type="text" 
               name="search"
               id="search"
-              className="w-80  h-10 border border-primary border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+              className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
               placeholder="search"
             />
-            <button className="bg-primary border border-primary text-white px-4 rounded-r-md hover:bg-transparent hover:text-primary transition">
+            <button className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition">
               Search
             </button>
           </div>
@@ -50,7 +65,7 @@ export function Navbar() {
                 </svg>
               </div>
               <div className="text-xs leading-3">Wishlist</div>
-              <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+              <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-blue-200 text-black text-xs">
                 8
               </div>
             </Link>
@@ -75,7 +90,7 @@ export function Navbar() {
                 </svg>
               </div>
               <div className="text-xs leading-3">Cart</div>
-              <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+              <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-blue-200 text-blue text-xs">
                 2
               </div>
             </Link>
@@ -83,7 +98,7 @@ export function Navbar() {
               to="/profile"
               className="text-center text-gray-700 hover:text-primary transition relative"
             >
-              <div className="text-4xl">
+              <div className="text-4xl pl-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -105,112 +120,49 @@ export function Navbar() {
         </div>
       </header>
 
-      <nav className="bg-blue-200 sm:px-6 lg:px-8"> 
-        <div className="container flex">
-          <div className="px-8 py-4 bg-primary flex items-center cursor-pointer relative group">
-            <span className="text-black">
-              <i className="fa-solid fa-bars" />
-            </span>
-            <Link to="/productlist">
-              <span className="capitalize ml-2 text-black">Tea Selection</span>
-            </Link>
-            <div className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/sofa.svg"
-                  alt="sofa"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Stress</span>
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/terrace.svg"
-                  alt="terrace"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Energy</span>
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/bed.svg"
-                  alt="bed"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Mood-Booster</span>
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/office.svg"
-                  alt="office"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Anxiety</span>
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/outdoor-cafe.svg"
-                  alt="outdoor"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Restless</span>
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-              >
-                <img
-                  src="../assets/images/icons/bed-2.svg"
-                  alt="Mattress"
-                  className="w-5 h-5 object-contain"
-                />
-                <span className="ml-6 text-gray-600 text-sm">Focus</span>
-              </Link>
+      <nav className="bg-blue-200 shadow-lg">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex justify-between">
+              <div className="flex space-x-7">
+                <div>
+                  {/* Website Logo */}
+                  <Link to="productlist" className="flex items-center py-4 px-2">
+                    <span className="font-extrabold text-black text-lg">Tea Selection</span>
+                  </Link>
+                </div>
+                {/* Primary Navbar items */}
+                <div className="hidden md:flex items-center space-x-1">
+                  <Link to="/" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Home</Link>
+                  <Link to="tea-room" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Tea Room</Link>
+                  <Link to="/ourteam" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Our Team</Link>
+                  <Link to="/contact-us" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Contact Us</Link>
+                </div>
+              </div>
+              {/* Secondary Navbar items */}
+              <div className="hidden md:flex items-center space-x-3 ">
+                <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
+                <Link to="/sign-up" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300">Sign Up</Link>
+              </div>
+              {/* Mobile menu button */}
+              <div className="md:hidden flex items-center onClick=">
+                <button className="outline-none mobile-menu-button">
+                  <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-between flex-grow pl-12">
-            <div className="flex items-center space-x-6 capitalize">
-              <Link
-                to="/"
-                className="text-black  hover:text-white transition"
-              >
-                Home
-              </Link>
-              <Link
-                to="/tea-room"
-                className="text-black hover:text-white transition"
-              >
-                Tea Room
-              </Link>
-              <Link to="/ourteam" className="text-black hover:text-white transition">
-                Our Team
-              </Link>
-              <Link to="/" className="text-black hover:text-white transition">
-                Contact us
-              </Link>
-            </div>
-            <Link to="/login" className="text-black hover:text-white transition">
-              Login/Register
-            </Link>
+          {/* mobile menu */}
+          <div className="hidden mobile-menu onClick=">
+            <ul className>
+              <li className="active"><Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
+              <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Tea Room</Link></li>
+              <li><Link to="ourteam" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
+              <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</Link></li>
+            </ul>
           </div>
-        </div>
-      </nav>
-
-    </div>
-  );
-}
+        </nav>
+      </div>
+    );
+  }

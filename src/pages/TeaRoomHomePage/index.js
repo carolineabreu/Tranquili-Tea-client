@@ -27,9 +27,8 @@ export function TeaRoomHomePage() {
         console.log(currentPost);
         return (
           <div>
-            <div class="min-h-20 py-6 w-full bg-gray-100 flex items-center justify-center">
-        
-                <div class="bg-white max-w-xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
+            <div class="min-h-20 py-6 px-10 w-full bg-gray-100 flex items-center justify-center">
+                <div class="bg-white max-w-3xl rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500 sm:px-6">
                   <div className="col-span-9 shadow rounded  px-10 pt-5 pb-7">
                     {/* FIXME: mostrar o username, não o id */}
                     <span className="text-sm text-gray-600 flex items-center">
@@ -42,13 +41,13 @@ export function TeaRoomHomePage() {
                       )}{" "}
                       days ago
                     </span>
-                    <div className="font-bold text-xl mb-2">
+                    <div className="font-bold text-2xl mb-2">
                       <Link to={`/tea-room/post/${currentPost._id}`}>
                         {currentPost.title}
                       </Link>
                     </div>
-                    <div className="px-6 pt-4 pb-2">
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    <div className=" pt-2 pb-2">
+                      <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                         {currentPost.tag}
                       </span>
                     </div>
