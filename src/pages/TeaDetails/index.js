@@ -128,13 +128,13 @@ export function TeaDetails() {
                 <span className="text-gray-600 ml-3">4 Reviews</span>
               </span>
             </div>
-            <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
-            <p><Strong>Category: </Strong>{teaDetail.category}</p>
-            <p><Strong>Origin: </Strong>{teaDetail.origin}</p>
-            <p><Strong>Brew: </Strong>{teaDetail.brew}</p>
-            <p><Strong>Temperature:</Strong> {teaDetail.temperature}°C</p>
-            <p><Strong> Flavour: </Strong>{teaDetail.flavour}</p>
-            <p><Strong>Ingredients: </Strong>{teaDetail.ingredients}</p>
+            <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>  
+            <p><strong>Category:</strong> {teaDetail.category}</p>
+            <p><strong>Origin:</strong> {teaDetail.origin}</p>
+            <p><strong>Brew:</strong> {teaDetail.brew}</p>
+            <p><strong>Temperature:</strong> {teaDetail.temperature}</p>
+            <p><strong>Flavour:</strong> {teaDetail.flavour}</p>
+            <p><strong>Ingredients:</strong> {teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Caffeine Free</span>
