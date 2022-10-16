@@ -26,7 +26,7 @@ export function AllPosts() {
       {posts.map((currentPost) => {
         return (
           <div className={style.container__card}>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg" style={{ width: "370px", height: "270px" }}>
               <div className="px-6 py-4">
                 {/* FIXME: mostrar o username, não o id */}
                 <span className="text-sm text-gray-600 flex items-center">{currentPost.owner}</span>

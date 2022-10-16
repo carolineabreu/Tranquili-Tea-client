@@ -31,20 +31,26 @@ export function TeaRoomPost() {
   }, [id]);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "  #F5F5F5 ", height: "100vh" }}>
       <NavbarForum />
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <div className="px-6 py-4">
-          <span className="text-sm text-gray-600 flex items-center">{post.owner.username}</span>
-          <span className="text-sm text-gray-600 flex items-center">{differenceInDays(
-            new Date(Date.now()),
-            new Date(post.createdAt)
-          )}{" "}
-            days ago</span>
-          <div className="font-bold text-xl mb-2">{post.title}</div>
-          <div className="px-6 pt-4 pb-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{post.tag}</span>
+      <div className="flex flex-col items-center" >
+        <div className="max-w-sm rounded overflow-hidden shadow-lg " >
+          <div className="px-6 py-4">
+            <span className="text-sm text-gray-600 flex items-center">{post.owner.username}</span>
+            <span className="text-sm text-gray-600 flex items-center">{differenceInDays(
+              new Date(Date.now()),
+              new Date(post.createdAt)
+            )}{" "}
+              days ago</span>
+            <div className="font-bold text-xl mb-2">{post.title}</div>
+            <div className="px-6 pt-4 pb-2">
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{post.tag}</span>
+            </div>
+            <p className="text-gray-700 text-base">
+              {post.body}
+            </p>
           </div>
+<<<<<<< HEAD
           <p className="text-gray-700 text-base">
             {post.body}
           </p>
@@ -53,6 +59,13 @@ export function TeaRoomPost() {
       
       <TeaRoomFormComment />
       <TeaRoomComment />
+=======
+        </div>;
+
+        <TeaRoomFormComment />
+        <TeaRoomComment />
+      </div>
+>>>>>>> 28b5139e676a09f327a7f5e258668e19b65c7cce
     </div>
   );
 }
