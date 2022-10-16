@@ -129,12 +129,12 @@ export function TeaDetails() {
               </span>
             </div>
             <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
-            <p>Category: {teaDetail.category}</p>
-            <p>Origin: {teaDetail.origin}</p>
-            <p>Brew: {teaDetail.brew}</p>
-            <p>Temperature: {teaDetail.temperature}</p>
-            <p>Flavour: {teaDetail.flavour}</p>
-            <p>Ingredients: {teaDetail.ingredients}</p>
+            <p><Strong>Category: </Strong>{teaDetail.category}</p>
+            <p><Strong>Origin: </Strong>{teaDetail.origin}</p>
+            <p><Strong>Brew: </Strong>{teaDetail.brew}</p>
+            <p><Strong>Temperature:</Strong> {teaDetail.temperature}°C</p>
+            <p><Strong> Flavour: </Strong>{teaDetail.flavour}</p>
+            <p><Strong>Ingredients: </Strong>{teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Caffeine Free</span>
