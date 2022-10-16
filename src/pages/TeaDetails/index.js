@@ -19,6 +19,7 @@ export function TeaDetails() {
     price: 0
   });
 
+
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(50);
   const [subtotal, setSubtotal] = useState(0);
@@ -129,7 +130,7 @@ export function TeaDetails() {
               </span>
             </div>
             <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
-            <p><strong>Category:</strong> {teaDetail.category}</p>
+            <p><strong>Category:</strong> {String(teaDetail.category)}</p>
             <p><strong>Origin:</strong> {teaDetail.origin}</p>
             <p><strong>Brew:</strong> {teaDetail.brew}</p>
             <p><strong>Temperature:</strong> {teaDetail.temperature}</p>
