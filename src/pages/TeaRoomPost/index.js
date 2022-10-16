@@ -50,10 +50,14 @@ export function TeaRoomPost() {
               {post.body}
             </p>
           </div>
-        </div>;
-        <TeaRoomFormComment />
-        <TeaRoomComment />
+          <p className="text-gray-700 text-base">
+            {post.body}
+          </p>
+        </div>
       </div>
+      
+      <TeaRoomFormComment />
+      <TeaRoomComment />
     </div>
   );
 }
