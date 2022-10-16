@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 import "../../index.css";
+import image6 from "../images/blacktea.jpeg";
+import image7 from "../images/greentea.webp";
+import image8 from "../images/Chamomile.webp";
+import image9 from "../images/oolong.jpeg";
 
 export function HomeCards() {
   return (
     <div className="bg-gray-100">
-      <div className="mx-auto max-w-2xl py-20 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-4xl py-10 px-2 sm:py-10 sm:px-6 md:py-10 sm-px-6  lg:max-w-full lg:px-4">
         <h2 className="text-3xl font-bold pb-4 tracking-tight font-sans  text-center text-black-600">
-          Best Sellers
+          BEST SELLERS
         </h2>
-        <div className="bg-gray-100 mx-auto  py-18 px-4 gap-4 flex-wrap flex justify-center items-center">
+        <div className="bg-gray-100 mx-auto  py-18 px-2 gap-4 flex-wrap flex justify-center items-center">
           <div className="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <img
-              className="h-40 object-cover rounded-xl"
-              h-40
-              object-cover
-              rounded-xl
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZLVzBWRitCZP8x1f-VbmY6VibRa08fQKwIfyEhI5w-lw_yyKUsyUMMDzCrP-9t0s2Pnk&usqp=CAU"
+              className="h-40 object-cover pl-10 rounded-xl"
+              src={image6}
               alt="Black Tea"
             />
             <div className="p-2">
@@ -31,7 +32,7 @@ export function HomeCards() {
             <div className="m-2">
               <Link
                 to="/Teas"
-                className="text-black bg-purple-300 px-3 py-1 rounded-md hover:bg-purple-700"
+                className="text-black bg-blue-300 px-3 py-1 rounded-md hover:bg-blue-700"
               >
                 Shop Now
               </Link>
@@ -39,11 +40,8 @@ export function HomeCards() {
           </div>
           <div className="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <img
-              className="h-40 object-cover rounded-xl"
-              h-40
-              object-cover
-              rounded-xl
-              src="https://images.unsplash.com/photo-1627894006066-b45786537103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGdyZWVuJTIwdGVhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              className="h-40 object-cover pl-10 rounded-xl"
+              src={image7}
               alt=" green tea"
             />
             <div className="p-2">
@@ -58,7 +56,7 @@ export function HomeCards() {
             <div className="m-2">
               <Link
                 to="/Teas"
-                className="text-black bg-purple-300  px-3 py-1 rounded-m"
+                className="text-black bg-blue-300 px-3 py-1 rounded-md hover:bg-blue-700"
               >
                 Shop Now
               </Link>
@@ -66,11 +64,8 @@ export function HomeCards() {
           </div>
           <div className="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <img
-              className="h-40 object-cover rounded-xl"
-              h-40
-              object-cover
-              rounded-xl
-              src="https://cdn.shopify.com/s/files/1/0559/8078/5828/products/Camomile_grande.jpg?v=1620954490"
+              className="h-40 object-cover pl-10 rounded-xl"
+              src={image8}
               alt="chamomile tea leaves"
             />
             <div className="p-2">
@@ -85,7 +80,7 @@ export function HomeCards() {
             <div className="m-2">
               <Link
                 to="/Teas"
-                className="text-black bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
+                className="text-black bg-blue-300 px-3 py-1 rounded-md hover:bg-blue-700"
               >
                 Shop Now
               </Link>
@@ -93,11 +88,8 @@ export function HomeCards() {
           </div>
           <div className="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
             <img
-              className="h-40 object-cover rounded-xl"
-              h-40
-              object-cover
-              rounded-xl
-              src="https://cdn.intelligencebank.com/au/share/NOrD/1VN0z/z0ZP6/preset=pB6BA/T105AE003_oolong_loose_leaf_hi-res"
+              className="h-40 object-cover pl-10 rounded-xl"
+              src={image9}
               alt="Oloong Tea"
             />
             <div className="p-2">
@@ -112,7 +104,7 @@ export function HomeCards() {
             <div className="m-2">
               <Link
                 to="/Teas"
-                className="text-black  bg-purple-300  px-3 py-1 rounded-md hover:bg-purple-700"
+                className="text-black bg-blue-300 px-3 py-1 rounded-md hover:bg-blue-700"
               >
                 Shop Now
               </Link>

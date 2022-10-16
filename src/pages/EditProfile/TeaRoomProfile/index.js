@@ -65,7 +65,6 @@ export function EditTeaRoomProfile() {
             <div className="icons flex text-gray-500 m-2">
               <div className="count ml-auto text-gray-400 text-xs font-semibold">0/200</div>
             </div>
-            {/* buttons */}
             <div className="buttons flex">
               <button type="submit" className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500">Submit</button>
             </div>

@@ -7,7 +7,7 @@ export function Testimonials() {
       <div className="lg:px-20 md:px-6 px-4 py-12">
         <div className="flex flex-col items-center justify-center">
           <h1 className="lg:text-3xl tracking-tight font-sans font-bold text-center text-black-600">
-            What our customers are saying
+            WHAT OUR COSTUMERS ARE SAYING
           </h1>
         </div>
         <div className="w-full lg:flex items-center gap-6 mt-10">
@@ -20,10 +20,10 @@ export function Testimonials() {
                 />
               </div>
               <p className="text-base leading-6 text-gray-600 mt-4">
-                I have been using Tranquil-Tea Store for about a year and have
+                "I have been using Tranquil-Tea Store for about a year and have
                 had all positive experiences. The website is easy to navigate.
                 They always have my tea in stock and is delivered on time. I
-                would and have recommended this to friends and family.
+                would and have recommended this to friends and family."
               </p>
               <div className="absolute bottom-0 -mb-4 ml-10">
                 <img

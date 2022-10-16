@@ -15,7 +15,7 @@ const products = [
       id: 2 ,
       name: 'Organic Yerba Mate',
       href: '/carrinho',
-      imageSrc: 'https://cdn.shopify.com/s/files/1/2256/0415/products/Organic-yerba.jpg?v=1511468981',
+      imageSrc: 'https://i.etsystatic.com/17235473/r/il/b97bea/1825539315/il_1588xN.1825539315_9w4b.jpg',
       imageAlt: "Yerba Mate leaves",
       qty: 'ounce loose',
       price: '$22.85',
@@ -42,11 +42,11 @@ const products = [
   
   export function ProductList() {
     return (
-      <div className="bg-white">
-        <div className="mx-auto  pt-8 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-3xl font-bold pb-4 tracking-tight font-sans  text-center text-black-600">Customers also purchased</h2>
+      <div className="bg-gray-100">
+        <div className="px-8 mx-auto  pt-8 sm:py-10 sm:px-6 lg:max-w-full lg:px-8">
+          <h2 className="text-3xl font-bold pb-4 tracking-tight p  text-center text-black-600">YOU MIGHT ALSO ENJOY</h2>
   
-          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
               <div key={product.id} className="group relative">
                 <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
