@@ -128,7 +128,7 @@ export function TeaDetails() {
                 <span className="text-gray-600 ml-3">4 Reviews</span>
               </span>
             </div>
-            <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
+            <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>  
             <p><strong>Category:</strong> {teaDetail.category}</p>
             <p><strong>Origin:</strong> {teaDetail.origin}</p>
             <p><strong>Brew:</strong> {teaDetail.brew}</p>
