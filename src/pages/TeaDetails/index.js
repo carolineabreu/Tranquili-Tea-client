@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../index.css";
 
+
 export function TeaDetails() {
   const { id } = useParams();
   console.log(id);
@@ -23,6 +24,8 @@ export function TeaDetails() {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(50);
   const [subtotal, setSubtotal] = useState(0);
+ 
+
 
   useEffect(() => {
     async function fetchTeaDetail() {
@@ -58,7 +61,7 @@ export function TeaDetails() {
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
             alt="..."
-            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+            className="lg:w-1/2 w-full lg:h-auto md:h-auto h-64 object-cover object-center rounded"
             src={teaDetail.image}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -158,7 +161,6 @@ export function TeaDetails() {
               <div className="flex">
                 <button
                   className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
-                  onClick={handleSubmit}
                 >
                   Add to cart
                 </button>

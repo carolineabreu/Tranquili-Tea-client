@@ -72,7 +72,14 @@ module.exports = {
           800: "#931407",
           900: "#5D0D04",
         },
-
+        neutral: {
+          "very-pale-blue": "#f5f7ff",
+          "desaturated-blue": "#7280a7",
+          "dark-blue": "#1f2f56",
+          "dark-blue-2": "hsl(212, 24%, 26%)",
+          "grayish-blue": "hsl(211, 10%, 45%)",
+          "light-grey": "hsl(223, 19%, 93%)",
+          "very-light-grey": " hsl(228, 33%, 97%)",
       },
     },
     variants: {
@@ -88,4 +95,5 @@ module.exports = {
     require("tw-elements/dist/plugin"),
     require("tailwindcss/colors"),
   ],
+}
 };
