@@ -7,9 +7,9 @@ export function OurTeam() {
   return (
     <div>
       <div className="w-full bg-white">
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-4">
+        <section className="max-w-xl mx-auto xsm:max-w-xsm sm:px-2 sm:max-w-xsm md:max-w-2xl lg:max-w-7xl">
           <div className="text-center pb-12">
-            <h2 className="text-base font-bold text-indigo-600"></h2>
+            <h2 className="text-base font-bold text-gray-600"></h2>
             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-500">
            OUR TEAM MEMBERS
             </h1>

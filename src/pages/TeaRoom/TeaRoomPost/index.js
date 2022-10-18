@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { differenceInDays } from "date-fns";
 import { api } from "../../../api/api";
 import { NavbarForum } from "../../../components/NavbarForum/index";
-import { TeaRoomFormComment } from "../../components/TeaRoomFormComment";
+import { TeaRoomFormComment } from "../../../components/TeaRoom/TeaRoomFormComment";
 import { TeaRoomComment } from "../../../components/TeaRoom/TeaRoomComment";
 
 
