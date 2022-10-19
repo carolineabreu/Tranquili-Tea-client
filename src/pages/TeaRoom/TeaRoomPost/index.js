@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { differenceInDays } from "date-fns";
 import { api } from "../../../api/api";
 import { NavbarForum } from "../../../components/NavbarForum/index";
 import { TeaRoomFormComment } from "../../../components/TeaRoom/TeaRoomFormComment";
 import { TeaRoomComment } from "../../../components/TeaRoom/TeaRoomComment";
+import "../../../pages/TeaRoom/TeaRoomHomePage/styles.css"
 
 
 export function TeaRoomPost() {
@@ -13,7 +14,7 @@ export function TeaRoomPost() {
     owner: "",
     title: "",
     body: "",
-    tag: ""
+    tag: "",
   });
 
   useEffect(() => {
@@ -33,31 +34,56 @@ export function TeaRoomPost() {
   return (
     <div style={{ backgroundColor: "  #F5F5F5 ", height: "100vh" }}>
       <NavbarForum />
-      <div className="flex flex-col items-center" >
-        <div className="max-w-sm rounded overflow-hidden shadow-lg " >
-          <div className="px-6 py-4">
-            <span className="text-sm text-gray-600 flex items-center">{post.owner.username}</span>
-            <span className="text-sm text-gray-600 flex items-center">{differenceInDays(
-              new Date(Date.now()),
-              new Date(post.createdAt)
-            )}{" "}
-              days ago</span>
-            <div className="font-bold text-xl mb-2">{post.title}</div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{post.tag}</span>
+      <div >
+      <div className="container-post">
+                      <div className="card mb-2">
+                        <div className="card-body p-2 p-sm-3">
+                          <div className="media forum-item">
+                            <Link
+                              to=""
+                              data-toggle="collapse"
+                              data-target=".forum-content"
+                            >
+                              <img
+                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                className="mr-3 rounded-circle"
+                                width={50}
+                                alt="User"
+                              />
+                            </Link>
+                            <div className="media-body">
+                              <h6>
+                                <Link to={`/tea-room/post/${post._id}`}>
+                                  {post.title}
+                                </Link>
+                              </h6>
+                              <p className="text-secondary">
+                                {post.body}
+                              </p>
+                              <p className="text-muted">
+                                <span>
+                                  {post.owner.username}
+                                  {""}
+                                </span>{" "}
+                                replied{" "}
+                                <span className="text-secondary font-weight-bold">
+                                  {differenceInDays(
+                                    new Date(Date.now()),
+                                    new Date(post.createdAt)
+                                  )}{" "}
+                                  days ago
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              <TeaRoomFormComment />
+              <TeaRoomComment />
             </div>
-            <p className="text-gray-700 text-base">
-              {post.body}
-            </p>
-          </div>
-          <p className="text-gray-700 text-base">
-            {post.body}
-          </p>
-        </div>
-      </div>
-
-      <TeaRoomFormComment />
-      <TeaRoomComment />
-    </div>
+            </div>
+         </div>
+          
+    
   );
 }
