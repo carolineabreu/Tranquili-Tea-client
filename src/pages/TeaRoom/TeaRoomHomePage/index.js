@@ -3,6 +3,7 @@ import { api } from "../../../api/api";
 import differenceInDays from "date-fns/differenceInDays";
 import { Link } from "react-router-dom";
 import { NavbarForum } from "../../../components/NavbarForum/index";
+import "./styles.css";
 
 export function TeaRoomHomePage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -25,92 +26,315 @@ export function TeaRoomHomePage() {
     <div>
       <NavbarForum />
       {allPosts.map((currentPost) => {
-        console.log(currentPost);
         return (
-          <div>         
-            <div class="flex flex-col py-2 w-full bg-gray-100 items-center justify-center">
-              <div class="bg-white rounded-lg px-6 py-3 hover:shadow-2xl transition duration-500 md:max-width-60">
-              <div className="font-bold text-xl  text-blue-300 mb-1">
-                  <Link to={`/tea-room/post/${currentPost._id}`}>
-                    {currentPost.title}
-                  </Link>
-                </div>
-                <span className="text-lg font-semibold rounded-l text-gray-700 flex items-center">
-                  {currentPost.owner.username}
-                  {""}
-                </span>
-                <span className="text-sm text-gray-500 flex items-center">
-                  <p></p>{differenceInDays(
-                    new Date(Date.now()),
-                    new Date(currentPost.createdAt)
-                  )}{" "}
-                  days ago
-                </span>
-                <div className="pt-2 pb-2">
-                  <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    {currentPost.tag}
-                  </span>
-                </div>
-                <p className="text-gray-700 text-base border-top  ">{currentPost.body}</p>
-                <Link to={`/tea-room/post/${currentPost._id}`}>
-                  <button class="inline-flex items-center px-1 pt-2 ml-1 flex-column">
-                    <svg
-                      class="w-5 h-5 ml-2 text-gray-600 cursor-pointer fill-current hover:text-gray-900"
-                      viewBox="0 0 95 78"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M29.58 0c1.53.064 2.88 1.47 2.879 3v11.31c19.841.769 34.384 8.902 41.247 20.464 7.212 12.15 5.505 27.83-6.384 40.273-.987 1.088-2.82 1.274-4.005.405-1.186-.868-1.559-2.67-.814-3.936 4.986-9.075 2.985-18.092-3.13-24.214-5.775-5.78-15.377-8.782-26.914-5.53V53.99c-.01 1.167-.769 2.294-1.848 2.744-1.08.45-2.416.195-3.253-.62L.85 30.119c-1.146-1.124-1.131-3.205.032-4.312L27.389.812c.703-.579 1.49-.703 2.19-.812zm-3.13 9.935L7.297 27.994l19.153 18.84v-7.342c-.002-1.244.856-2.442 2.034-2.844 14.307-4.882 27.323-1.394 35.145 6.437 3.985 3.989 6.581 9.143 7.355 14.715 2.14-6.959 1.157-13.902-2.441-19.964-5.89-9.92-19.251-17.684-39.089-17.684-1.573 0-3.004-1.429-3.004-3V9.936z"
-                        fill-rule="nonzero"
-                      />
-                    </svg>
-                  </button>
-                </Link>
-                <button class="inline-flex items-center px-1 -ml-1 flex-column">
-                  <svg
-                    class="w-5 h-5 text-gray-600 cursor-pointer hover:text-gray-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                    ></path>
-                  </svg>
-                </button>
-                
-                
-                <div className="mt-1 flex items-center">
-                  <div className="flex -space-x-2 mr-2">
-                    <img
-                      className="rounded-full w-6 h-6 border border-white"
-                      src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                      alt=""
-                    />
-                    <img
-                      className="rounded-full w-6 h-6 border border-white"
-                      src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                      alt=""
-                    />
+          <div>
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+              integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+              crossOrigin="anonymous"
+            />
+            <div className="container">
+              <div className="main-body p-0">
+                <div className="inner-wrapper">
+                  <div className="inner-sidebar">
+                    <div className="inner-sidebar-header justify-content-center">
+                      <Link to="/tea-room/new-post">
+                      <button
+                        className="btn btn-primary has-icon btn-block"
+                        type="button"
+                        data-toggle="modal"
+                        data-target="#threadModal"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="feather feather-plus mr-2"
+                        >
+                          <line x1={12} y1={5} x2={12} y2={19} />
+                          <line x1={5} y1={12} x2={19} y2={12} />
+                        </svg>
+                        NEW DISCUSSION
+                      </button>
+                      </Link>
+                    </div>
+                    <div className="inner-sidebar-body p-0">
+                      <div className="p-3 h-100" data-simplebar="init">
+                        <div
+                          className="simplebar-wrapper"
+                          style={{ margin: "-16px" }}
+                        >
+                          <div className="simplebar-height-auto-observer-wrapper">
+                            <div className="simplebar-height-auto-observer" />
+                          </div>
+                          <div className="simplebar-mask">
+                            <div
+                              className="simplebar-offset"
+                              style={{ right: "0px", bottom: "0px" }}
+                            >
+                              <div
+                                className="simplebar-content-wrapper"
+                                style={{
+                                  height: "100%",
+                                  overflow: "hidden scroll",
+                                }}
+                              >
+                                <div
+                                  className="simplebar-content"
+                                  style={{ padding: "16px" }}
+                                >
+                                  <nav className="nav nav-pills nav-gap-y-1 flex-column">
+                                  <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon active"
+                                    >
+                                    Tags
+                                    </Link>
+                                  <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon"
+                                    >
+                                     Question
+                                    </Link>
+                                    <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon"
+                                    >
+                                      Recommendation
+                                    </Link>
+                                    <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon"
+                                    >
+                                     Blog
+                                    </Link>
+                                    <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon"
+                                    >
+                                      Review
+                                    </Link>
+                                    <Link
+                                      to="javascript:void(0)"
+                                      className="nav-link nav-link-faded has-icon"
+                                    >
+                                      Discussion
+                                    </Link>
+                                  </nav>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="simplebar-placeholder"
+                            style={{ width: "234px", height: "292px" }}
+                          />
+                        </div>
+                        <div
+                          className="simplebar-track simplebar-horizontal"
+                          style={{ visibility: "hidden" }}
+                        >
+                          <div
+                            className="simplebar-scrollbar"
+                            style={{ width: "0px", display: "none" }}
+                          />
+                        </div>
+                        <div
+                          className="simplebar-track simplebar-vertical"
+                          style={{ visibility: "visible" }}
+                        >
+                          <div
+                            className="simplebar-scrollbar"
+                            style={{
+                              height: "151px",
+                              display: "block",
+                              transform: "translate3d(0px, 0px, 0px)",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-500 font-semibold">
-                    5 Replies
+                  <div className="inner-main">
+                    <div className="inner-main-header">
+                      <select className="custom-select custom-select-sm w-auto mr-1">
+                        <option selected>Tags</option>
+                        <option value={1}>Question</option>
+                        <option value={3}>Recommendation</option>
+                        <option value={3}>Blog</option>
+                        <option value={3}>Review</option>
+                        <option value={3}>Discussion</option>
+                      </select>
+                      <span className="input-icon input-icon-sm ml-auto w-auto">
+                        <input
+                          type="text"
+                          className="form-control form-control-sm bg-gray-200 border-gray-200 shadow-none mb-4 mt-4"
+                          placeholder="Search forum"
+                        />
+                      </span>
+                    </div>
+                    <div className="inner-main-body p-2 p-sm-3 collapse forum-content show">
+                      <div className="card mb-2">
+                        <div className="card-body p-2 p-sm-3">
+                          <div className="media forum-item">
+                            <Link
+                              to=""
+                              data-toggle="collapse"
+                              data-target=".forum-content"
+                            >
+                              <img
+                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                className="mr-3 rounded-circle"
+                                width={50}
+                                alt="User"
+                              />
+                            </Link>
+                            <div className="media-body">
+                              <h6>
+                                <Link to={`/tea-room/post/${currentPost._id}`}>
+                                  {currentPost.title}
+                                </Link>
+                              </h6>
+                              <p className="text-gray-700 border rounded-2 bg-slate-50 h-20 pl-4 pt-2">
+                                {currentPost.body}
+                              </p>
+                              <p className="text-muted">
+                                <span>
+                                  {currentPost.owner.username}
+                                  {""}
+                                </span>{" "}
+                                replied{" "}
+                                <span className="text-secondary font-weight-bold">
+                                  {differenceInDays(
+                                    new Date(Date.now()),
+                                    new Date(currentPost.createdAt)
+                                  )}{" "}
+                                  days ago
+                                </span>
+                              </p>
+                            </div>
+                            <div className="text-muted small text-center align-self-center pt-0">
+                              <span className="d-none d-sm-inline-block">
+                              <Link to="#"><i class="fa fa-thumbs-up"></i> Like (22)</Link>
+                              </span>
+                              <Link to={`/tea-room/post/${currentPost._id}`}>
+                              <span>
+                                <i className="far fa-comment color-blue ml-2" /> 3
+                              </span>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* <ul className="pagination pagination-sm pagination-circle justify-content-center mb-0">
+                        <li className="page-item disabled">
+                          <span className="page-link has-icon">
+                            <i className="material-icons">chevron_left</i>
+                          </span>
+                        </li>
+                        <li className="page-item">
+                          <Link className="page-link" to="javascript:void(0)">
+                            1
+                          </Link>
+                        </li>
+                        <li className="page-item active">
+                          <span className="page-link">2</span>
+                        </li>
+                        <li className="page-item">
+                          <Link className="page-link" to="javascript:void(0)">
+                            3
+                          </Link>
+                        </li>
+                        <li className="page-item">
+                          <Link
+                            className="page-link has-icon"
+                            to="javascript:void(0)"
+                          >
+                            <i className="material-icons">chevron_right</i>
+                          </Link>
+                        </li>
+                      </ul> */}
+                    </div>
+                    {/* /Forum List */}
+                    {/* Forum Detail */}
+                    {/* <div className="inner-main-body p-2 p-sm-3 collapse forum-content">
+                      <div className="card mb-2">
+                        <div className="card-body">
+                          <div className="media forum-item">
+                            <a href="javascript:void(0)" className="card-link">
+                              <img
+                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                className="rounded-circle"
+                                width={50}
+                                alt="User"
+                              />
+                              <small className="d-block text-center text-muted">
+                                Newbie
+                              </small>
+                            </a>
+                            <div className="media-body ml-3">
+                              <a
+                                href="javascript:void(0)"
+                                className="text-secondary"
+                              >
+                                Mokrani
+                              </a>
+                              <small className="text-muted ml-2">
+                                1 hour ago
+                              </small>
+                              <h5 className="mt-1">Realtime fetching data</h5>
+                              <div className="mt-3 font-size-sm">
+                                <p>Hellooo :)</p>
+                                <p>
+                                  I'm newbie with laravel and i want to fetch
+                                  data from database in realtime for my
+                                  dashboard anaytics and i found a solution with
+                                  ajax but it dosen't work if any one have a
+                                  simple solution it will be helpful
+                                </p>
+                                <p>Thank</p>
+                              </div>
+                            </div>
+                            <div className="text-muted small text-center">
+                              <span className="d-none d-sm-inline-block">
+                                <i className="far fa-eye" /> 19
+                              </span>
+                              <span>
+                                <i className="far fa-comment ml-2" /> 3
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> */}
+                    {/* /Forum Detail */}
+                    {/* /Inner main body */}
                   </div>
+                  {/* /Inner main */}
                 </div>
+                {/* New Thread Modal */}
+                {/* <div
+                  className="modal fade"
+                  id="threadModal"
+                  tabIndex={-1}
+                  role="dialog"
+                  aria-labelledby="threadModalLabel"
+                  aria-hidden="true"
+                >
+              
+                </div> */}
               </div>
             </div>
           </div>
         );
       })}
-        <div className="rounded-lg bg-gray-100 px-5 py-3 ">
-                <form action="/comments" method="post">
-                    <input type="text" className="bg-white  w-full rounded-t-none border-solid border-2 border-blue-500 border-t p-2" placeholder="Press enter to post comment" />
-                </form>
-              </div>
     </div>
   );
 }
