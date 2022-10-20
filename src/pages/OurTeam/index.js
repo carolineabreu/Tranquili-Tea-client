@@ -38,7 +38,7 @@ export function OurTeam() {
                 <div className="flex justify-start space-x-2">
                   <Link to="/" className="text-gray-500 hover:text-gray-600">
                     <svg
-                      class="w-6 h-6 text-gray-500 fill-current"
+                      className="w-6 h-6 text-gray-500 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
                     >
@@ -87,7 +87,7 @@ export function OurTeam() {
                 <div className="flex justify-start space-x-2">
                   <Link to="/" className="text-gray-500 hover:text-gray-600">
                     <svg
-                      class="w-6 h-6 text-gray-500 fill-current"
+                      className="w-6 h-6 text-gray-500 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
                     >
@@ -135,7 +135,7 @@ export function OurTeam() {
                 </p>
                 <div className="flex justify-start space-x-2">
                   <svg
-                    class="w-6 h-6 text-gray-500 fill-current"
+                    className="w-6 h-6 text-gray-500 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"
                   >

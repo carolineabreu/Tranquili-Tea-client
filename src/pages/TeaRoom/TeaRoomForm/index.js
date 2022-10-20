@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../../api/api";
 import { NavbarForum } from "../../../components/NavbarForum/index";
+import "../../../pages/TeaRoom/TeaRoomHomePage/styles.css";
 
 export function TeaRoomForm() {
   const navigate = useNavigate();
@@ -17,7 +18,6 @@ export function TeaRoomForm() {
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-  
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -37,10 +37,28 @@ export function TeaRoomForm() {
     <>
       <NavbarForum />
       <div>
-        <form onSubmit={handleSubmit}>
-          <div className="heading text-center font-bold text-2xl m-5 text-gray-800">New Post</div>
-          <style dangerouslySetInnerHTML={{ __html: "\n  body {background:white !important;}\n" }} />
-          <div className="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+      <div className="modal-dialog modal-lg" role="document"> <div className="modal-content">
+<form>
+<div className="modal-header d-flex align-items-center bg-primary text-white">
+<h6
+        className="modal-title mb-0 pl-12"
+        id="threadModalLabel"
+      >
+        New Post
+      </h6>
+      {/* <button
+        type="button"
+        className="close"
+        data-dismiss="modal"
+        aria-label="Close"
+        onClick={handleSubmit}
+      >
+        <span aria-hidden="true">×</span>
+      </button> */}
+    </div>
+        <div className="" role="document">
+          <div className="modal-content">
+          <div className="editor mx-auto w-10/12 flex flex-col py-4 text-gray-800   max-w-2xl">
             <label htmlFor="formTitle"></label>
             <input
               onChange={handleChange}
@@ -68,7 +86,7 @@ export function TeaRoomForm() {
 
             <label htmlFor="formTag">Tags</label>
             <select
-              className="tag  bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
+              className="tag  bg-gray-100 border border-gray-300 p-2s mb-4 outline-none"
               id="formTag"
               name="tag"
               value={form.tag}
@@ -88,17 +106,21 @@ export function TeaRoomForm() {
               <svg className="mr-2 cursor-pointer hover:text-gray-700 border rounded-full p-1 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>
               <div className="count ml-auto text-gray-400 text-xs font-semibold">0/300</div>
             </div>
-
             <div className="buttons flex">
               <Link to="/tea-room">
                 <div className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto">Cancel</div>
               </Link>
-              <button type="submit" onSubmit={handleSubmit} className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500">Post</button>
+              <Link to="/tea-room">
+              <button type="submit" onSubmit={handleSubmit} className="btn border p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500">Post</button>
+              </Link>
             </div>
           </div>
+          </div>
+        </div>
         </form>
+      </div>
+      </div>
       </div>
     </>
   );
 }
-

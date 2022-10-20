@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { api } from "../../../api/api";
-
+import "../../../pages/TeaRoom/TeaRoomHomePage/styles.css";
 
 export function TeaRoomFormComment() {
   const { id } = useParams();
   const [commentForm, setCommentForm] = useState({
-    comment: ""
+    comment: "",
   });
 
   async function handleSubmit(e) {
@@ -25,25 +25,37 @@ export function TeaRoomFormComment() {
 
   return (
     <>
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-      <form onSubmit={handleSubmit} className="">
-        <div className="flex items-center border-b border-gray-500  pl-40 py-4">
-          <label htmlFor="formComment"></label>
-          <input
-            className="appearance-none p-10 bg-transparent border-none w-full text-gray-700 mr-10 py-10 px-2 leading-tight focus:outline-none"
-            onChange={handleChange}
-            id="formComment"
-            type="text"
-            value={commentForm.comment}
-            name="comment"
-          />
-          <button className="flex-shrink-0 bg-gray-500 hover:bg-gray-700 border-gray-500 hover:border-gray-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">
-            Comment
-          </button>
+      <div className="card ">
+        <div className="media-body ml">
+          <form onSubmit={handleSubmit}>
+            <div className="comment-container">
+              <input
+                className="form-comment"
+                onChange={handleChange}
+                id="formComment"
+                type="text"
+                value={commentForm.comment}
+                name="comment"
+              />
+            </div>
+          </form>
+
+          <div className="flex-parent jc-center">
+            <button
+              onSubmit={handleSubmit}
+              type="submit"
+              className="button1 margin-right"
+            >
+              Comment
+            </button>
+            <Link to="/tea-room">
+              <button type="submit" className="button2">
+                Back
+              </button>
+            </Link>
+          </div>
         </div>
-      </form>
       </div>
     </>
   );
-
 }

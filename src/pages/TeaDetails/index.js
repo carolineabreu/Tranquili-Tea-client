@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CarrinhoContext } from "../ecommerce/Carrinho/carrinho";
-;
+
+import "../../index.css";
+// import { TeaReview } from "../../components/TeaReview";
+// import { TeaReview } from "./review";
 
 
 export function TeaDetails() {
@@ -62,22 +65,21 @@ export function TeaDetails() {
   function handleChangePrice(e) {
     setQuantity(e.target.value);
   }
-
   return (
+    <>
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
             alt="..."
             className="lg:w-1/2 w-full lg:h-auto md:h-auto h-64 object-cover object-center rounded"
-            src={teaDetail.image}
-          />
+            src={teaDetail.image} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              Name:{teaDetail.name}
+              {teaDetail.name}
             </h1>
             <div className="pl-0">
-              <p className="font-bold text-xl">From ${Number(parseInt(teaDetail.price)).toFixed(2)}</p>
+              <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
 
             </div>
             <div className="flex mb-4">
@@ -145,19 +147,19 @@ export function TeaDetails() {
 
             <p><strong>Origin:</strong> {teaDetail.origin}</p>
             <p><strong>Brew:</strong> {teaDetail.brew}</p>
-            <p><strong>Temperature:</strong> {teaDetail.temperature}</p>
+            <p><strong>Temperature:</strong> {teaDetail.temperature}°C</p>
             <p><strong>Flavour:</strong> {teaDetail.flavour}</p>
             <p><strong>Ingredients:</strong> {teaDetail.ingredients}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Caffeine Free</span>
-                <button className="border-2 border-green-200  bg-green-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                <button className="border-2 border-green-300  bg-green-300 rounded-full w-6 h-6 focus:outline-none"></button>
               </div>
 
               <div className="flex ml-6 items-center">
                 <span className="mr-3">Quantity</span>
                 <div className="relative">
-                  <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10">
+                  <select className="rounded border appearance-none border-blue-400 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base pl-3 pr-10">
                     <option>50 g</option>
                     <option>100 g</option>
                     <option>250 g </option>
@@ -170,6 +172,7 @@ export function TeaDetails() {
                 <button
                   onClick={() => handleCart(teaDetail)}
                   className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
+
                 >
                   Add to cart
                 </button>
@@ -179,5 +182,7 @@ export function TeaDetails() {
         </div>
       </div>
     </section>
+    {/* <TeaReview /> */}
+    </>
   );
 }
