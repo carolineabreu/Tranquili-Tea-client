@@ -3,16 +3,15 @@ import { CarrinhoContext } from "../../Carrinho/carrinho.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../../../api/api.js";
-import { HandleCart } from "../pages/handleCarrinho.js";
+//import { HandleCart } from "../pages/handleCarrinho.js";
 
 export function Card() {
   const [allTea, setAllTea] = useState([]);
   const carrinho = useContext(CarrinhoContext);
-  const [tea, setTea] = useState({});
+  // const [tea, setTea] = useState({});
 
-  function handleCarrinho(tea) {
-    console.log(carrinho);
-    console.log(tea);
+  function handleCart(tea) {
+    //console.log(tea);
     carrinho.setTea([...carrinho.tea, { ...tea }]);
     console.log(carrinho);
   }
@@ -29,6 +28,7 @@ export function Card() {
     fetchTea();
   }, []);
   return (
+
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-start">
@@ -58,7 +58,7 @@ export function Card() {
                 <fieldset>
                   <legend className="block w-full bg-gray-50  font-bold px-5 py-3 text-md">
                     {/* trocar as categorias?*/}
-                    Category 
+                    Category
                   </legend>
                   <div className="space-y-2 px-5 py-6">
                     <div className="flex items-center">
@@ -123,18 +123,18 @@ export function Card() {
                       </label>
                     </div>
                     <div className="flex items-center">
-                        <input id="outdoor" type="checkbox" name="type[outdoor]" className="h-5 w-5 rounded border-gray-300" />
-                        <label htmlFor="outdoor" className="ml-3 text-sm font-medium">
-                          Tiresome
-                        </label>
-                      </div>
-                      <div className="pt-2">
-                        <button type="button" className="text-xs text-gray-700 underline">
-                          Reset Type
-                        </button>
-                      </div>
+                      <input id="outdoor" type="checkbox" name="type[outdoor]" className="h-5 w-5 rounded border-gray-300" />
+                      <label htmlFor="outdoor" className="ml-3 text-sm font-medium">
+                        Tiresome
+                      </label>
                     </div>
-                  </fieldset>
+                    <div className="pt-2">
+                      <button type="button" className="text-xs text-gray-700 underline">
+                        Reset Type
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
                 <div>
                   <fieldset>
                     <legend className="block w-full bg-gray-50 px-5 py-3 text-md font-bold">
@@ -185,30 +185,30 @@ export function Card() {
                         </label>
                       </div>
                       <div className="flex items-center">
-                          <input id="green tea" type="checkbox" name="green tea" className="h-5 w-5 rounded border-gray-300" />
-                          <label htmlFor="green tea" className="ml-3 text-sm font-medium">
-                            Green Tea
-                          </label>
-                        </div>
-                        <div className="pt-2">
-                          <button type="button" className="text-xs text-gray-700 underline">
-                            Reset Type
-                          </button>
-                        </div>
+                        <input id="green tea" type="checkbox" name="green tea" className="h-5 w-5 rounded border-gray-300" />
+                        <label htmlFor="green tea" className="ml-3 text-sm font-medium">
+                          Green Tea
+                        </label>
                       </div>
-                    </fieldset>
-                  </div>
-                  <div className="flex justify-between border-t border-gray-200 px-5 py-3">
-                    <button name="reset" type="button" className="rounded text- font-medium text-gray-700 underline">
-                      Reset All
-                    </button>
-                    <button name="commit" type="button" className="rounded bg-green-600 px-4 py-3 text-xs font-medium text-white">
-                      Apply Filters
-                    </button>
-                  </div>
-                </form>
-              </details>
-            </div>
+                      <div className="pt-2">
+                        <button type="button" className="text-xs text-gray-700 underline">
+                          Reset Type
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div className="flex justify-between border-t border-gray-200 px-5 py-3">
+                  <button name="reset" type="button" className="rounded text- font-medium text-gray-700 underline">
+                    Reset All
+                  </button>
+                  <button name="commit" type="button" className="rounded bg-green-600 px-4 py-3 text-xs font-medium text-white">
+                    Apply Filters
+                  </button>
+                </div>
+              </form>
+            </details>
+          </div>
 
           <div className="lg:col-span-3">
             <div className="flex items-center justify-between">
@@ -238,14 +238,14 @@ export function Card() {
               <div className="mt-4 grid grid-cols-1 gap-px border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-3">
                 {allTea.map((currentTea) => {
                   return (
-                    <Link to="/tea-detail" className="relative block bg-white">
+                    <div className="relative block bg-white">
                       <button
                         type="button"
                         className="absolute right-4 top-4 rounded-full bg-green-200 p-2 text-blue-600"
                       >
                         {/* criar wishlist?? */}
                         <span className="sr-only">Wishlist</span>
-                        
+
                         <svg
                           className="h-4 w-4"
                           fill="none"
@@ -280,7 +280,7 @@ export function Card() {
                           {currentTea.price}
                         </p>
                         <button
-                          onClick={() => handleCarrinho(currentTea)}
+                          onClick={() => handleCart(currentTea)}
                           className="rounded-lg px-2 py-2 bg-blue-200 hover:bg-blue-400 duration-300 mr-2.5"
                         >
                           Add to Cart
@@ -293,7 +293,7 @@ export function Card() {
                           <button>View</button>
                         </Link>
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
               </div>

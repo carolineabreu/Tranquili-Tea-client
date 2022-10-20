@@ -22,7 +22,7 @@ export function Footer() {
             <div className="px-5 py-2"></div>
             <div className="px-5 py-2">
               <Link
-                to="/ourteam"
+                to="/ourTeam"
                 className="text-base leading-6 text-black hover:text-gray-900"
               >
                 Our Team
