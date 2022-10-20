@@ -1,17 +1,25 @@
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { CarrinhoContext } from "../carrinho.js";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export function CarrinhoPage() {
   const carrinho = useContext(CarrinhoContext);
+
+  const [form, setForm] = useState({
+    quantity: 0,
+  });
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
   return (
     <>
       <div className="ml-40 mt-10">
         <div className="row float: right">
-          <Link to="/productlist">
+          <Link to="/productList">
             <button
-              type="submit"
               className="relative mb-5 block w-25 py-2 content-center text-white bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 border rounded uppercase font-roboto font-medium"
             >
               Continue Shopping
@@ -32,6 +40,13 @@ export function CarrinhoPage() {
                 <p className="text-xl font-medium font-mono font-style: italic text-gray-900 mt-4 mb-3">
                   US$ {currentTea.price} per 100 grams
                 </p>
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="Quantity"
+                  onChange={handleChange}
+                />
+                <p>Subtotal: {currentTea.price}</p>
               </div>
             );
           })}

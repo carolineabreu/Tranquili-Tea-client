@@ -7,21 +7,21 @@ const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-r
 
 export function Navbar() {
   const { pathname } = useLocation();
- const [click, setClick] = useState(false);
- const [button, setButton]= useState(true);
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
 
- const handleClick = () => setClick(!click);
- const closeMobileMenu = () => setClick(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
- const showButton = () => {
-  if (window.innerWidth <= 960) {
-    setButton(false);
-  }else {
-    setButton(true);
-  }
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
   };
   useEffect(() => {
-    showButton ( );
+    showButton();
   }, []);
 
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
@@ -31,11 +31,11 @@ export function Navbar() {
       <header className="lex flex-wrap items-center justify-between w-full py-3 md:py-0 px-4 text-lg text-gray-700">
         <div className="container flex items-center justify-between">
           <Link to="/">
-          <img className = "items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
+            <img className="items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
           </Link>
           <div className="w-full pl-20 max-auto relative flex">
             <input
-              type="text" 
+              type="text"
               name="search"
               id="search"
               className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
@@ -121,48 +121,48 @@ export function Navbar() {
       </header>
 
       <nav className="bg-blue-200 shadow-lg">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between">
-              <div className="flex space-x-7">
-                <div>
-                  {/* Website Logo */}
-                  <Link to="productlist" className="flex items-center py-4 px-2">
-                    <span className="font-extrabold text-black text-lg">Tea Selection</span>
-                  </Link>
-                </div>
-                {/* Primary Navbar items */}
-                <div className="hidden md:flex items-center space-x-1">
-                  <Link to="/" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Home</Link>
-                  <Link to="tea-room" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Tea Room</Link>
-                  <Link to="/ourteam" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Our Team</Link>
-                  <Link to="/contact-us" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Contact Us</Link>
-                </div>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex justify-between">
+            <div className="flex space-x-7">
+              <div>
+                {/* Website Logo */}
+                <Link to="productList" className="flex items-center py-4 px-2">
+                  <span className="font-extrabold text-black text-lg">Tea Selection</span>
+                </Link>
               </div>
-              {/* Secondary Navbar items */}
-              <div className="hidden md:flex items-center space-x-3 ">
-                <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
-                <Link to="/sign-up" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300">Sign Up</Link>
-              </div>
-              {/* Mobile menu button */}
-              <div className="md:hidden flex items-center onClick=">
-                <button className="outline-none mobile-menu-button">
-                  <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
+              {/* Primary Navbar items */}
+              <div className="hidden md:flex items-center space-x-1">
+                <Link to="/" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Home</Link>
+                <Link to="tea-room" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Tea Room</Link>
+                <Link to="/ourTeam" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Our Team</Link>
+                <Link to="/contact-us" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Contact Us</Link>
               </div>
             </div>
+            {/* Secondary Navbar items */}
+            <div className="hidden md:flex items-center space-x-3 ">
+              <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
+              <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300">Sign Up</Link>
+            </div>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center onClick=">
+              <button className="outline-none mobile-menu-button">
+                <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
-          {/* mobile menu */}
-          <div className="hidden mobile-menu onClick=">
-            <ul className>
-              <li className="active"><Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
-              <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Tea Room</Link></li>
-              <li><Link to="ourteam" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
-              <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</Link></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    );
-  }
+        </div>
+        {/* mobile menu */}
+        <div className="hidden mobile-menu onClick=">
+          <ul className>
+            <li className="active"><Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
+            <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Tea Room</Link></li>
+            <li><Link to="ourTeam" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
+            <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</Link></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
+}

@@ -1,7 +1,9 @@
 import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../../index.css";
+import { useContext } from "react";
+import { CarrinhoContext } from "../ecommerce/Carrinho/carrinho";
+;
 
 
 export function TeaDetails() {
@@ -24,8 +26,14 @@ export function TeaDetails() {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(50);
   const [subtotal, setSubtotal] = useState(0);
- 
 
+  const carrinho = useContext(CarrinhoContext);
+
+  function handleCart(tea) {
+    //console.log(tea);
+    carrinho.setTea([...carrinho.tea, { ...tea }]);
+    console.log(carrinho);
+  }
 
   useEffect(() => {
     async function fetchTeaDetail() {
@@ -160,6 +168,7 @@ export function TeaDetails() {
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
                 <button
+                  onClick={() => handleCart(teaDetail)}
                   className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                 >
                   Add to cart
