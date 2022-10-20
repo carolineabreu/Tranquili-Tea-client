@@ -50,7 +50,7 @@ export function TeaRoomFormComment() {
             </button>
             <Link to="/tea-room">
               <button type="submit" className="button2">
-                Tea Room
+                Back
               </button>
             </Link>
           </div>

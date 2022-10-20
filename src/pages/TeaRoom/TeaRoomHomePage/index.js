@@ -34,7 +34,7 @@ export function TeaRoomHomePage() {
               integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
               crossOrigin="anonymous"
             />
-            <div className="container">
+            {/* <div className="container"> */}
               <div className="main-body p-0">
                 <div className="inner-wrapper">
                   <div className="inner-sidebar">
@@ -222,8 +222,8 @@ export function TeaRoomHomePage() {
                             </div>
                             <div className="text-muted small text-center align-self-center pt-0">
                               <span className="d-none d-sm-inline-block">
-                              <Link to="#"><i class="fa fa-thumbs-up"></i> Like (22)</Link>
-                              </span>
+                              <Link to="#"><i className="fa fa-thumbs-up"></i> Like (22)</Link>
+                              </span>C
                               <Link to={`/tea-room/post/${currentPost._id}`}>
                               <span>
                                 <i className="far fa-comment color-blue ml-2" /> 3
@@ -332,7 +332,7 @@ export function TeaRoomHomePage() {
                 </div> */}
               </div>
             </div>
-          </div>
+          // </div>
         );
       })}
     </div>
