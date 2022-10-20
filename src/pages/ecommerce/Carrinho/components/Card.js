@@ -202,7 +202,7 @@ export function Card() {
                   <button name="reset" type="button" className="rounded text- font-medium text-gray-700 underline">
                     Reset All
                   </button>
-                  <button name="commit" type="button" className="rounded bg-green-600 px-4 py-3 text-xs font-medium text-white">
+                  <button name="commit" type="button" className="rounded bg-green-500 px-4 py-3 text-xs font-bold text-white">
                     Apply Filters
                   </button>
                 </div>

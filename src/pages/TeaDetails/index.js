@@ -1,9 +1,6 @@
 import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { CarrinhoContext } from "../ecommerce/Carrinho/carrinho";
-
 import "../../index.css";
 // import { TeaReview } from "../../components/TeaReview";
 // import { TeaReview } from "./review";
@@ -26,19 +23,11 @@ export function TeaDetails() {
   });
 
 
-  const [price, setPrice] = useState(0);
+  // const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(50);
+  // const [subtotal, setSubtotal] = useState(0);
+ 
 
-  const [subtotal, setSubtotal] = useState(0);
-
-
-  const carrinho = useContext(CarrinhoContext);
-
-  function handleCart(tea) {
-    //console.log(tea);
-    carrinho.setTea([...carrinho.tea, { ...tea }]);
-    console.log(carrinho);
-  }
 
   useEffect(() => {
     async function fetchTeaDetail() {
@@ -71,21 +60,16 @@ export function TeaDetails() {
   }
   return (
     <>
-    <section className="text-gray-600 body-font overflow-hidden">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <img
-            alt="..."
-            className="lg:w-1/2 w-full lg:h-auto md:h-auto h-64 object-cover object-center rounded"
-            src={teaDetail.image} />
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              {teaDetail.name}
-            </h1>
+  <section className="text-gray-700 body-font overflow-hidden bg-white">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="lg:w-5/5 xlg:w-3/5 mx-auto flex flex-wrap">
+      <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={teaDetail.image}/>
+      <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 className="text-gray-900 text-3xl title-font font-bold mb-1">{teaDetail.name}</h1>
             <div className="pl-0">
               {/* resolucao Dan */}
               {/* <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p> */}
-              <p className="font-bold text-xl">(teaDetail.price)</p>
+              <p className="font-bold text-2xl tracking-wider">C${teaDetail.price}</p>
             </div>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -148,8 +132,7 @@ export function TeaDetails() {
               </span>
             </div>
             <p className="leading-relaxed font-extrabold">{teaDetail.description}</p>
-            <p><strong>Category:</strong> {String(teaDetail.category)}</p>
-
+            <p ><strong>Category: </strong>{String(teaDetail.category)}</p>
             <p><strong>Origin:</strong> {teaDetail.origin}</p>
             <p><strong>Brew:</strong> {teaDetail.brew}</p>
             <p><strong>Temperature:</strong> {teaDetail.temperature}°C</p>
@@ -160,7 +143,6 @@ export function TeaDetails() {
                 <span className="mr-3">Caffeine Free</span>
                 <button className="border-2 border-green-300  bg-green-300 rounded-full w-6 h-6 focus:outline-none"></button>
               </div>
-
               <div className="flex ml-6 items-center">
                 <span className="mr-3">Quantity</span>
                 <div className="relative">
@@ -176,9 +158,7 @@ export function TeaDetails() {
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
                 <button
-                  onClick={() => handleCart(teaDetail)}
-                  className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
-
+                  className="px-8 py-2  bg: blue-200 transition ease-in duration-200  text-blue-600 uppercase rounded-full hover:bg-blue-500 hover:text-white border-2 border-blue-400 focus:outline-none"
                 >
                   {/* n esta funcionando */}
                   Add to cart
@@ -186,10 +166,10 @@ export function TeaDetails() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </section>
     {/* <TeaReview /> */}
-    </>
+     </>
   );
 }
