@@ -3,16 +3,15 @@ import { CarrinhoContext } from "../../Carrinho/carrinho.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../../../api/api.js";
-import { HandleCart } from "../pages/handleCarrinho.js";
+//import { HandleCart } from "../pages/handleCarrinho.js";
 
 export function Card() {
   const [allTea, setAllTea] = useState([]);
   const carrinho = useContext(CarrinhoContext);
-  const [tea, setTea] = useState({});
+  // const [tea, setTea] = useState({});
 
-  function handleCarrinho(tea) {
-    console.log(carrinho);
-    console.log(tea);
+  function handleCart(tea) {
+    //console.log(tea);
     carrinho.setTea([...carrinho.tea, { ...tea }]);
     console.log(carrinho);
   }
@@ -29,6 +28,7 @@ export function Card() {
     fetchTea();
   }, []);
   return (
+
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-start">
