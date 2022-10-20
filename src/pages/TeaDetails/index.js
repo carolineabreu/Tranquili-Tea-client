@@ -28,7 +28,9 @@ export function TeaDetails() {
 
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(50);
+
   const [subtotal, setSubtotal] = useState(0);
+
 
   const carrinho = useContext(CarrinhoContext);
 
@@ -51,14 +53,16 @@ export function TeaDetails() {
     fetchTeaDetail();
   }, []);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    window.location.reload(true);
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   window.location.reload(true);
+  // }
 
   useEffect(() => {
     function changePrice() {
-      setSubtotal((quantity / 50) * teaDetail.price);
+      // resolucao DAN
+      // setSubtotal((quantity / 50) * teaDetail.price);
+      
     }
     changePrice();
   }, [quantity]);
@@ -79,8 +83,9 @@ export function TeaDetails() {
               {teaDetail.name}
             </h1>
             <div className="pl-0">
-              <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
-
+              {/* resolucao Dan */}
+              {/* <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p> */}
+              <p className="font-bold text-xl">(teaDetail.price)</p>
             </div>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -160,6 +165,7 @@ export function TeaDetails() {
                 <span className="mr-3">Quantity</span>
                 <div className="relative">
                   <select className="rounded border appearance-none border-blue-400 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-base pl-3 pr-10">
+                   {/* arrumar */}
                     <option>50 g</option>
                     <option>100 g</option>
                     <option>250 g </option>
@@ -174,6 +180,7 @@ export function TeaDetails() {
                   className="px-8 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
 
                 >
+                  {/* n esta funcionando */}
                   Add to cart
                 </button>
               </div>
