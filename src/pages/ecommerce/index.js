@@ -138,7 +138,7 @@
             </div>
           </div>
           <div className="mt-4 grid grid-cols-1 gap-px border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,7 @@
                 </button>
               </div>
             </a>
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +182,7 @@
                 </button>
               </div>
             </a>
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -204,7 +204,7 @@
                 </button>
               </div>
             </a>
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +226,7 @@
                 </button>
               </div>
             </a>
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +248,7 @@
                 </button>
               </div>
             </a>
-            <a href="#" className="relative block bg-white">
+            <a to="#" className="relative block bg-white">
               <button type="button" className="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
                 <span className="sr-only">Wishlist</span>
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

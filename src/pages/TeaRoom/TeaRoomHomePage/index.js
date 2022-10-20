@@ -30,7 +30,7 @@ export function TeaRoomHomePage() {
           <div>
             <link
               rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+              to="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
               integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
               crossOrigin="anonymous"
             />
@@ -268,7 +268,7 @@ export function TeaRoomHomePage() {
                       <div className="card mb-2">
                         <div className="card-body">
                           <div className="media forum-item">
-                            <a href="javascript:void(0)" className="card-link">
+                            <a to="javascript:void(0)" className="card-link">
                               <img
                                 src="https://bootdey.com/img/Content/avatar/avatar1.png"
                                 className="rounded-circle"
@@ -281,7 +281,7 @@ export function TeaRoomHomePage() {
                             </a>
                             <div className="media-body ml-3">
                               <a
-                                href="javascript:void(0)"
+                                to="javascript:void(0)"
                                 className="text-secondary"
                               >
                                 Mokrani

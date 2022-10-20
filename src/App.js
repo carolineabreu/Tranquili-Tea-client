@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
+import { ContactUs } from "./pages/ContactUs";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
@@ -37,7 +38,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
             <Route path="/profile/edit" element={<EditProfile />} />
-            <Route path="/ourTeam" element={<OurTeam />} />
+            <Route path="/our-team" element={<OurTeam />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+
             <Route path="*" element={<ErrorPage />} />
 
             <Route path="/teaDetail/:id" element={<TeaDetails />} />
