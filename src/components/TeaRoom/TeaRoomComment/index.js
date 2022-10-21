@@ -8,6 +8,16 @@ export function TeaRoomComment() {
   const { id } = useParams();
   const [comment, setComment] = useState([]);
 
+  async function handleDelete(props) {
+    try {
+      const id = props._id;
+      await api.delete(`tea-room/comment/delete/${id}`);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     async function fetchComment() {
       try {
@@ -44,6 +54,9 @@ export function TeaRoomComment() {
                     <p className="text-gray-700 text-base">
                       {currentComment.comment}
                     </p>
+                    <div>
+                      <button onClick={handleDelete(currentComment._id)} className="button3">Delete</button>
+                    </div>
                   </div>
                 </div>
               </div>
