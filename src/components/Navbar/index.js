@@ -29,17 +29,18 @@ export function Navbar() {
             <img className="items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
           </Link>
           <div className="w-full pl-20 max-auto relative flex">
-            <form className="search" onSubmit={inputHandler}>
+            <form className="search" style={{ display: "flex" }} onSubmit={inputHandler}>
               <input
                 type="text"
                 name="search"
                 id="search"
                 onChange={inputHandler}
-                className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+                className="w-80 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+                style={{ height: "35px" }}
                 placeholder="search"
               />
-              <Link to="search-page">
-                <button className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition"
+              <Link to="search-page" >
+                <button style={{ height: "35px" }} className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition"
                   onClick={() => navigate("/contact")}>
                   Search
                 </button>
