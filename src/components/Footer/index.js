@@ -17,13 +17,13 @@ export function Footer() {
   return (
     <div>
       <section className="bg-gray-100">
-        <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden lg:px-8">
           <nav className="flex flex-wrap justify-center -mx-5 -my-2">
             <div className="px-5 py-2"></div>
             <div className="px-5 py-2">
               <Link
                 to="/ourTeam"
-                className="text-base leading-6 text-black hover:text-gray-900"
+                className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
               >
                 Our Team
               </Link>
@@ -31,7 +31,7 @@ export function Footer() {
             <div className="px-5 py-2">
               <Link
                 to="/our-team"
-                className="text-base leading-6 text-black hover:text-gray-900"
+                className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
               >
                 Contact Us
               </Link>
@@ -39,7 +39,7 @@ export function Footer() {
             <div className="px-5 py-2">
               <Link
                 to="/contact-us"
-                className="text-base leading-6 text-black hover:text-gray-900"
+                className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
               >
                 My account
               </Link>
