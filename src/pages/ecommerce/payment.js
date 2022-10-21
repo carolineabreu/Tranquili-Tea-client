@@ -41,42 +41,47 @@ export function Payment() {
               />
             </div>
             <div>
-              <label htmlFor="city" className="text-gray-600 mb-2 block">
-                City
-              </label>
-              <input
-                type="city"
-                onSubmit={handleChange}
-                name="city"
-                id="city"
-                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
-                placeholder="City"
-              />
-            </div>
-            <div>
-              <label htmlFor="zip" className="text-gray-600 mb-2 block">
-                Zip Code
-              </label>
-              <input
-                type="zip"
-                onSubmit={handleChange}
-                name="zip"
-                id="zip"
-                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
-                placeholder="Zip Code"
-              />
-            </div>
-            <div>
               <label htmlFor="card" className="text-gray-600 mb-2 block">
-                Card
+                Card Number
               </label>
               <input
-                type="card"
+                type="text"
+                inputMode="numeric"
                 onSubmit={handleChange}
                 name="card"
                 id="card"
+                maxLength={16}
                 className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
-                placeholder="XXX XXXX XXX XXX"
+                placeholder="XXXX XXXX XXXX XXXX"
+              />
+            </div>
+            <div>
+              <label htmlFor="date" className="text-gray-600 mb-2 block">
+                Expiration Date
+              </label>
+              <input
+                id="date"
+                type="text"
+                inputMode="numeric"
+                name="date"
+                placeholder="Month/Year"
+                required
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                pattern="[0-9/[0-9]{4}]{2}"
+              />
+            </div>
+            <div>
+              <label htmlFor="securityCode" className="text-gray-600 mb-2 block">
+                Security Code
+              </label>
+              <input
+                type="tel"
+                maxLength={3}
+                onSubmit={handleChange}
+                name="securityCode"
+                id="securityCode"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                placeholder="***"
               />
             </div>
           </div>
