@@ -30,7 +30,7 @@ export function Footer() {
             </div>
             <div className="px-5 py-2">
               <Link
-                to="/"
+                to="/our-team"
                 className="text-base leading-6 text-black hover:text-gray-900"
               >
                 Contact Us
@@ -38,7 +38,7 @@ export function Footer() {
             </div>
             <div className="px-5 py-2">
               <Link
-                to="/login"
+                to="/contact-us"
                 className="text-base leading-6 text-black hover:text-gray-900"
               >
                 My account

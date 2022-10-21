@@ -1,36 +1,22 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link , useNavigate} from "react-router-dom";
 import logo from "../images/Low Resolution Logo - Transparent Background-2.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../index.css";
 
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-room/profile", "/tea-room"];
 
 export function Navbar() {
   const { pathname } = useLocation();
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+ 
+  const navigate = useNavigate();
  
   const [inputText, setInputText] = useState("");
+const inputHandler = (e) => {
+  const lowerCase = e.target.value.toLowercase();
+  setInputText(lowerCase);
+  setInputText(inputText);
+};
 
-  const updateInput = async (input) => {
-    const filtered = inputText.filter(list => {
-     return list.name.toLowerCase().includes(input.toLowerCase())
-    })
- 
- }
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-  useEffect(() => {
-    showButton();
-  }, []);
 
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
 
@@ -41,20 +27,25 @@ export function Navbar() {
         <div className="container flex items-center justify-between">
           <Link to="/">
             <img className="items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
-          </Link>
-          <div className="w-full pl-20 max-auto relative flex">
+          </Link>  
+           <div className="w-full pl-20 max-auto relative flex">
+          <form className= "search" onSubmit={inputHandler}>
             <input
               type="text"
               name="search"
               id="search"
-              onChange={updateInput}
+              onChange={inputHandler}
               className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
               placeholder="search"
             />
-            <button className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition">
+            <Link to="search-page">
+            <button className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition"
+            onClick={() => navigate("/contact")}>
               Search
             </button>
-          </div>
+            </Link>
+            </form>
+          </div>  
           <div className="flex items-center space-x-4">
             <Link to="/" className="text-center text-gray-700 hover:text-primary transition relative"
             >
@@ -129,18 +120,15 @@ export function Navbar() {
           </div>
         </div>
       </header>
-
       <nav className="bg-blue-200 shadow-lg">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
             <div className="flex space-x-7">
               <div>
-                {/* Website Logo */}
                 <Link to="productList" className="flex items-center py-4 px-2">
                   <span className="font-extrabold text-black text-lg">Tea Selection</span>
                 </Link>
               </div>
-              {/* Primary Navbar items */}
               <div className="hidden md:flex items-center space-x-1">
                 <Link to="/" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Home</Link>
                 <Link to="tea-room" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Tea Room</Link>
@@ -150,8 +138,8 @@ export function Navbar() {
             </div>
             {/* Secondary Navbar items */}
             <div className="hidden md:flex items-center space-x-3 ">
-              <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
-              <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300">Sign Up</Link>
+              <Link to="/login"  className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
+              <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300" >Sign Up</Link>
             </div>
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center onClick=">
