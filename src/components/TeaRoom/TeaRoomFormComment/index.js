@@ -27,8 +27,8 @@ export function TeaRoomFormComment() {
     <>
       <div className="card ">
         <div className="media-body ml">
-          <form onSubmit={handleSubmit}>
-            <div className="comment-container">
+          <div className="comment-container">
+            <form onSubmit={handleSubmit}>
               <input
                 className="form-comment"
                 onChange={handleChange}
@@ -37,17 +37,16 @@ export function TeaRoomFormComment() {
                 value={commentForm.comment}
                 name="comment"
               />
-            </div>
-          </form>
+              <button
+                type="submit"
+                className="button1 margin-right"
+              >
+                Comment
+              </button>
+            </form>
+          </div>
 
           <div className="flex-parent jc-center">
-            <button
-              onSubmit={handleSubmit}
-              type="submit"
-              className="button1 margin-right"
-            >
-              Comment
-            </button>
             <Link to="/tea-room">
               <button type="submit" className="button2">
                 Back
