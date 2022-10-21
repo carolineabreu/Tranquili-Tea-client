@@ -23,6 +23,7 @@ import { ProductList } from "./pages/ecommerce/Carrinho/pages/productList.js";
 import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
 import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
 import { OrderDone } from "./pages/ecommerce/orderDone";
+import { SearchPage } from "./pages/SearchPage/search"
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/profile/edit" element={<EditProfile />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/search-page" element={<SearchPage />} />
 
             <Route path="*" element={<ErrorPage />} />
 

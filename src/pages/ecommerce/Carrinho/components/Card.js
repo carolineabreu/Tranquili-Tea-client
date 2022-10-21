@@ -27,6 +27,8 @@ export function Card() {
     }
     fetchTea();
   }, []);
+
+  
   return (
 
     <section>

@@ -9,7 +9,15 @@ export function Navbar() {
   const { pathname } = useLocation();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+ 
+  const [inputText, setInputText] = useState("");
 
+  const updateInput = async (input) => {
+    const filtered = inputText.filter(list => {
+     return list.name.toLowerCase().includes(input.toLowerCase())
+    })
+ 
+ }
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -27,6 +35,7 @@ export function Navbar() {
   if (withoutNavbarRoutes.some((item) => pathname.includes(item))) return null;
 
   return (
+
     <div className="bg-white sm:px-6  md:px-8 lg:px-8">
       <header className="lex flex-wrap items-center justify-between w-full py-3 md:py-0 px-4 text-lg text-gray-700">
         <div className="container flex items-center justify-between">
@@ -38,6 +47,7 @@ export function Navbar() {
               type="text"
               name="search"
               id="search"
+              onChange={updateInput}
               className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
               placeholder="search"
             />
