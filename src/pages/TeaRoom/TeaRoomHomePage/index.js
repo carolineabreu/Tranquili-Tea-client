@@ -92,37 +92,37 @@ export function TeaRoomHomePage() {
                                 >
                                   <nav className="nav nav-pills nav-gap-y-1 flex-column">
                                   <Link
-                                      to="javascript:void(0)"
+                                      to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon active"
                                     >
                                     Tags
                                     </Link>
                                   <Link
-                                      to="javascript:void(0)"
+                                    to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon"
                                     >
                                      Question
                                     </Link>
                                     <Link
-                                      to="javascript:void(0)"
+                                      to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon"
                                     >
                                       Recommendation
                                     </Link>
                                     <Link
-                                      to="javascript:void(0)"
+                                      to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon"
                                     >
                                      Blog
                                     </Link>
                                     <Link
-                                      to="javascript:void(0)"
+                                    to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon"
                                     >
                                       Review
                                     </Link>
                                     <Link
-                                      to="javascript:void(0)"
+                                     to="#" onclick="return false"
                                       className="nav-link nav-link-faded has-icon"
                                     >
                                       Discussion
@@ -223,7 +223,7 @@ export function TeaRoomHomePage() {
                             <div className="text-muted small text-center align-self-center pt-0">
                               <span className="d-none d-sm-inline-block">
                               <Link to="#"><i className="fa fa-thumbs-up"></i> Like (22)</Link>
-                              </span>C
+                              </span>
                               <Link to={`/tea-room/post/${currentPost._id}`}>
                               <span>
                                 <i className="far fa-comment color-blue ml-2" /> 3

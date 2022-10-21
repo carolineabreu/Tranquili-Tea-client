@@ -7,16 +7,15 @@ export function OurTeam() {
   return (
     <div>
       <div className="w-full bg-white">
-        <section className="max-w-xl mx-auto xsm:max-w-xsm sm:px-2 sm:max-w-xsm md:max-w-2xl lg:max-w-7xl">
+        <section className="max-w-xl mx-auto xsm:max-w-xsm sm:px-2 sm:max-w-xsm md:max-w-2xl lg:max-w-4xl">
           <div className="text-center pb-12">
-            <h2 className="text-base font-bold text-gray-600"></h2>
             <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-500">
            OUR TEAM MEMBERS
             </h1>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="w-full bg-gray-300 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
-              <div className="w-full md:w-40 md:h-full h-80">
+          <div className="grid grid-cols-1  max-w-20 gap-6">
+          <div className="w-full bg-gray-300 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
+            <div className="lg:w-80 xlg:w-40 md:w-40 md:h-full h-80">
                 <img
                   className="object-center object-cover w-full h-full"
                   src={images1}
@@ -51,7 +50,6 @@ export function OurTeam() {
                   >
                     <svg
                       className="w-6 h-6"
-                      aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -66,7 +64,7 @@ export function OurTeam() {
               </div>
             </div>
             <div className="w-full bg-gray-300 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-40 md:h-full h-80">
+            <div className="lg:w-80 xlg:w-40 md:w-40 md:h-full h-80">
                 <img
                   className="object-center object-cover w-full h-full"
                   src={images}
@@ -100,7 +98,6 @@ export function OurTeam() {
                   >
                     <svg
                       className="w-6 h-6"
-                      aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -115,7 +112,7 @@ export function OurTeam() {
               </div>
             </div>
             <div className="w-full bg-gray-300 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-40 md:h-full h-80">
+            <div className="lg:w-80 xlg:w-40 md:w-40 md:h-full h-80">
                 <img
                   className="object-center object-cover w-full h-full"
                   src={images2}
@@ -147,7 +144,6 @@ export function OurTeam() {
                   >
                     <svg
                       className="w-6 h-6"
-                      aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
