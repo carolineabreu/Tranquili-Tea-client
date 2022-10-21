@@ -17,7 +17,7 @@ export function TeaDetails() {
     caffeine: 0,
     flavour: "",
     ingredients: "",
-    price: 0
+    price: 0,
   });
 
   const [price, setPrice] = useState(0);
@@ -152,7 +152,9 @@ export function TeaDetails() {
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
-                <p className="font-bold text-xl">{Number(parseInt(teaDetail.price)).toFixed(2)}</p>
+                <p className="font-bold text-xl">
+                  {Number(parseInt(teaDetail.price)).toFixed(2)}
+                </p>
                 <button
                   className="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
                   onClick={handleSubmit}
