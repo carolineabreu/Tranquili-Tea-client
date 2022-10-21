@@ -262,7 +262,7 @@ export function Card() {
                         </svg>
                       </button>
                       <img
-                        alt="Tea"
+                        alt={currentTea.id}
                         src={currentTea.image}
                         className="h-56 w-full object-contain lg:h-72"
                       />

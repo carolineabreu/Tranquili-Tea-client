@@ -24,7 +24,7 @@ export function TeaDetails() {
 
 
   // const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(50);
+  // const [quantity, setQuantity] = useState(50);
   // const [subtotal, setSubtotal] = useState(0);
  
 
@@ -40,24 +40,28 @@ export function TeaDetails() {
       }
     }
     fetchTeaDetail();
-  }, []);
+  }, [id]);
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   window.location.reload(true);
-  // }
 
-  useEffect(() => {
-    function changePrice() {
-      // resolucao DAN
-      // setSubtotal((quantity / 50) * teaDetail.price);
+
+  // useEffect(() => {
+  //   function changePrice() {
+  //     // resolucao DAN
+  //     // setSubtotal((quantity / 50) * teaDetail.price);
       
-    }
-    changePrice();
-  }, [quantity]);
-  function handleChangePrice(e) {
-    setQuantity(e.target.value);
-  }
+  //   }
+  //   changePrice();
+  // }, [quantity]);
+  // function handleChangePrice(e) {
+  //   setQuantity(e.target.value);
+  // }
+  // const carrinho = useContext(CarrinhoContext);
+
+  // function handleCart(tea) {
+  //   //console.log(tea);
+  //   carrinho.setTea([...carrinho.tea, { ...tea }]);
+  //   console.log(carrinho);
+  // }
   return (
     <>
   <section className="text-gray-700 body-font overflow-hidden bg-white">

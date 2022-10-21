@@ -5,7 +5,8 @@ import image7 from "../images/greentea.webp";
 import image8 from "../images/Chamomile.webp";
 import image9 from "../images/oolong.jpeg";
 
-export function HomeCards() {
+export function HomeCard2() {
+  
   return (
     <div className="bg-gray-100">
       <div className="mx-auto max-w-4xl py-10 px-2 sm:py-10 sm:px-6 md:py-10 sm-px-6  lg:max-w-full lg:px-4">

@@ -1,14 +1,14 @@
-import { MainCard} from "../../components/MainCard";
-import { HomeCards } from "../../components/HomeCards";
+import { HomeCard1} from "../../components/HomeCard1";
+import { HomeCard2 } from "../../components/HomeCard2";
+import { CardInfo } from "../../components/CardInfo";
 import { Testimonials } from "../../components/Testimonials";
-import { ProductList } from "../../components/ProductList";
 
 export function Home() {
   return (
     <>
-      <MainCard />
-      <HomeCards />
-      <ProductList />
+      <HomeCard1/>
+      <HomeCard2 />
+      <CardInfo />
       <Testimonials />
     </>
   );
