@@ -254,8 +254,8 @@ body {
 
 .button3hover,
 .button3:focus {
-  background-color: #205b22;
-  color: #0a1d0f;
+  background-color: #dae0da;
+  color: #838583;
 }
 
 .button3:focus {
@@ -263,9 +263,9 @@ body {
 }
 
 .button3:active {
-  background-color: #3b8a1e;
+  background-color: #bdbfbd;
   box-shadow: none;
-  color: #95ef7c;
+  color: #dae0da;
 }
 
 .flex-parent {
