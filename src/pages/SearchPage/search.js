@@ -17,7 +17,7 @@ export function SearchPage() {
   
         <div className="main">
           <h1 className= "flex justify-content">Tea Search</h1>
-      <SearchList SearchList={SearchList}/>
+      <SearchList searchList={SearchList}/>
       </div>
     );
 }

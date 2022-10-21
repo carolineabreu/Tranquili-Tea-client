@@ -108,7 +108,7 @@ export function TeaRoomForm() {
               <Link to="/tea-room">
                 <div className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto">Cancel</div>
               </Link>
-              <Link to="/tea-room">
+              <Link to="/tea-room/post/new-post">
               <button type="submit" onSubmit={handleSubmit} className="btn border p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500">Post</button>
               </Link>
             </div>
