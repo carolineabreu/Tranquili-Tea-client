@@ -163,6 +163,7 @@ export function TeaDetails() {
               <div className="flex">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 <p className="font-bold text-xl">
                   {Number(parseInt(teaDetail.price)).toFixed(2)}
@@ -175,6 +176,11 @@ export function TeaDetails() {
 =======
 >>>>>>> 316dfbecc354895a88fea7cf15a21e3c2d561003
 >>>>>>> 3e5eb94 (commit)
+=======
+                <p className="font-bold text-xl">
+                  {Number(parseInt(teaDetail.price)).toFixed(2)}
+                </p>
+>>>>>>> 8d2b8560a96fc66c99a2f8d736f3d37a1f118eb1
                 <button
                   className="px-8 py-2  bg: blue-200 transition ease-in duration-200  text-blue-600 uppercase rounded-full hover:bg-blue-500 hover:text-white border-2 border-blue-400 focus:outline-none"
                 >
