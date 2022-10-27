@@ -71,7 +71,10 @@ export function Payment() {
               />
             </div>
             <div>
-              <label htmlFor="securityCode" className="text-gray-600 mb-2 block">
+              <label
+                htmlFor="securityCode"
+                className="text-gray-600 mb-2 block"
+              >
                 Security Code
               </label>
               <input

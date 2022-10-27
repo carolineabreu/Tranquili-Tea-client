@@ -3,15 +3,12 @@ import { CarrinhoContext } from "../../Carrinho/carrinho.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../../../api/api.js";
-//import { HandleCart } from "../pages/handleCarrinho.js";
 
 export function Card() {
   const [allTea, setAllTea] = useState([]);
   const carrinho = useContext(CarrinhoContext);
-  // const [tea, setTea] = useState({});
 
   function handleCart(tea) {
-    //console.log(tea);
     carrinho.setTea([...carrinho.tea, { ...tea }]);
     console.log(carrinho);
   }
@@ -28,9 +25,7 @@ export function Card() {
     fetchTea();
   }, []);
 
-  
   return (
-
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-start">
@@ -125,13 +120,24 @@ export function Card() {
                       </label>
                     </div>
                     <div className="flex items-center">
-                      <input id="outdoor" type="checkbox" name="type[outdoor]" className="h-5 w-5 rounded border-gray-300" />
-                      <label htmlFor="outdoor" className="ml-3 text-sm font-medium">
+                      <input
+                        id="outdoor"
+                        type="checkbox"
+                        name="type[outdoor]"
+                        className="h-5 w-5 rounded border-gray-300"
+                      />
+                      <label
+                        htmlFor="outdoor"
+                        className="ml-3 text-sm font-medium"
+                      >
                         Tiresome
                       </label>
                     </div>
                     <div className="pt-2">
-                      <button type="button" className="text-xs text-gray-700 underline">
+                      <button
+                        type="button"
+                        className="text-xs text-gray-700 underline"
+                      >
                         Reset Type
                       </button>
                     </div>
@@ -187,13 +193,24 @@ export function Card() {
                         </label>
                       </div>
                       <div className="flex items-center">
-                        <input id="green tea" type="checkbox" name="green tea" className="h-5 w-5 rounded border-gray-300" />
-                        <label htmlFor="green tea" className="ml-3 text-sm font-medium">
+                        <input
+                          id="green tea"
+                          type="checkbox"
+                          name="green tea"
+                          className="h-5 w-5 rounded border-gray-300"
+                        />
+                        <label
+                          htmlFor="green tea"
+                          className="ml-3 text-sm font-medium"
+                        >
                           Green Tea
                         </label>
                       </div>
                       <div className="pt-2">
-                        <button type="button" className="text-xs text-gray-700 underline">
+                        <button
+                          type="button"
+                          className="text-xs text-gray-700 underline"
+                        >
                           Reset Type
                         </button>
                       </div>
@@ -201,10 +218,18 @@ export function Card() {
                   </fieldset>
                 </div>
                 <div className="flex justify-between border-t border-gray-200 px-5 py-3">
-                  <button name="reset" type="button" className="rounded text- font-medium text-gray-700 underline">
+                  <button
+                    name="reset"
+                    type="button"
+                    className="rounded text- font-medium text-gray-700 underline"
+                  >
                     Reset All
                   </button>
-                  <button name="commit" type="button" className="rounded bg-green-500 px-4 py-3 text-xs font-bold text-white">
+                  <button
+                    name="commit"
+                    type="button"
+                    className="rounded bg-green-500 px-4 py-3 text-xs font-bold text-white"
+                  >
                     Apply Filters
                   </button>
                 </div>
