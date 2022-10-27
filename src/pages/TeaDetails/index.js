@@ -19,7 +19,7 @@ export function TeaDetails() {
     temperature: "",
     flavour: "",
     ingredients: "",
-    price: 0
+    price: 0,
   });
 
 
@@ -161,6 +161,12 @@ export function TeaDetails() {
             </div>
             <div className="flex mt-6 items-center pb-5 ">
               <div className="flex">
+<<<<<<< HEAD
+=======
+                <p className="font-bold text-xl">
+                  {Number(parseInt(teaDetail.price)).toFixed(2)}
+                </p>
+>>>>>>> 8d2b856 (páginas apagadas)
                 <button
                   className="px-8 py-2  bg: blue-200 transition ease-in duration-200  text-blue-600 uppercase rounded-full hover:bg-blue-500 hover:text-white border-2 border-blue-400 focus:outline-none"
                 >
