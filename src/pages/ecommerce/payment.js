@@ -89,7 +89,7 @@ export function Payment() {
             </div>
           </div>
           <div className="mt-4">
-            <Link to="/orderDone">
+            <Link to="/productList">
               <button
                 type="submit"
                 className="relative block w-50 py-2 content-center text-white bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 border rounded uppercase font-roboto font-medium"
