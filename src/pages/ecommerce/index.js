@@ -57,7 +57,7 @@ export function Teas(props) {
                     <span aria-hidden="true" className=" inset-0" />
                     {currentTea.name}{" "}
                   </div>{" "}
-                  <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-60 lg:aspect-none lg:h-80">
+                  <div className="min-h-60 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-60 lg:aspect-none lg:h-80">
                     <img
                       src={currentTea.image}
                       alt={currentTea.name}
