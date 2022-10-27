@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import images from "../../components/images/Design sem nome-3.png";
+<<<<<<< HEAD
 import images1 from "../../components/images/Carolproject3.jpg";
+=======
+import images1 from "../../components/images/PHOTO-2022-10-08-18-06-04.jpg";
+>>>>>>> 3e5eb94 (commit)
 import images2 from "../../components/images/Lari.jpg";
 
 export function OurTeam() {

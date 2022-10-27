@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useLocation, Link, useNavigate } from "react-router-dom";
+=======
+import { useLocation, Link , useNavigate} from "react-router-dom";
+>>>>>>> 3e5eb94 (commit)
 import logo from "../images/Low Resolution Logo - Transparent Background-2.png";
 import { useState } from "react";
 import "../../index.css";
@@ -7,6 +11,16 @@ const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-r
 
 export function Navbar() {
   const { pathname } = useLocation();
+ 
+  const navigate = useNavigate();
+ 
+  const [inputText, setInputText] = useState("");
+const inputHandler = (e) => {
+  const lowerCase = e.target.value.toLowercase();
+  setInputText(lowerCase);
+  setInputText(inputText);
+};
+
 
   const navigate = useNavigate();
 
@@ -27,6 +41,7 @@ export function Navbar() {
         <div className="container flex items-center justify-between">
           <Link to="/">
             <img className="items-center h-20 w-80  sm:flex-shrink-0 mr-8" src={logo} alt="Logo" />
+<<<<<<< HEAD
           </Link>
           <div className="w-full pl-20 max-auto relative flex">
             <form className="search" style={{ display: "flex" }} onSubmit={inputHandler}>
@@ -47,6 +62,27 @@ export function Navbar() {
               </Link>
             </form>
           </div>
+=======
+          </Link>  
+           <div className="w-full pl-20 max-auto relative flex">
+          <form className= "search" onSubmit={inputHandler}>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              onChange={inputHandler}
+              className="w-50 h-8 hidden md:block flex-shrink flex-grow-14 justify-start px-2 border border-blue border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+              placeholder="search"
+            />
+            <Link to="search-page">
+            <button className="bg-blue-200 hidden sm:shrink md:block border border-blue200 text-black px-4 rounded-r-md hover:bg-transparent hover:text-primary transition"
+            onClick={() => navigate("/contact")}>
+              Search
+            </button>
+            </Link>
+            </form>
+          </div>  
+>>>>>>> 3e5eb94 (commit)
           <div className="flex items-center space-x-4">
             <Link to="/" className="text-center text-gray-700 hover:text-primary transition relative"
             >
@@ -139,7 +175,11 @@ export function Navbar() {
             </div>
             {/* Secondary Navbar items */}
             <div className="hidden md:flex items-center space-x-3 ">
+<<<<<<< HEAD
               <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
+=======
+              <Link to="/login"  className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
+>>>>>>> 3e5eb94 (commit)
               <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300" >Sign Up</Link>
             </div>
             {/* Mobile menu button */}

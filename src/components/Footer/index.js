@@ -23,7 +23,11 @@ export function Footer() {
             <div className="px-5 py-2">
               <Link
                 to="/ourTeam"
+<<<<<<< HEAD
                 className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
+=======
+                className="text-base leading-6 text-black hover:text-gray-900"
+>>>>>>> 3e5eb94 (commit)
               >
                 Our Team
               </Link>
@@ -31,7 +35,11 @@ export function Footer() {
             <div className="px-5 py-2">
               <Link
                 to="/our-team"
+<<<<<<< HEAD
                 className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
+=======
+                className="text-base leading-6 text-black hover:text-gray-900"
+>>>>>>> 3e5eb94 (commit)
               >
                 Contact Us
               </Link>
@@ -39,7 +47,11 @@ export function Footer() {
             <div className="px-5 py-2">
               <Link
                 to="/contact-us"
+<<<<<<< HEAD
                 className="text-base leading-6 font-bold text-gray-800 hover:text-gray-400"
+=======
+                className="text-base leading-6 text-black hover:text-gray-900"
+>>>>>>> 3e5eb94 (commit)
               >
                 My account
               </Link>
