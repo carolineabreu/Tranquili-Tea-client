@@ -6,8 +6,8 @@ import { ContactUs } from "./pages/ContactUs/index";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import { Teas } from "./pages/ecommerce/index.js";
-import { Payment } from "./pages/ecommerce/payment.js";
+import { Teas } from "./pages/ShoppingCart/index";
+import { Payment } from "./pages/ShoppingCart/payment";
 import { OurTeam } from "./pages/OurTeam/index.js";
 import { TeaRoomForm } from "./pages/TeaRoom/TeaRoomForm";
 import { TeaRoomPost } from "./pages/TeaRoom/TeaRoomPost";
@@ -19,11 +19,12 @@ import { EditTeaRoomProfile } from "./pages/EditProfile/TeaRoomProfile";
 import { TeaRoomHomePage } from "./pages/TeaRoom/TeaRoomHomePage";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import { EditProfile } from "./pages/EditProfile/Profile";
-import { ProductList } from "./pages/ecommerce/Carrinho/pages/productList.js";
-import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
-import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
-import { OrderDone } from "./pages/ecommerce/orderDone";
+import { ProductList } from "./pages/ProductList/productList.js";
+import { ShoppingPage } from "./pages/ShoppingCart/shoppingPage";
+// import { ShoppingCart} from "./pages/ShoppingCart/shoppingPage";
+import { OrderDone } from "./pages/ShoppingCart/orderDone";
 import { SearchPage } from "./pages/SearchPage/search"
+import { Wishlist } from "./pages/Wishlist/index";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -31,7 +32,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <CarrinhoComponent>
+      <ShoppingPage>
         <AuthContextComponent>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -42,15 +43,17 @@ function App() {
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/search-page" element={<SearchPage />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+
 
             <Route path="*" element={<ErrorPage />} />
 
-            <Route path="/teaDetail/:id" element={<TeaDetails />} />
-            <Route path="/Teas" element={<Teas />} />
-            <Route path="/productList" element={<ProductList />} />
+            <Route path="/tea-detail/:id" element={<TeaDetails />} />
+            <Route path="/teas" element={<Teas />} />
+            <Route path="/product-list" element={<ProductList />} />
             <Route path="/payment" element={<Payment />} />
-            <Route path="/carrinho" element={<ProtectedRoute component={CarrinhoPage} />} />
-            <Route path="/orderDone" element={<OrderDone />} />
+            <Route path="/shopping-cart" element={<ProtectedRoute component={ShoppingPage} />} />
+            <Route path="/order-done" element={<OrderDone />} />
 
             <Route path="/tea-room" element={<ProtectedRoute component={TeaRoomHomePage} />} />
             <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
@@ -60,7 +63,7 @@ function App() {
           </Routes>{" "}
           <Footer />
         </AuthContextComponent>
-      </CarrinhoComponent>
+      </ShoppingPage>
     </>
   );
 }

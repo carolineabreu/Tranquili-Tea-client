@@ -1,19 +1,19 @@
 import { useContext } from "react";
-import { CarrinhoContext } from "../../Carrinho/carrinho.js";
+import { ShoppingContext } from "../../pages/ShoppingCart/shoppingCart";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { api } from "../../../../api/api.js";
+import { api } from "../../api/api.js";
 //import { HandleCart } from "../pages/handleCarrinho.js";
 
 export function Card() {
   const [allTea, setAllTea] = useState([]);
-  const carrinho = useContext(CarrinhoContext);
+  const cart = useContext(ShoppingContext);
   // const [tea, setTea] = useState({});
 
   function handleCart(tea) {
     //console.log(tea);
-    carrinho.setTea([...carrinho.tea, { ...tea }]);
-    console.log(carrinho);
+    cart.setTea([...cart.tea, { ...tea }]);
+    console.log(cart);
   }
   useEffect(() => {
     async function fetchTea() {
@@ -241,13 +241,11 @@ export function Card() {
                 {allTea.map((currentTea) => {
                   return (
                     <div className="relative block bg-white">
-                      <button
-                        type="button"
+                      <Link
+                        to="/wishlist"
                         className="absolute right-4 top-4 rounded-full bg-green-200 p-2 text-blue-600"
                       >
-                        {/* criar wishlist?? */}
                         <span className="sr-only">Wishlist</span>
-
                         <svg
                           className="h-4 w-4"
                           fill="none"
@@ -262,7 +260,7 @@ export function Card() {
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <img
                         alt={currentTea.id}
                         src={currentTea.image}

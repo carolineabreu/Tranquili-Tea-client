@@ -8,6 +8,11 @@ const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-r
 export function Navbar() {
   const { pathname } = useLocation();
 
+  const [click, setClick] = useState(false);
+
+  const closeMobileMenu = () => setClick(false);
+  const handleClick = ( ) => setClick(!click);
+
   const navigate = useNavigate();
 
   const [inputText, setInputText] = useState("");
@@ -48,7 +53,7 @@ export function Navbar() {
             </form>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="/" className="text-center text-gray-700 hover:text-primary transition relative"
+            <Link to="/wishlist" className="text-center text-gray-700 hover:text-primary transition relative"
             >
               <div className="text-2xl">
                 <svg
@@ -68,7 +73,7 @@ export function Navbar() {
               </div>
               <div className="text-xs leading-3">Wishlist</div>
               <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-blue-200 text-black text-xs">
-                8
+                4
               </div>
             </Link>
             <Link
@@ -133,18 +138,18 @@ export function Navbar() {
               <div className="hidden md:flex items-center space-x-1">
                 <Link to="/" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Home</Link>
                 <Link to="tea-room" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Tea Room</Link>
-                <Link to="/ourTeam" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Our Team</Link>
+                <Link to="/our-team" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Our Team</Link>
                 <Link to="/contact-us" className="py-1 px-2 text-gray-700 hover:border-b-4 transition-transform border-blue-500 font-semibold ">Contact Us</Link>
               </div>
             </div>
             {/* Secondary Navbar items */}
-            <div className="hidden md:flex items-center space-x-3 ">
+            <div className="hidden md:flex items-center space-x-3" onClick={handleClick}>
               <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
               <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300" >Sign Up</Link>
             </div>
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center onClick=">
-              <button className="outline-none mobile-menu-button">
+            <div className="md:hidden flex items-center" onClick={closeMobileMenu}>
+              <button className="outline-none mobile-menu-button" onClick={handleClick}>
                 <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -153,11 +158,12 @@ export function Navbar() {
           </div>
         </div>
         {/* mobile menu */}
-        <div className="hidden mobile-menu onClick=">
+        <div className="hidden mobile-menu">
           <ul className>
-            <li className="active"><Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
+            <li className="active">
+              <Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
             <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Tea Room</Link></li>
-            <li><Link to="ourTeam" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
+            <li><Link to="our-team" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
             <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</Link></li>
           </ul>
         </div>
