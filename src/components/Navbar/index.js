@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import logo from "../images/Low Resolution Logo - Transparent Background-2.png";
-import { useState } from "react";
 import "../../index.css";
 
 const withoutNavbarRoutes = ["/tea-room/new-post", "/tea-room/post/:id", "/tea-room/profile", "/tea-room"];
@@ -10,8 +10,13 @@ export function Navbar() {
 
   const [click, setClick] = useState(false);
 
-  const closeMobileMenu = () => setClick(false);
+  // const closeMobileMenu = () => setClick(false);
   const handleClick = ( ) => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+console.log(handleClick);
+
+
 
   const navigate = useNavigate();
 
@@ -77,7 +82,7 @@ export function Navbar() {
               </div>
             </Link>
             <Link
-              to="/carrinho"
+              to="/shopping-cart"
               className="text-center text-gray-700 hover:text-primary transition relative"
             >
               <div className="text-2xl">
@@ -143,14 +148,14 @@ export function Navbar() {
               </div>
             </div>
             {/* Secondary Navbar items */}
-            <div className="hidden md:flex items-center space-x-3" onClick={handleClick}>
+            <div className="hidden md:flex items-center space-x-3">
               <Link to="/login" className="py-2 px-2 font-medium text-gray-700 rounded hover:bg-blue-500 hover:text-white transition duration-300">Log In</Link>
               <Link to="/signup" className="py-2 px-2 font-medium text-white bg-green-700 rounded hover:bg-green-300 transition duration-300" >Sign Up</Link>
             </div>
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center" onClick={closeMobileMenu}>
+            <div className="md:hidden flex items-center">
               <button className="outline-none mobile-menu-button" onClick={handleClick}>
-                <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
+                <svg className=" w-6 h-6 text-gray-500 hover:text-blue-500 " fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
@@ -159,12 +164,12 @@ export function Navbar() {
         </div>
         {/* mobile menu */}
         <div className="hidden mobile-menu">
-          <ul className>
+          <ul className= {click ? "mobile-menu active" : "mobile-menu"}>
             <li className="active">
-              <Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</Link></li>
-            <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Tea Room</Link></li>
-            <li><Link to="our-team" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Our Team</Link></li>
-            <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</Link></li>
+              <Link to="/" className="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold" onClick={closeMobileMenu}>Home</Link></li>
+            <li><Link to="tea-room" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300" onClick={closeMobileMenu}>Tea Room</Link></li>
+            <li><Link to="our-team" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300" onClick={closeMobileMenu}>Our Team</Link></li>
+            <li><Link to="contact-us" className="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300" onClick={closeMobileMenu}>Contact Us</Link></li>
           </ul>
         </div>
       </nav>

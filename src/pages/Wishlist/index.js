@@ -15,7 +15,7 @@ export  function Wishlist() {
               <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In Stock</span></p>
           </div>
           <div class="text-primary text-lg font-semibold">C$ 9.98</div>
-          <Link to="carrinho"
+          <Link to="shopping-cart"
               class="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">add
               to cart</Link>
           <div class="text-gray-600 cursor-pointer hover:text-primary">

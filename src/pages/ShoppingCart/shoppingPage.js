@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ShoppingContext } from "./shoppingCart";
 import { Link } from "react-router-dom";
 
+
 export function ShoppingPage() {
 
   const cart = useContext(ShoppingContext);
@@ -17,7 +18,7 @@ export function ShoppingPage() {
               Continue Shopping
             </button>
           </Link>
-          {cart.tea.map((currentTea) => {
+          {cart.map((currentTea) => {
             return (
               <div>
                 <h1>{currentTea.name}</h1>
@@ -35,6 +36,7 @@ export function ShoppingPage() {
               </div>
             );
           })}
+          
         </div>
         <Link to="/payment">
           <button

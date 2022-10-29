@@ -7,14 +7,14 @@ import images2 from "../../components/images/Lari.jpg";
 export function OurTeam() {
   return (
    
-<div class="p-4">
-    <p class="text-center text-3xl font-bold text-gray-800 lg:text-center">
+<div className="p-4">
+    <p className="text-center text-3xl font-bold text-gray-800 lg:text-center">
         Professional team
     </p>
-    <p class="text-center mb-32 text-xl font-normal text-gray-500">
+    <p className="text-center mb-32 text-xl font-normal text-gray-500">
         Meat the best team in wolrd
     </p>
-    <div class="flex items-center space-y-24 sm:space-y-0 md:space-y-0 flex-col md:flex-row justify-center">
+    <div className="flex items-center space-y-24 sm:space-y-0 md:space-y-0 flex-col md:flex-row justify-center">
         <div className="p-4 relative">
           <div className="text-center mb-4 absolute -top-16 right-1/2 transform translate-x-1/2">
             <Link to="#" className="block relative">
