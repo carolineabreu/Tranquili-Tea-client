@@ -6,7 +6,6 @@ import { ContactUs } from "./pages/ContactUs/index";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
-import { Teas } from "./pages/ecommerce/index.js";
 import { Payment } from "./pages/ecommerce/payment.js";
 import { OurTeam } from "./pages/OurTeam/index.js";
 import { TeaRoomForm } from "./pages/TeaRoom/TeaRoomForm";
@@ -22,8 +21,7 @@ import { EditProfile } from "./pages/EditProfile/Profile";
 import { ProductList } from "./pages/ecommerce/Carrinho/pages/productList.js";
 import { CarrinhoPage } from "./pages/ecommerce/Carrinho/pages/CarrinhoPage.js";
 import { CarrinhoComponent } from "./pages/ecommerce/Carrinho/carrinho.js";
-import { OrderDone } from "./pages/ecommerce/orderDone";
-import { SearchPage } from "./pages/SearchPage/search"
+import { SearchPage } from "./pages/SearchPage/search";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -37,7 +35,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
+            <Route
+              path="/profile"
+              element={<ProtectedRoute component={Profile} />}
+            />
             <Route path="/profile/edit" element={<EditProfile />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/contact-us" element={<ContactUs />} />
@@ -46,15 +47,24 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
 
             <Route path="/teaDetail/:id" element={<TeaDetails />} />
-            <Route path="/Teas" element={<Teas />} />
+            {/* <Route path="/Teas" element={<Teas />} /> */}
             <Route path="/productList" element={<ProductList />} />
             <Route path="/payment" element={<Payment />} />
-            <Route path="/carrinho" element={<ProtectedRoute component={CarrinhoPage} />} />
-            <Route path="/orderDone" element={<OrderDone />} />
+            <Route
+              path="/carrinho"
+              element={<ProtectedRoute component={CarrinhoPage} />}
+            />
+            {/* <Route path="/orderDone" element={<OrderDone />} /> */}
 
-            <Route path="/tea-room" element={<ProtectedRoute component={TeaRoomHomePage} />} />
+            <Route
+              path="/tea-room"
+              element={<ProtectedRoute component={TeaRoomHomePage} />}
+            />
             <Route path="/tea-room/profile" element={<TeaRoomProfile />} />
-            <Route path="/tea-room/profile/edit" element={<EditTeaRoomProfile />} />
+            <Route
+              path="/tea-room/profile/edit"
+              element={<EditTeaRoomProfile />}
+            />
             <Route path="/tea-room/new-post" element={<TeaRoomForm />} />
             <Route path="/tea-room/post/:id" element={<TeaRoomPost />} />
           </Routes>{" "}
